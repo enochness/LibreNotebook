@@ -200,6 +200,125 @@ f_{x_i} (x_1, \ldots, x_n)
 \]
 \end{important}
 
+Now that we can take partial derivatives of a multivariable function,
+how do we define differentiability?
+
+\subsection{Differentiability}
+
+In single variable calculus, we said a function is differentiable
+at a given domain if it is differentiable at all points in the domain.
+Now how do we apply similar notion for multivariable functions?
+Notice that in a sense, partial derivatives of a multivariable
+function is different from derivatives of single variable functions.
+Therefore, although differentiability of a multivariable function
+implies the existence of partial derivatives, we need a different way
+to define differentiability for multivariable functions.
+
+Although partial derivatives provide very limited information about
+the function at the point, the fact that differentiability implies
+continuity at a point remains. Also before moving on to
+differentiability for multivariable functions, let's investigate
+a little more on the differentiability tells us about a function.
+
+\begin{important}
+Let $f$ be a single variable function, $I$ be an open interval around
+$x_0$, $\epsilon$ be a function where $\epsilon \to 0$ as $x \to x_0$,
+and $m$ be a number. $f$ is differentiable at the point $x_0$
+if and only if the following equation holds.
+\[
+f(x) - f(x_0) = m(x - x_0) + \epsilon(x) (x - x_0)
+\]
+\end{important}
+
+We are going to first show this because this leads us to an
+interesting finding. First, assume that $f$ is differentiable and
+the following equation holds.
+\[
+\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = m
+\]
+With this, define $\epsilon(x)$ as the following piece-wise function.
+\[
+\epsilon(x)
+= \begin{cases}
+    \frac{f(x) - f(x_0)}{x - x_0} - m & (x \neq x_0) \\
+    0 & (x = x_0)
+\end{cases}
+\]
+Notice that by construction, $\epsilon(x)$ approaches zero as
+$x \to x_0$. Rearranging the equation, we obtain the following.
+\[
+f(x) - f(x_0) = m(x - x_0) + \epsilon(x) (x - x_0)
+\]
+Now to show the converse, we can rearrange the equation as
+\[
+\frac{f(x) - f(x_0)}{x - x_0} = m + \epsilon(x)
+\]
+for $x \neq x_0$ and we can see that the statement holds. Now this
+fact leads us to an interesting interpretation of differentiability.
+Actually, the interpretation that we are going to see now can be
+quite familiar, but it gets very interesting when we extend it to
+multivariable functions.
+
+Let $L(x) = m(x - x_0) + f(x_0)$. Note that $L(x)$ is a linear
+function that passes through $(x_0, f(x_0))$. Rewriting the
+statement we just proved, we can see that a function is differentiable
+if and only if there exists a line $L$ that passes through the point
+$(x_0, f(x_0))$ and that satisfies the following.
+\[
+\lim_{x \to x_0} \frac{f(x) - L(x)}{x - x_0} = 0
+\]
+Now this unique $L$ is just a tangent line with slope $m$, but I think
+this is an interesting way to algebraically show the connection
+between the existence of the good approximation and differentiability.
+
+Now how do we expand this to functions with more variables?
+For functions of two variables, we can define differentiability as
+the following.
+
+\begin{definition}{}{}
+Given a function $f$ that is defined in a open disk $D$ around a point
+$(x_0, y_0)$, $f$ is \textbf{differentiable} if and only if there
+exists some function $\epsilon_1(x, y)$ and $\epsilon_2(x, y)$
+such that $\lim_{(x, y) \to (x_0, y_0)} \epsilon_1 = \lim_{(x, y) \to
+(x_0, y_0)} \epsilon_2 = 0$ and the following equation holds.
+\vspace{-0.6\baselineskip}
+\begin{align*}
+    f(x, y) - f(x_0, y_0)
+    &= f_x(x_0, y_0) (x - x_0) + f_y(x_0, y_0) (y - y_0) \\
+    &\qquad\qquad\ + \epsilon_1(x, y) (x - x_0)
+        + \epsilon_2(x, y) (y - y_0)
+\end{align*}
+\end{definition}
+
+Just as we had the unique tangent line, this time,
+$f_x(x_0, y_0) (x - x_0) + f_y(x_0, y_0) (y - y_0)$ can be interpreted
+as the tangent plane that is a good approximation of $f$ near the
+point $(x_0, y_0)$. From the equation, we can also notice that
+\[
+\lim_{(x, y) \to (x_0, y_0)} f(x, y) = f(x_0, y_0)
+\]
+and that differentiability implies continuity.
+
+Now before wrapping up this section, here is an important theorem!
+
+\begin{theorem}{}{}
+Let $f$ be a function whose first-order partials are defined on an
+open disk around $(x_0, y_0)$. $f$ is differentiable at $(x_0, y_0)$
+if the defined partials are continuous at the point $(x_0, y_0)$.
+\end{theorem}
+
+The proof for this theorem is quite long, and may not fit to the
+scope of this note. So let's skip the proof for now, but maybe I
+can add it in the future!
+
+This theorem also tells that under the same condition, we can see
+that $f$ is continuous at $(x_0, y_0)$ since differentiability implies
+continuity. Now let's discuss chain rule before we conclude this
+section!
+
+\subsection{The Chain Rule}
+
+
 
 
 \end{document}
