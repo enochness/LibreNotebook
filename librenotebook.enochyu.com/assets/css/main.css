@@ -1,13 +1,9 @@
 :root {
   --bg-color: #FDFCFA;
-  --primary-color: #1C1C1E;
-  --secondary-color: #1A1110;
   --accent-color1: #880808;
-  --accent-color2: #002147;
-  --accent-color3: #FCA311;
+  --accent-color2: #FCA311;
   --text-light: #f5f5f5;
   --text-dark: #1B1212;
-  --transition: all 0.3s ease;
 }
 
 body {
@@ -29,6 +25,13 @@ body {
 body p {
   text-align: justify;
   font-size: 13pt;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+a:hover {
+  text-decoration: underline !important;
 }
 
 @media (max-width: 912px) {
@@ -59,25 +62,38 @@ body p {
 }
 
 
+body:has(.error-page) {
+  height: 100vh;
+}
+main:has(> .error-page) {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
 .error-page {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
 }
 .error-page h1 {
-  font-size: 15vw;
+  font-size: 13vw;
   color: var(--accent-color1);
+  margin-bottom: 0;
 }
 .error-page p {
+  text-align: center;
   font-size: 2.1rem;
   font-weight: 400;
 }
 .error-page a {
   text-decoration: none;
+  color: blue;
   font-size: 1.7rem;
-  font-weight: 400;
+}
+.error-page a:hover {
+  text-decoration: underline;
 }
 
 
@@ -206,7 +222,7 @@ body p {
   background-color: inherit;
 }
 .active, .accordion:hover {
-  background-color: var(--accent-color3);
+  background-color: var(--accent-color2);
 }
 .accordion:after {
   content: '\002B';
@@ -250,7 +266,6 @@ body p {
 .left-toc h3 {
   font-size: 1.2rem !important;
 }
-
 
 #changelog-container {
   width: 100%;

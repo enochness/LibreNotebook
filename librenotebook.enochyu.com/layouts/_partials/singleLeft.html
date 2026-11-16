@@ -5,18 +5,37 @@
           &#10137;
       </span>&nbsp;LibreNotebook
   </a></h3>
-  {{ if eq .Section "math01" }}
-    {{ partial "singleLeft/MATH01.html" . }}
-  {{ else if eq .Section "math02" }}
-    {{ partial "singleLeft/MATH02.html" . }}
-  {{ else if eq .Section "math03" }}
-    {{ partial "singleLeft/MATH03.html" . }}
-  {{ else if eq .Section "cs01" }}
-    {{ partial "singleLeft/CS01.html" . }}
-  {{ else if eq .Section "cs02" }}
-    {{ partial "singleLeft/CS02.html" . }}
-  {{ else if eq .Section "misc01" }}
-    {{ partial "singleLeft/MISC01.html" . }}
+  {{ $n := 0 }}
+  {{ range hugo.Data.index.parts }}
+    {{ $part := . }}
+    {{ $num := 0 }}
+    {{ if not (hasPrefix .id "MISC") }}
+      {{ $n = add $n 1 }}
+      {{ $num = $n }}
+    {{ end }}
+    {{ if eq (lower .id) $.Section }}
+    <h3>{{ with $num }}&sect;&hairsp;{{ . }}: {{ end }}{{ .title }}</h3>
+    <ul>
+      {{ range .chapters }}
+        {{ $base := printf "/%s/%s" (lower $part.id) .id }}
+        {{ if and (eq (len .sections) 1) (eq (index .sections 0).title .title) }}
+          {{ with index .sections 0 }}
+          <li><a class="toc-single"
+                 href="{{ $base }}/{{ .id }}/">{{ .title }}</a></li>
+          {{ end }}
+        {{ else }}
+          <li>
+            <button class="accordion">{{ .title }}</button>
+            <ul class="panel">
+              {{ range .sections }}
+                <li><a href="{{ $base }}/{{ .id }}/">{{ .title }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
   {{ end }}
 </div>
 

@@ -18,4 +18,11 @@ author = "Enoch Yu"
 [security]
   allowContent = ['^text/html$', '^text/markdown$']
 
+[module]
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = '../index.yaml'
+    target = 'data/index.yaml'
 

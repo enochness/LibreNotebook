@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-<link rel="canonical" href="https://librenotebook.enochyu.com/" />
+<link rel="canonical" href="{{ .Permalink }}" />
 
 
 {{ $main := resources.Get "css/main.css" | minify | fingerprint }}
@@ -42,6 +42,5 @@
   "url": "https://librenotebook.enochyu.com/"
 }
 </script>
-
 
 

@@ -7,9 +7,9 @@
       <h2>A Giant Notebook</h2>
 
       <div id="intropara">
-        <em>LibreNotebook</em> is a personal notebook that I write as
-        I explore different topics of my interest. I personally learn
-        the best when I explain the contents, so I naturally write
+        <em>LibreNotebook</em> is a giant open source notebook that I
+        write as I explore different topics of my interest. I personally
+        learn the best when I explain the contents, so I naturally write
         my notes as if I am explaining the topics to other people.
         Although <em>LibreNotebook</em> reflects my fields of interest,
         I strive to include thorough insights whenever possible.
@@ -26,35 +26,26 @@
         <div id="index-meta">
           <h3><span class="bold">Author:</span> Enoch Yu</h3>
           <h3><span class="bold">License:</span> CC-BY-SA-4.0</h3>
-          <h3><span class="bold">Version:</span> v1.11.14</h3>
+          <h3><span class="bold">Version:</span> v1.11.17</h3>
           <h3><span class="bold">Last Updated:</span> {{ now.Format "2 January 2006" }}
           (<a class="bold" href="/changelog">Changelog</a>)</h3>
         </div>
         <img src="/cover.png" alt="LibreNotebook Cover" id="index-cover">
       </div>
     </div>
-    <hr>
-    <p>
-      The <a href="https://archive.enochyu.com/LibreNotebook.pdf">
-        PDF version</a> of <em>LibreNotebook</em> is also available!
-      <br><br>
-      As the purpose and name suggests, contributions are appreciated!
-      The source files are <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>.
-    </p>
+    <hr style="margin-bottom: 0;">
 
     <div class="index-stat">
       <div>
         <div class="index-stat-num" id="view-count">...</div>
         <div>Visits</div>
       </div>
-
       <div>
         {{ with partialCached "githubstars.html" . }}
         <div class="index-stat-num">{{ .stargazers_count }}</div>
         <div>GitHub Stars</div>
         {{ end }}
       </div>
-
       <div>
         {{ with .Site.Params.social.github }}
         <a href="{{ . }}" target="_blank" rel="noopener"
@@ -63,31 +54,6 @@
         </a>
         {{ end }}
       </div>
-
-      <div>
-        {{ $total := 0 }}
-        {{ range slice
-          hugo.Data.math01 hugo.Data.math02 hugo.Data.math03
-          hugo.Data.cs01 hugo.Data.cs02
-        }}
-          {{ range . }}
-            {{ with .items }}
-              {{ $total = add $total (len .) }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ $total = add $total 7 }}
-        <div class="index-stat-num">{{ $total }}</div>
-        <div>Notes</div>
-      </div>
-
-      <div>
-        <div class="index-stat-num">
-          {{ len (readDir "static/svg") }}
-        </div>
-        <div>Figures</div>
-      </div>
-
       <div>
         {{ with .Site.Params.social.youtube }}
         <a href="{{ . }}" target="_blank" rel="noopener"
@@ -96,7 +62,40 @@
         </a>
         {{ end }}
       </div>
+      {{ $parts := hugo.Data.index.parts }}
+      {{ $sections := 0 }}
+      {{ $chapters := 0 }}
+      {{ range $parts }}
+        {{ $chapters = add $chapters (len .chapters) }}
+        {{ range .chapters }}
+          {{ $sections = add $sections (len .sections) }}
+        {{ end }}
+      {{ end }}
+      <div>
+        <div class="index-stat-num">{{ $chapters }}</div>
+        <div>Notes</div>
+      </div>
+      <div>
+        <div class="index-stat-num">{{ $sections }}</div>
+        <div>Sections</div>
+      </div>
+      <div>
+        <div class="index-stat-num">
+          {{ add (len (readDir "static/svg")) (len (readDir "static/img")) }}
+        </div>
+        <div>Figures</div>
+      </div>
+      <div>
+        <a href="https://cdn.enochyu.com/LibreNotebook.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      </div>
     </div>
+
+    <p>
+      Contributions are appreciated! The source files are
+      <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>.
+    </p>
     <hr><hr>
   </div>
 

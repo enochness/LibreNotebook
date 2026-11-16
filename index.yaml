@@ -4,7 +4,7 @@ parts:
   - id: MATH01
     title: "Math Olympiad"
     chapters:
-      - kind: "INIT"
+      - id: psn
         title: "Introducing the Notes"
         sections:
           - { id: 26bfzzr, status: "===",
@@ -15,12 +15,12 @@ parts:
         sections:
           - { id: 26cgbbs, status: "===",
               title: "Definitions and Notations" }
-          - { id: 26dhcct, status: "===",
-              title: "Number Theory" }
           - { id: 26gpznd, status: "===",
               title: "Algebra" }
           - { id: 26fjddv, status: "===",
               title: "Geometry" }
+          - { id: 26dhcct, status: "===",
+              title: "Number Theory" }
 
       - id: vyt
         title: "[A] Inequalities"
@@ -67,22 +67,22 @@ parts:
         sections:
           - { id: 26qtppg, status: "0.8",
               title: "Power of a Point" }
-          - { id: 26rvqqh, status: "0.4",
-              title: "Points and Circles of a Triangle" }
-          - { id: 26tcnbr, status: "===",
-              title: "Homothety" }
-          - { id: 26swrrj, status: "===",
-              title: "Isogonal Conjugate" }
           - { id: 26vdpcs, status: "===",
               title: "Six Collinear Points" }
+          - { id: 26swrrj, status: "===",
+              title: "Isogonal Conjugate" }
+          - { id: 26tcnbr, status: "===",
+              title: "Homothety" }
+          - { id: 26rvqqh, status: "0.4",
+              title: "Points and Circles of a Triangle" }
 
       - id: ycx
         title: "[G] Projective Geometry"
         sections:
-          - { id: 26txssk, status: "0.8",
-              title: "Fundamental Theorems" }
           - { id: 26wfqdt, status: "===",
               title: "Foundations" }
+          - { id: 26txssk, status: "0.8",
+              title: "Fundamental Theorems" }
 
       - id: zdy
         title: "[N] Diophantine Equations"
@@ -107,16 +107,16 @@ parts:
         sections:
           - { id: 26ycxxp, status: "===",
               title: "$p$-adic Valuation & LTE Lemma" }
-          - { id: 26bkvjy, status: "0.1",
-              title: "Practice Problems" }
           - { id: 26zdyyq, status: "0.1",
               title: "Proving and Problem Solving Tips" }
+          - { id: 26bkvjy, status: "0.1",
+              title: "Practice Problems" }
 
 
   - id: MATH02
     title: "Linear Algebra"
     chapters:
-      - kind: "INIT"
+      - id: dmx
         title: "Introducing the Notes"
         sections:
           - { id: 26dmxlb, status: "===",
@@ -194,7 +194,7 @@ parts:
   - id: MATH03
     title: "Multivariable Calculus"
     chapters:
-      - kind: "INIT"
+      - id: nrm
         title: "Introducing the Notes"
         sections:
           - { id: 26clypk, status: "0.0",
@@ -236,7 +236,7 @@ parts:
   - id: CS01
     title: "Machine Learning"
     chapters:
-      - kind: "INIT"
+      - id: bkw
         title: "What is AI and Why Should We Learn It?"
         sections:
           - { id: 26ksftm, status: "===",
@@ -300,7 +300,7 @@ parts:
   - id: CS02
     title: "Competitive Programming"
     chapters:
-      - kind: "INIT"
+      - id: sbp
         title: "Introducing the Notes"
         sections:
           - { id: 26ltkcc, status: "0.0",
@@ -334,7 +334,7 @@ parts:
   - id: CS03
     title: "Creative Coding"
     chapters:
-      - kind: "INIT"
+      - id: qtp
         title: "Introducing the Notes"
         sections:
           - { id: 26yhwnl, status: "===",
@@ -350,7 +350,7 @@ parts:
   - id: MISC01
     title: "Appendix"
     chapters:
-      - kind: "appendix"
+      - id: rvq
         title: "Bibliography"
         sections:
           - { id: 26dmfzf, status: "===",

@@ -1,5 +1,33 @@
 [
   {
+    "hash": "233df977468aa0108abb4018b9c5e3d81ace0a62",
+    "commit": "233df97",
+    "date": "2026-11-16",
+    "author": "Enoch Yu",
+    "message": "refactor: change ids"
+  },
+  {
+    "hash": "a5633e4d250b44cd8dac81313cf7799108e8fdc5",
+    "commit": "a5633e4",
+    "date": "2026-11-15",
+    "author": "Enoch Yu",
+    "message": "feat(MATH03): Differentiability"
+  },
+  {
+    "hash": "b6227bd67f28395e0bde72f4cf03b1bf1d5cff43",
+    "commit": "b6227bd",
+    "date": "2026-11-14",
+    "author": "Enoch Yu",
+    "message": "Merge pull request #14 from enochness/web"
+  },
+  {
+    "hash": "847bad7ede92bedf54cbbaff9d53ec573ee38045",
+    "commit": "847bad7",
+    "date": "2026-11-14",
+    "author": "Enoch Yu",
+    "message": "fix: outdated links"
+  },
+  {
     "hash": "817c17587a621819cf115059570a7d028ea44985",
     "commit": "817c175",
     "date": "2026-11-11",
