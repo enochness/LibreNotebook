@@ -24,12 +24,6 @@ body {
   width: 100% !important;
   line-height: 1.4;
   font-family: 'Times New Roman', Times, serif;
-
-/*
-  background-color: #FEFCF5;
-  color: var(--text-dark);
-  background-color: var(--bg-color);
-*/
 }
 
 body p {
@@ -44,12 +38,6 @@ body p {
   #index {
     width: 90vw !important;
   }
-}
-
-p, h1, h2, h3, h4, a, span, ul, th, td, div {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .footer {
@@ -71,7 +59,6 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
 }
 
 
-/* 404 Error Page */
 .error-page {
   display: flex;
   flex-direction: column;
@@ -79,17 +66,14 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
   justify-content: center;
   min-height: 90vh;
 }
-
 .error-page h1 {
   font-size: 15vw;
   color: var(--accent-color1);
 }
-
 .error-page p {
   font-size: 2.1rem;
   font-weight: 400;
 }
-
 .error-page a {
   text-decoration: none;
   font-size: 1.7rem;
@@ -97,14 +81,12 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
 }
 
 
-/* SINGLE */
 .single {
   display: grid;
   grid-template-columns: 2.2fr 6fr 1.8fr;
   gap: 2rem;
   width: 100%;
 }
-
 .single-left {
   min-width: 0;
   position: sticky;
@@ -115,7 +97,6 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
   border-bottom: 2px solid #37353E;
   padding: 0 2rem 1rem 2rem;
 }
-
 .single-right {
   min-width: 0;
   position: sticky;
@@ -125,7 +106,6 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
   border-left: 2px solid #37353E;
   border-bottom: 2px solid #37353E;
 }
-
 .single-right-content {
   margin-bottom: 0rem !important;
   font-size: 1.01rem;
@@ -156,7 +136,6 @@ p, h1, h2, h3, h4, a, span, ul, th, td, div {
 .single-right-contribute a:hover {
   text-decoration: underline;
 }
-
 .single-content {
   width: 90%;
   margin: 0 auto;

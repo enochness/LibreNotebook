@@ -1,10 +1,11 @@
 #!/bin/bash
 
 OUT_DIR="$HOME/projects/LibreNotebook/librenotebook.enochyu.com"
-TMP_DIR="$HOME/projects/LibreNotebook/LibreNotebook/temp"
+TMP_DIR="$HOME/projects/LibreNotebook/temp"
 CONTENT="$OUT_DIR/content"
 CSS="$OUT_DIR/assets/css/make4ht"
 
+cd ~/projects/LibreNotebook
 rm -r "$CONTENT" "$CSS"
 mkdir "$CONTENT" "$CSS"
 
@@ -28,7 +29,7 @@ for dir in tex/*; do
     [[ -d "$subdir" ]] || continue
 
     (
-      cd "$HOME/projects/LibreNotebook/LibreNotebook/$subdir"
+      cd "$HOME/projects/LibreNotebook/$subdir"
 
       subdirName="${subdir#"$dir"}"
       subdirNameLower=$(echo "$subdirName" | tr 'A-Z' 'a-z')
@@ -55,11 +56,11 @@ for dir in tex/*; do
   done
 done
 
-cd "$HOME/projects/LibreNotebook/LibreNotebook/"
+cd "$HOME/projects/LibreNotebook/"
 mv temp/*.svg "$OUT_DIR"/static/svg/
+cp assets/img/* "$OUT_DIR"/static/img/
 rm -r temp/
 
-cd "$HOME/projects/LibreNotebook/"
 git log --date=short --pretty=format:'%H%x1f%h%x1f%ad%x1f%an%x1f%s' |
 jq -Rn '[inputs | split("\u001f") |
   {hash: .[0], commit: .[1], date: .[2], author: .[3], message: .[4]}]

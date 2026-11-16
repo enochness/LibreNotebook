@@ -1,0 +1,358 @@
+# LibreNotebook Index
+
+parts:
+  - id: MATH01
+    title: "Math Olympiad"
+    chapters:
+      - kind: "INIT"
+        title: "Introducing the Notes"
+        sections:
+          - { id: 26bfzzr, status: "===",
+              title: "Introducing the Notes" }
+
+      - id: swr
+        title: "Prerequisites"
+        sections:
+          - { id: 26cgbbs, status: "===",
+              title: "Definitions and Notations" }
+          - { id: 26dhcct, status: "===",
+              title: "Number Theory" }
+          - { id: 26gpznd, status: "===",
+              title: "Algebra" }
+          - { id: 26fjddv, status: "===",
+              title: "Geometry" }
+
+      - id: vyt
+        title: "[A] Inequalities"
+        sections:
+          - { id: 26hqbpf, status: "===",
+              title: "Fundamental Inequalities" }
+          - { id: 26gkffw, status: "0.3",
+              title: "Advanced Inequalities" }
+          - { id: 26jrcqg, status: "0.3",
+              title: "Techniques and Patterns" }
+          - { id: 26hlggx, status: "0.8",
+              title: "Practice Problems" }
+
+      - id: wzv
+        title: "[A] Functional Equations"
+        sections:
+          - { id: 26ksdrh, status: "===",
+              title: "Foundations" }
+          - { id: 26jmhhy, status: "0.4",
+              title: "Cauchy's FE and Its Variants" }
+          - { id: 26lpkkb, status: "0.0",
+              title: "Additional Topics" }
+
+      - id: yhs
+        title: "[A] Polynomials"
+        sections:
+          - { id: 26mqllc, status: "===",
+              title: "Foundations" }
+          - { id: 26pxjwm, status: "0.7",
+              title: "Roots of Unity" }
+
+      - id: xbw
+        title: "[A] Sequence and Series"
+        sections:
+          - { id: 26nrmmd, status: "===",
+              title: "Prerequisites" }
+          - { id: 26qykxn, status: "===",
+              title: "Recurrence Relation" }
+          - { id: 26rzlyp, status: "0.1",
+              title: "Practice Problems" }
+
+      - id: zjt
+        title: "[G] Euclidean Geometry"
+        sections:
+          - { id: 26qtppg, status: "0.8",
+              title: "Power of a Point" }
+          - { id: 26rvqqh, status: "0.4",
+              title: "Points and Circles of a Triangle" }
+          - { id: 26tcnbr, status: "===",
+              title: "Homothety" }
+          - { id: 26swrrj, status: "===",
+              title: "Isogonal Conjugate" }
+          - { id: 26vdpcs, status: "===",
+              title: "Six Collinear Points" }
+
+      - id: ycx
+        title: "[G] Projective Geometry"
+        sections:
+          - { id: 26txssk, status: "0.8",
+              title: "Fundamental Theorems" }
+          - { id: 26wfqdt, status: "===",
+              title: "Foundations" }
+
+      - id: zdy
+        title: "[N] Diophantine Equations"
+        sections:
+          - { id: 26vyttl, status: "===",
+              title: "Primitive Pythagorean Triples" }
+          - { id: 26wzvvm, status: "===",
+              title: "Infinite Descent" }
+          - { id: 26yhsgw, status: "0.0",
+              title: "Pell's Equations" }
+          - { id: 26xbwwn, status: "0.0",
+              title: "Practice Problems" }
+
+      - id: clw
+        title: "[N] Modular Arithmetic"
+        sections:
+          - { id: 26zjthx, status: "0.0",
+              title: "Primitive Root Modulo $n$" }
+
+      - id: bfz
+        title: "Miscellaneous Goodies"
+        sections:
+          - { id: 26ycxxp, status: "===",
+              title: "$p$-adic Valuation & LTE Lemma" }
+          - { id: 26bkvjy, status: "0.1",
+              title: "Practice Problems" }
+          - { id: 26zdyyq, status: "0.1",
+              title: "Proving and Problem Solving Tips" }
+
+
+  - id: MATH02
+    title: "Linear Algebra"
+    chapters:
+      - kind: "INIT"
+        title: "Introducing the Notes"
+        sections:
+          - { id: 26dmxlb, status: "===",
+              title: "Introducing the Notes" }
+
+      - id: cgb
+        title: "Vectors and Vector Spaces"
+        sections:
+          - { id: 26fnzph, status: "===",
+              title: "Basic Terms and Notations" }
+          - { id: 26fnymc, status: "===",
+              title: "Fundamental Properties" }
+          - { id: 26hqcrk, status: "===",
+              title: "Subspaces" }
+          - { id: 26jrfvq, status: "===",
+              title: "Practice Problems" }
+
+      - id: fny
+        title: "Matrices"
+        sections:
+          - { id: 26nwjxq, status: "===",
+              title: "Basic Terms and Notations" }
+          - { id: 26pxlbw, status: "===",
+              title: "Fundamental Properties" }
+          - { id: 26nwhvl, status: "===",
+              title: "Matrix Multiplication" }
+          - { id: 26pxkyr, status: "===",
+              title: "Additional Fundamental Topics" }
+          - { id: 26qylzs, status: "===",
+              title: "Determinants" }
+          - { id: 26rzndy, status: "===",
+              title: "Practice Problems" }
+
+      - id: dhc
+        title: "System of Linear Equations"
+        sections:
+          - { id: 26rzmbt, status: "===",
+              title: "Basics and Intuitions" }
+          - { id: 26sbncv, status: "===",
+              title: "Gaussian Elimination" }
+          - { id: 26tcqgb, status: "===",
+              title: "The Multiplicative Inverse" }
+          - { id: 26sbmzq, status: "===",
+              title: "LU Decomposition" }
+          - { id: 26tcpdw, status: "===",
+              title: "Practice Problems" }
+
+      - id: lpk
+        title: "Matrices and Vector Spaces"
+        sections:
+          - { id: 26vdqfx, status: "===",
+              title: "Row Space and Rank of a Matrix" }
+          - { id: 26wfsjd, status: "===",
+              title: "Linear Transformations" }
+          - { id: 26wfrgy, status: "===",
+              title: "Eigenvalues and Eigenvectors" }
+          - { id: 26xgtkf, status: "===",
+              title: "Practice Problems" }
+
+      - id: mql
+        title: "Solutions"
+        sections:
+          - { id: 26xgshz, status: "===",
+              title: "Solutions for Note 1" }
+          - { id: 26xgrfv, status: "===",
+              title: "Solutions for Note 2" }
+          - { id: 26yhtjb, status: "===",
+              title: "Solutions for Note 3" }
+          - { id: 26zjvkc, status: "===",
+              title: "Solutions for Note 4" }
+          - { id: 26bkwld, status: "===",
+              title: "Final Thoughts" }
+
+
+  - id: MATH03
+    title: "Multivariable Calculus"
+    chapters:
+      - kind: "INIT"
+        title: "Introducing the Notes"
+        sections:
+          - { id: 26clypk, status: "0.0",
+              title: "Introducing the Notes" }
+
+      - id: qyk
+        title: "Vectors and Geometry"
+        sections:
+          - { id: 26clxmf, status: "===",
+              title: "Basic Terms and Intuitions" }
+          - { id: 26dmzql, status: "===",
+              title: "Vectors" }
+          - { id: 26clwkz, status: "===",
+              title: "Geometry in 3-Space" }
+          - { id: 26gpcsn, status: "===",
+              title: "Cylindrical and Spherical Coordinates" }
+
+      - id: rzl
+        title: "Vector-Valued Functions and Parametrization"
+        sections:
+          - { id: 26hqfwt, status: "===",
+              title: "Vector-Valued Functions and Calculus" }
+          - { id: 26gpbqj, status: "===",
+              title: "Parameterizations of Curves" }
+          - { id: 26hqdtp, status: "===",
+              title: "Curvature" }
+
+      - id: vdp
+        title: "Multivariable Functions and Derivatives"
+        sections:
+          - { id: 26kshyw, status: "===",
+              title: "Multivariable Functions and Sets" }
+          - { id: 26jrdsl, status: "===",
+              title: "Limits and Continuity" }
+          - { id: 26ksgwr, status: "0.0",
+              title: "Partial Derivatives" }
+
+
+  - id: CS01
+    title: "Machine Learning"
+    chapters:
+      - kind: "INIT"
+        title: "What is AI and Why Should We Learn It?"
+        sections:
+          - { id: 26ksftm, status: "===",
+              title: "What is AI and Why Should We Learn It?" }
+
+      - id: zjv
+        title: "Fundamental Math for Machine Learning"
+        sections:
+          - { id: 26ltgvn, status: "0.8",
+              title: "Calculus" }
+          - { id: 26yhvlg, status: "0.7",
+              title: "Linear Algebra" }
+          - { id: 26zjxpm, status: "0.4",
+              title: "Probability Theory" }
+
+      - id: knj
+        title: "Python Basics for Machine Learning"
+        sections:
+          - { id: 26zjwmh, status: "===",
+              title: "Basic Syntax" }
+          - { id: 26bkyqn, status: "===",
+              title: "Modules and Libraries" }
+
+      - id: nwh
+        title: "Foundations and Intuitions"
+        sections:
+          - { id: 26bkxnj, status: "===",
+              title: "Fundamental Terms and Concepts" }
+          - { id: 26dmbsq, status: "===",
+              title: "Introduction to LLMs" }
+          - { id: 26fndww, status: "===",
+              title: "Improving Large Language Models" }
+
+      - id: pxk
+        title: "Deep Dive into Deep Neural Networks"
+        sections:
+          - { id: 26fnctr, status: "===",
+              title: "Definitions and High Level Overview" }
+          - { id: 26gpfxx, status: "===",
+              title: "Mathematical Interpretations" }
+          - { id: 26dmyng, status: "===",
+              title: "Building Vanilla NN From Scratch" }
+
+      - id: pxj
+        title: "Building Language Models"
+        sections:
+          - { id: 26jrhzz, status: "0.0",
+              title: "Bigram Language Model" }
+          - { id: 26kskdg, status: "0.1",
+              title: "Attention and Transformers" }
+          - { id: 26jrgxv, status: "0.0",
+              title: "Building an LLM with PyTorch" }
+
+      - id: rzm
+        title: "Further Resources"
+        sections:
+          - { id: 26ksjbb, status: "0.7",
+              title: "Further Resources" }
+
+
+  - id: CS02
+    title: "Competitive Programming"
+    chapters:
+      - kind: "INIT"
+        title: "Introducing the Notes"
+        sections:
+          - { id: 26ltkcc, status: "0.0",
+              title: "Introducing the Notes" }
+
+      - id: sbn
+        title: "C++ Basics"
+        sections:
+          - { id: 26mvmgj, status: "===",
+              title: "Foundations" }
+          - { id: 26ltjzx, status: "===",
+              title: "Conditionals and Loops" }
+          - { id: 26bkzss, status: "===",
+              title: "Functions and References" }
+          - { id: 26clbtt, status: "===",
+              title: "Arrays and Vectors" }
+          - { id: 26clzrp, status: "===",
+              title: "Practice Problems and Solutions" }
+
+      - id: tcq
+        title: "Foundations"
+        sections:
+          - { id: 26dmcvv, status: "===",
+              title: "Time Complexity" }
+          - { id: 26gpgzc, status: "0.7",
+              title: "Simulation and Complete Search" }
+          - { id: 26fnbrm, status: "0.1",
+              title: "Practice Problems and Solutions" }
+
+
+  - id: CS03
+    title: "Creative Coding"
+    chapters:
+      - kind: "INIT"
+        title: "Introducing the Notes"
+        sections:
+          - { id: 26yhwnl, status: "===",
+              title: "Introducing the Notes" }
+
+      - id: sbm
+        title: "C Programming Language"
+        sections:
+          - { id: 26clcwy, status: "0.0",
+              title: "Foundations" }
+
+
+  - id: MISC01
+    title: "Appendix"
+    chapters:
+      - kind: "appendix"
+        title: "Bibliography"
+        sections:
+          - { id: 26dmfzf, status: "===",
+              title: "Bibliography" }
+

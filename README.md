@@ -1,9 +1,9 @@
-<img src="LibreNotebook/cover.png" alt="LibreNotebook Cover" width="200" />
+<img src="assets/cover.png" alt="LibreNotebook Cover" width="200" />
 
 # LibreNotebook
 
-*[LibreNotebook](https://librenotebook.enochyu.com/)*
-is Enoch Yu's giant open source notebook.
+*[LibreNotebook](https://librenotebook.enochyu.com/)* is Enoch Yu's
+giant open source notebook that is entirely human-written.
 
 ## About
 
