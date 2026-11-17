@@ -1,5 +1,26 @@
 [
   {
+    "hash": "9c854e590df1bb3e828935a98ee1c0b0623b5fdd",
+    "commit": "9c854e5",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "Merge pull request #15 from enochness/web"
+  },
+  {
+    "hash": "3438f8f4a75c813462b9c94ba3f6e11fe03fe05b",
+    "commit": "3438f8f",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "refactor: Update web"
+  },
+  {
+    "hash": "32301c32d1f2438cb38652af7583538db435bc44",
+    "commit": "32301c3",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "refactor: Complete refactor"
+  },
+  {
     "hash": "233df977468aa0108abb4018b9c5e3d81ace0a62",
     "commit": "233df97",
     "date": "2026-11-16",
