@@ -26,3 +26,12 @@ author = "Enoch Yu"
     source = '../index.yaml'
     target = 'data/index.yaml'
 
+[outputFormats.index]
+  mediaType = "text/plain"
+  baseName = "index"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["html", "rss", "index"]
+

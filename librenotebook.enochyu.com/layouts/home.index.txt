@@ -1,0 +1,57 @@
+{{- $hline := strings.Repeat 70 "-" -}}
+{{- $dhline := strings.Repeat 70 "=" -}}
+{{- $parts := hugo.Data.index.parts -}}
+{{- $sections := slice -}}
+{{- range $parts -}}
+  {{- $part := .id -}}
+  {{- range .chapters -}}
+    {{- $chapter := printf "%s/%s" $part .id -}}
+    {{- range .sections -}}
+      {{- $sections = $sections | append (dict
+          "path" (printf "%s/%s" $chapter .id)
+          "status" .status
+          "title" .title
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+LibreNotebook Index
+
+{{ $dhline }}
+
+
+Section I. Parts
+{{ $hline }}
+{{ $prefix := "" -}}
+{{ range $parts -}}
+  {{- $p := replaceRE `\d+$` "" .id -}}
+  {{- if and $prefix (ne $p $prefix) }}{{ "\n" }}{{ end -}}
+  {{- $prefix = $p -}}
+  {{- printf "%-14s | %s\n" .id .title -}}
+{{ end -}}
+{{ $hline }}
+
+
+Section II. Notes
+{{ $hline }}
+{{ range $i, $part := $parts -}}
+  {{- if $i }}{{ "\n" }}{{ end -}}
+  {{- range .chapters -}}
+    {{- printf "%-14s | %s\n" (printf "%s/%s" $part.id .id) .title -}}
+  {{- end -}}
+{{ end -}}
+{{ $hline }}
+
+
+Section III. Sections
+{{ $hline }}
+{{ range $i, $s := $sections -}}
+  {{- if and $i (eq (mod $i 10) 0) }}{{ "\n" }}{{ end -}}
+  {{- printf "%s | %18s | %s\n" .status .path .title -}}
+{{ end -}}
+{{ $hline }}
+
+END OF INDEX
+
+{{ $dhline }}
+
