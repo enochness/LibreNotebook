@@ -84,6 +84,12 @@
 \usepackage{float}
 \usepackage{pdfpages}
 \usepackage{subfiles}
+\ifdefined\HCode
+    \AtBeginDocument{%
+        \renewcommand{\subfile}[1]{}%
+        \renewcommand{\localtableofcontents}{}%
+    }
+\fi
 \usepackage{csquotes}
 \usepackage[
     backend=biber,

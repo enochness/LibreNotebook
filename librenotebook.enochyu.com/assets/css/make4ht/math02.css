@@ -1,7 +1,6 @@
  
 /* start css.sty */
 .pplr8t-x-x-109{}
-.pplb8t-x-x-109{font-weight: bold;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
@@ -24,7 +23,7 @@ h1,h2,h3,h4,h5 { line-height:1.2; }
 .sectionHead, .likesectionHead { font-size: 1.5157em; }
 .subsectionHead, .likesubsectionHead { font-size: 1.3195em; }
 .subsubsectionHead, .likesubsubsectionHead { font-size: 1.1487em; }
- @media (prefers-color-scheme: dark) { img[src^="26dmxlb"]{filter: invert(1); } } 
+ @media (prefers-color-scheme: dark) { img[src^="MATH02"]{filter: invert(1); } } 
  body { background-color: Canvas; color: CanvasText; color-scheme: light dark; } 
 li p.indent { text-indent: 0em }
 li p:first-child{ margin-top:0em; }

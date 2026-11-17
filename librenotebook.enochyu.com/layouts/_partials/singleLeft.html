@@ -5,6 +5,11 @@
           &#10137;
       </span>&nbsp;LibreNotebook
   </a></h3>
+  {{ $sec := $.Section }}
+    {{ if not $sec }}
+      {{ with $.File }}{{ $sec = .ContentBaseName }}
+    {{ end }}
+  {{ end }}
   {{ $n := 0 }}
   {{ range hugo.Data.index.parts }}
     {{ $part := . }}
@@ -13,8 +18,11 @@
       {{ $n = add $n 1 }}
       {{ $num = $n }}
     {{ end }}
-    {{ if eq (lower .id) $.Section }}
-    <h3>{{ with $num }}&sect;&hairsp;{{ . }}: {{ end }}{{ .title }}</h3>
+    {{ if eq (lower .id) $sec }}
+    <h3>
+      {{ with $num }}&sect;&hairsp;{{ . }}. {{ end }}
+      <a href="/{{ lower .id }}/">{{ .title }}</a>
+    </h3>
     <ul>
       {{ range .chapters }}
         {{ $base := printf "/%s/%s" (lower $part.id) .id }}
