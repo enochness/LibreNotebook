@@ -1,22 +1,32 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+var acc = document.getElementsByClassName("accordion");
+var key = "toggle-" + location.pathname.split("/")[1];
+var toggle = JSON.parse(sessionStorage.getItem(key) || "[]");
 
-    const href = this.getAttribute('href');
+function openPanel(btn) {
+  btn.classList.add("active");
+  btn.nextElementSibling.style.maxHeight = "none";
+}
 
-    if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
+for (var i = 0; i < acc.length; i++) {
+  if (toggle.includes(acc[i].textContent.trim())) openPanel(acc[i]);
+
+  acc[i].addEventListener("click", function() {
+    var name = this.textContent.trim();
+    var panel = this.nextElementSibling;
+    this.classList.toggle("active");
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      toggle = toggle.filter(n => n !== name);
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      toggle.push(name);
     }
-
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    sessionStorage.setItem(key, JSON.stringify(toggle));
   });
-});
+}
 
+var current = document.querySelector('.left-toc a[href="' + location.pathname + '"]');
+if (current && current.closest(".panel")) {
+  openPanel(current.closest(".panel").previousElementSibling);
+}
 

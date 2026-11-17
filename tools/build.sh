@@ -25,6 +25,21 @@ for dir in tex/*; do
   dirNameLower=$(echo "$dirName" | tr 'A-Z' 'a-z')
   mkdir -p "$CONTENT$dirNameLower"
 
+  (
+    cd "$HOME/projects/LibreNotebook/$dir"
+    make4ht -u -B $TMP_DIR -f html5+tidy "${dirName#/}".tex "mathjax"
+    if grep -qE '\\(no)?cite|\\printbibliography' "${dirName#/}".tex; then
+      (cd "$HOME/projects/LibreNotebook" &&
+       biber --output-directory temp "${dirName#/}")
+      make4ht -u -B "$TMP_DIR" -f html5+tidy "${dirName#/}".tex "mathjax"
+    fi
+    tidy -indent -wrap 70 -utf8 -m \
+         --show-body-only yes --force-output yes \
+      "$TMP_DIR$dirName".html
+    mv "$TMP_DIR$dirName".html "$CONTENT$dirNameLower".html
+    mv "$TMP_DIR$dirName".css "$CSS$dirNameLower".css
+  )
+
   for subdir in "$dir"/*; do
     [[ -d "$subdir" ]] || continue
 
@@ -40,6 +55,12 @@ for dir in tex/*; do
         fileNameLower=$(echo "$fileName" | tr 'A-Z' 'a-z')
 
         make4ht -u -B "$TMP_DIR" -f html5+tidy "$fileName".tex "mathjax"
+        if grep -qE '\\(no)?cite|\\printbibliography' "$fileName".tex; then
+          (cd "$HOME/projects/LibreNotebook" &&
+           biber --output-directory temp "$fileName")
+          make4ht -u -B "$TMP_DIR" -f html5+tidy "$fileName".tex "mathjax"
+        fi
+
         perl -0777 -pi -e "s#src\s*=\s*'([^']+\.svg)'#src='/svg/\$1'#g" \
           "$TMP_DIR/$fileName".html
         perl -pi -e 's/\\(?:displaybreak|linebreak|relax)//g' \
@@ -66,10 +87,5 @@ jq -Rn '[inputs | split("\u001f") |
   {hash: .[0], commit: .[1], date: .[2], author: .[3], message: .[4]}]
 ' > librenotebook.enochyu.com/data/changelog.json
 
-cat > librenotebook.enochyu.com/content/changelog.md <<'CONTENT'
----
-layout: "changelog"
----
-CONTENT
-
+printf '%s\n' '---' 'layout: "changelog"' '---' > "$CONTENT/changelog.md"
 

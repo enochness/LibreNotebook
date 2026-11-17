@@ -4,7 +4,7 @@
     <hr><hr>
     <div id="index-title">
       <h1>LibreNotebook</h1>
-      <h2>A Giant Notebook</h2>
+      <h2>A Giant Open Source Notebook</h2>
 
       <div id="intropara">
         <em>LibreNotebook</em> is a giant open source notebook that I
@@ -24,11 +24,11 @@
 
       <div id="index-meta-cover">
         <div id="index-meta">
-          <h3><span class="bold">Author:</span> Enoch Yu</h3>
-          <h3><span class="bold">License:</span> CC-BY-SA-4.0</h3>
-          <h3><span class="bold">Version:</span> v1.11.17</h3>
-          <h3><span class="bold">Last Updated:</span> {{ now.Format "2 January 2006" }}
-          (<a class="bold" href="/changelog">Changelog</a>)</h3>
+          <h3><strong>Author:</strong> Enoch Yu</h3>
+          <h3><strong>License:</strong> CC-BY-SA-4.0</h3>
+          <h3><strong>Version:</strong> v1.11.17</h3>
+          <h3><strong>Last Updated:</strong> {{ now.Format "2 January 2006" }}
+          (<a href="/changelog"><strong>Changelog</strong></a>)</h3>
         </div>
         <img src="/cover.png" alt="LibreNotebook Cover" id="index-cover">
       </div>
@@ -93,8 +93,13 @@
     </div>
 
     <p>
-      Contributions are appreciated! The source files are
-      <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>.
+      Contributions are welcome! The source files are
+      <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>,
+      and the index for page URLs is available in <a href="/index.txt">index.txt</a>.
+      To contribute, please either create an issue or submit a pull request,
+      and be sure to check
+      <a href="https://github.com/enochness/LibreNotebook/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+      for our <strong>No AI Policy</strong>. Thank you for your efforts!
     </p>
     <hr><hr>
   </div>
@@ -113,7 +118,10 @@
         {{ $n = add $n 1 }}
         {{ $num = $n }}
       {{ end }}
-      <h3>{{ with $num }}&sect;&hairsp;{{ . }}: {{ end }}{{ .title }}</h3>
+      <h3>
+        {{ with $num }}&sect;&hairsp;{{ . }}. {{ end }}
+        <a href="/{{ lower .id }}/">{{ .title }}</a>
+      </h3>
       <ul>
         {{ range .chapters }}
           {{ $base := printf "/%s/%s" (lower $part.id) .id }}
@@ -136,22 +144,5 @@
     {{ end }}
   </div>
 </section>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-}
-</script>
 {{ end }}
 

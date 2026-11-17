@@ -4,12 +4,6 @@ parts:
   - id: MATH01
     title: "Math Olympiad"
     chapters:
-      - id: psn
-        title: "Introducing the Notes"
-        sections:
-          - { id: 26bfzzr, status: "===",
-              title: "Introducing the Notes" }
-
       - id: swr
         title: "Prerequisites"
         sections:
@@ -116,12 +110,6 @@ parts:
   - id: MATH02
     title: "Linear Algebra"
     chapters:
-      - id: dmx
-        title: "Introducing the Notes"
-        sections:
-          - { id: 26dmxlb, status: "===",
-              title: "Introducing the Notes" }
-
       - id: cgb
         title: "Vectors and Vector Spaces"
         sections:
@@ -194,12 +182,6 @@ parts:
   - id: MATH03
     title: "Multivariable Calculus"
     chapters:
-      - id: nrm
-        title: "Introducing the Notes"
-        sections:
-          - { id: 26clypk, status: "0.0",
-              title: "Introducing the Notes" }
-
       - id: qyk
         title: "Vectors and Geometry"
         sections:
@@ -236,12 +218,6 @@ parts:
   - id: CS01
     title: "Machine Learning"
     chapters:
-      - id: bkw
-        title: "What is AI and Why Should We Learn It?"
-        sections:
-          - { id: 26ksftm, status: "===",
-              title: "What is AI and Why Should We Learn It?" }
-
       - id: zjv
         title: "Fundamental Math for Machine Learning"
         sections:
@@ -300,12 +276,6 @@ parts:
   - id: CS02
     title: "Competitive Programming"
     chapters:
-      - id: sbp
-        title: "Introducing the Notes"
-        sections:
-          - { id: 26ltkcc, status: "0.0",
-              title: "Introducing the Notes" }
-
       - id: sbn
         title: "C++ Basics"
         sections:
@@ -334,12 +304,6 @@ parts:
   - id: CS03
     title: "Creative Coding"
     chapters:
-      - id: qtp
-        title: "Introducing the Notes"
-        sections:
-          - { id: 26yhwnl, status: "===",
-              title: "Introducing the Notes" }
-
       - id: sbm
         title: "C Programming Language"
         sections:

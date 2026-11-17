@@ -1,41 +1,30 @@
-{{ define "main" }}
-<section id="changelog-container">
-  <h1>Changelog
-    <small><small><small id="changelog-h1-link">
-          (<a href="/">Go Home</a>)
-    </small></small></small>
-  </h1>
-  <table id="changelog">
-    <thead>
-      <tr>
-        <th class="changelog-no">No.</th>
-        <th>Version</th>
-        <th>Date</th>
-        <th>Commit</th>
-        <th>Author(s)</th>
-        <th>Message</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ $total := len hugo.Data.changelog }}
-      {{ range $i, $var := hugo.Data.changelog }}
-        <tr>
-          <td class="changelog-no">{{ sub $total $i }}.</td>
-          <td class="changelog-ver">
-            {{ $date := time.AsTime $var.date }}
-            {{ $major := sub (mod $date.Year 100) 25 }}
-            v{{ printf "%d.%02d.%02d" $major $date.Month $date.Day }}
-          </td>
-          <td>{{ $var.date }}</td>
-          <td>
-            <a href="https://github.com/enochness/LibreNotebook/commit/{{ .hash }}">{{ .commit }}</a>
-          </td>
-          <td>{{ $var.author }}</td>
-          <td>{{ $var.message }}</td>
-        </tr>
-      {{ end }}
-    </tbody>
-  </table>
-</section>
-{{ end }}
+<!doctype html>
+<html lang="{{ .Language.Params.locale | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+<main style="padding: 1rem 1rem 0rem 1rem; text-align: center;">
+<h1 style="margin-top: 0;">Changelog
+  <small><small><small>(<a href="/">Go Home</a>)</small></small></small>
+</h1>
+<pre>
+{{- printf "%-6s %-10s %-13s" "No." "Version" "Date" -}}
+Commit
+{{- printf "   %-10s %-100s" "Author(s)" "Message" -}}
+<hr>
+{{- $total := len hugo.Data.changelog -}}
+{{- range $i, $var := hugo.Data.changelog -}}
+{{- $date := time.AsTime $var.date -}}
+{{- $major := sub (mod $date.Year 100) 25 -}}
+{{- $version := printf "v%d.%02d.%02d" $major $date.Month $date.Day -}}
+  {{- printf "%03d.   %8s   %-13s"
+    (sub $total $i) $version $var.date -}}
+  <a href="https://github.com/enochness/LibreNotebook/commit/{{ $var.hash }}">{{ $var.commit }}</a>
+  {{- printf "  %-10s %-100s\n" $var.author $var.message -}}
+{{- end -}}
+<hr><span>&copy; {{ now.Year }} Enoch Yu. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span></pre>
+</main>
+</body>
+</html>
 

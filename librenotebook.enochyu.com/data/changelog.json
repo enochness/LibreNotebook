@@ -1,5 +1,19 @@
 [
   {
+    "hash": "d4d7ca53ac6327ab9ab2041700cadeb3dbca92fe",
+    "commit": "d4d7ca5",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "Merge pull request #16 from enochness/web"
+  },
+  {
+    "hash": "e64c1896d786e83b76dfcd597ba416048dc5462d",
+    "commit": "e64c189",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "fix: broken links from refactor"
+  },
+  {
     "hash": "9c854e590df1bb3e828935a98ee1c0b0623b5fdd",
     "commit": "9c854e5",
     "date": "2026-11-17",

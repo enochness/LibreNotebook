@@ -33,8 +33,8 @@ frame.</p>
 
     <p class='noindent'>The <span class='pplb8t-x-x-109'>Time
     Complexity</span> of a program denotes the number of operations
-    an algorithm executes [<span class=
-    'pplb8t-x-x-109'>CS02-5</span>].</p>
+    an algorithm executes [<a id='x1-2002'></a><a id=
+    'page.3'></a><a>Gee26</a>].</p>
   </div>
 </div><!-- l. 23 -->
 
@@ -55,10 +55,10 @@ program is.</p><!-- l. 32 -->
 Quadratic <span class='mathjax-inline'>\(\mathcal {O}(n^2)\)</span>,
 Exponential <span class='mathjax-inline'>\(\mathcal
 {O}(2^n)\)</span>, and Factorial <span class=
-'mathjax-inline'>\(\mathcal {O}(n!)\)</span> [<span class=
-'pplb8t-x-x-109'>CS02-8</span>]. We will evaluate the time
-complexities of algorithms as we walk through them, but here are some
-simple examples using input/output and loops.</p><!-- l. 39 -->
+'mathjax-inline'>\(\mathcal {O}(n!)\)</span> [<a id=
+'x1-2003'></a><a>Ola22</a>]. We will evaluate the time complexities
+of algorithms as we walk through them, but here are some simple
+examples using input/output and loops.</p><!-- l. 39 -->
 
 <p class='noindent'>A simple hello world example have constant time
 complexity since it only prints once. One the other hand, the
@@ -70,19 +70,19 @@ following snippet</p>
   <div class='tcolorbox-content'>
     <!-- l. 43 -->
     <pre class='lstlisting' id='listing-1'>
-<span class='label'><a id='x1-2002r1'></a><span class=
+<span class='label'><a id='x1-2004r1'></a><span class=
 'pplr8t-x-x-60'>1</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>for</span></span><span style=
 'color:#000000'> <span class='pcrr8t-'>(</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
 'color:#000000'> <span class=
 'pcrr8t-'>i = 0; i &lt; 5*n; i++) {</span> 
-</span><span class='label'><a id='x1-2003r2'></a><span class=
+</span><span class='label'><a id='x1-2005r2'></a><span class=
 'pplr8t-x-x-60'>2</span></span><span class=
 'pcrro8t-'>    </span><span style='color:#646464'><span class=
 'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
 'pcrro8t-'>constant time code</span> 
-</span><span class='label'><a id='x1-2004r3'></a><span class=
+</span><span class='label'><a id='x1-2006r3'></a><span class=
 'pplr8t-x-x-60'>3</span></span><span style=
 'color:#000000'><span class='pcrr8t-'>}</span></span>
 </pre>
@@ -90,10 +90,10 @@ following snippet</p>
 </div><!-- l. 50 -->
 
 <p class='noindent'>is <span class='mathjax-inline'>\(\mathcal
-{O}(n)\)</span> [<span class='pplb8t-x-x-109'>CS02-2</span>]. When we
-start nesting them, it gets horrible. For instance, the following
-snippet is <span class='mathjax-inline'>\(\mathcal
-{O}(nm)\)</span>.</p>
+{O}(n)\)</span> [<a id='x1-2007'></a><a id=
+'page.4'></a><a>Laa19</a>]. When we start nesting them, it gets
+horrible. For instance, the following snippet is <span class=
+'mathjax-inline'>\(\mathcal {O}(nm)\)</span>.</p>
 
 <div class='tcolorbox basicboxstyle' id='tcolobox-3'>
   <div class='tcolorbox-title'></div>
@@ -101,30 +101,30 @@ snippet is <span class='mathjax-inline'>\(\mathcal
   <div class='tcolorbox-content'>
     <!-- l. 55 -->
     <pre class='lstlisting' id='listing-2'>
-<span class='label'><a id='x1-2005r1'></a><span class=
+<span class='label'><a id='x1-2008r1'></a><span class=
 'pplr8t-x-x-60'>1</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>for</span></span><span style=
 'color:#000000'> <span class='pcrr8t-'>(</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
 'color:#000000'> <span class=
 'pcrr8t-'>i = 0; i &lt; n; i++) {</span> 
-</span><span class='label'><a id='x1-2006r2'></a><span class=
+</span><span class='label'><a id='x1-2009r2'></a><span class=
 'pplr8t-x-x-60'>2</span></span><span class=
 'pcrr8t-'>    </span><span style='color:#004099'><span class=
 'pcrb8t-'>for</span></span><span style='color:#000000'> <span class=
 'pcrr8t-'>(</span></span><span style='color:#004099'><span class=
 'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
 'pcrr8t-'>j = 0; i &lt; m; j++) {</span> 
-</span><span class='label'><a id='x1-2007r3'></a><span class=
+</span><span class='label'><a id='x1-2010r3'></a><span class=
 'pplr8t-x-x-60'>3</span></span><span class=
 'pcrro8t-'>        </span><span style='color:#646464'><span class=
 'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
 'pcrro8t-'>constant time code</span> 
-</span><span class='label'><a id='x1-2008r4'></a><span class=
+</span><span class='label'><a id='x1-2011r4'></a><span class=
 'pplr8t-x-x-60'>4</span></span><span class=
 'pcrr8t-'>    </span><span style='color:#000000'><span class=
 'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-2009r5'></a><span class=
+<span class='label'><a id='x1-2012r5'></a><span class=
 'pplr8t-x-x-60'>5</span></span><span style=
 'color:#000000'><span class='pcrr8t-'>}</span></span>
 </pre>
@@ -140,45 +140,45 @@ if we nest code as the following.</p>
   <div class='tcolorbox-content'>
     <!-- l. 68 -->
     <pre class='lstlisting' id='listing-3'>
-<span class='label'><a id='x1-2010r1'></a><span class=
+<span class='label'><a id='x1-2013r1'></a><span class=
 'pplr8t-x-x-60'>1</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>for</span></span><span style=
 'color:#000000'> <span class='pcrr8t-'>(</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
 'color:#000000'> <span class=
 'pcrr8t-'>i = 0; i &lt; n; i++) {</span> 
-</span><span class='label'><a id='x1-2011r2'></a><span class=
+</span><span class='label'><a id='x1-2014r2'></a><span class=
 'pplr8t-x-x-60'>2</span></span><span class=
 'pcrr8t-'>    </span><span style='color:#004099'><span class=
 'pcrb8t-'>for</span></span><span style='color:#000000'> <span class=
 'pcrr8t-'>(</span></span><span style='color:#004099'><span class=
 'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
 'pcrr8t-'>j = 0; i &lt; n; j++) {</span> 
-</span><span class='label'><a id='x1-2012r3'></a><span class=
+</span><span class='label'><a id='x1-2015r3'></a><span class=
 'pplr8t-x-x-60'>3</span></span><span class=
 'pcrro8t-'>        </span><span style='color:#646464'><span class=
 'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
 'pcrro8t-'>constant time code</span> 
-</span><span class='label'><a id='x1-2013r4'></a><span class=
+</span><span class='label'><a id='x1-2016r4'></a><span class=
 'pplr8t-x-x-60'>4</span></span><span class=
 'pcrr8t-'>    </span><span style='color:#000000'><span class=
 'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-2014r5'></a><span class=
+<span class='label'><a id='x1-2017r5'></a><span class=
 'pplr8t-x-x-60'>5</span></span><span style=
 'color:#000000'><span class='pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-2015r6'></a><span class=
+<span class='label'><a id='x1-2018r6'></a><span class=
 'pplr8t-x-x-60'>6</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>for</span></span><span style=
 'color:#000000'> <span class='pcrr8t-'>(</span></span><span style=
 'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
 'color:#000000'> <span class=
 'pcrr8t-'>i = 0; i &lt; 10000*n; i++) {</span> 
-</span><span class='label'><a id='x1-2016r7'></a><span class=
+</span><span class='label'><a id='x1-2019r7'></a><span class=
 'pplr8t-x-x-60'>7</span></span><span class=
 'pcrro8t-'>    </span><span style='color:#646464'><span class=
 'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
 'pcrro8t-'>constant time code</span> 
-</span><span class='label'><a id='x1-2017r8'></a><span class=
+</span><span class='label'><a id='x1-2020r8'></a><span class=
 'pplr8t-x-x-60'>8</span></span><span style=
 'color:#000000'><span class='pcrr8t-'>}</span></span>
 </pre>
@@ -191,8 +191,8 @@ Note that the time complexity is not linear since the big O is only
 interested in the worst case.</p><!-- l. 84 -->
 
 <p class='noindent'>One more thing to note is the order of growth.
-Consider the graph below [<span class=
-'pplb8t-x-x-109'>CS02-8</span>].</p><!-- l. 89 -->
+Consider the graph below [<a id='x1-2021'></a><a>Ola22</a>].</p>
+<!-- l. 89 -->
 
 <p class='noindent'><img alt='[Picture]' src=
 '/svg/26dmcvv0x.svg' /></p><!-- l. 159 -->
@@ -203,16 +203,15 @@ has the lowest growth rate since it is not growing at all. Next, we
 can see that <span class='mathjax-inline'>\(\log {n}\)</span> grows
 slower than <span class='mathjax-inline'>\(n\)</span>, which grows
 slower than <span class='mathjax-inline'>\(n \log {n}\)</span>
-[<span class='pplb8t-x-x-109'>CS02-5</span>]. Generally speaking,
-anything below <span class='mathjax-inline'>\(\mathcal (n)\)</span>
-is good while we really want to avoid anything beyond the linear
-time.</p><!-- l. 167 -->
+[<a id='x1-2022'></a><a id='page.8'></a><a>Gee26</a>]. Generally
+speaking, anything below <span class='mathjax-inline'>\(\mathcal
+(n)\)</span> is good while we really want to avoid anything beyond
+the linear time.</p><!-- l. 167 -->
 
 <p class='noindent'>Now big O is important since it is used to
 compare two algorithms that perform the same task. With <span class=
 'pplb8t-x-x-109'>asymptotic analysis</span>, we can evaluate and
 compare algorithms without the inconsistency of inputs and machines
-[<span class='pplb8t-x-x-109'>CS02-5</span>]. This was a short
-introduction to computing time complexities and big O notation. In
-the next section, we will be discussing fundamental data
-structures.</p>
+[<a>Gee26</a>]. This was a short introduction to computing time
+complexities and big O notation. In the next section, we will be
+discussing fundamental data structures.</p>
