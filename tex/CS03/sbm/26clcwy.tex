@@ -4,10 +4,316 @@
 
 \chapter{C Programming Language}
 
+I always wanted to learn C. I mean C really is the fundamental
+language that inspired so many others like PHP, Java, C++, and
+so much more. Also there is that coolness in C. Is it only me?
+Or do you also feel that sensation when you see 90+\% gray dot
+in GitHub repository for Linux Kernel? Writing in C and going
+low level has its own coolness. In this note, we will discuss some
+fundamental features in C for us to actually use it for writing
+goodies. Many of the contents here are based on the video
+``C Programming Tutorial for Beginners'' from freeCodeCamp by
+Mike Dane and many other online tutorials \cite{CS03-1}.
 
 \section{Foundations}
 
+The previous note contains much more detailed explanations on
+data structures, algorithms, and solving problems. So in this
+section, instead of discussing everything from scratch again,
+let's focus on the syntax for C and some distinct features that
+C shines with.
 
+For our first program, let's output ``Hello, world!'' and see how
+to compile C programs.
+
+\begin{cbox}{26clcwy-01}{26clcwy-01}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    printf("Hello, world!\n");
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+For our header, we have standard input/output and we use \verb|printf|
+to print output ``Hello, world!''. Now there are two popular ways of
+compiling it and we can use either GCC or Clang. They are nearly
+identical (please don't get mad at me!), and I will be using Clang
+since I am on macOS.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Hello, world!
+\end{lstlisting}
+\end{basicbox}
+
+With this, let's discuss about input/output and basic data types.
+
+\subsection{Input/Output and Basic Data Types}
+
+Now this \verb|printf| function can be very powerful. Like Java,
+we can pass values into placeholders like \%d, \%f, \%s, \%c,
+namely double, float, string, and character. Here is an example.
+
+\begin{cbox}{26clcwy-02}{26clcwy-02}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    int age = 123;
+    double gpa = 3.14;
+    char name[] = "Enoch";
+
+    printf("%s is %d years old.\n", name, age);
+    printf("He has a GPA of %f and a letter grade of %c\n", gpa, 'A');
+    printf("%s also loves math. For example...\n", name);
+    printf("%f / %d = %f\n", 1.0, 5, 1.0 / 5);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+As you can see, we can define integer, double, float, and character
+as usual. We can also pass our values into the place holder.
+You may have noticed that we wrote \verb|char name[] = "Enoch";|
+instead of \verb|string name = "Enoch";|. This is because unlike
+other languages, C doesn't have data type string in its usual sense.
+We will discuss more about this as we discuss arrays and pointers.
+Finally, notice that we wrote $1.0$ instead of $1$ for our first
+\verb|%f| in the last line. This is because $1$ by itself is an
+integer and we will get an error. Compiling and running, we get the
+following output.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Enoch is 123 years old.
+He has a GPA of 3.140000 and a letter grade of A
+Enoch also loves math. For example...
+1.000000 / 5 = 0.200000
+\end{lstlisting}
+\end{basicbox}
+
+As you can see, we get $3.140000$ instead of $3.14$. When displaying,
+C likes to give a more accurate value. Continuing, we have same
+commenting style as C++.
+
+\begin{cbox}{26clcwy-03}{26clcwy-03}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    /*
+     * This is a multi-line comment
+     * This is fun!
+     */
+
+    printf("Hi there\n");
+    // printf("This is an inline comment");
+    
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+Running them, we get the desired result.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Hi there
+\end{lstlisting}
+\end{basicbox}
+
+Similar to other languages, we can define a constant with \verb|const|
+and arrays with \verb|arr[]| as well. Here is an example of using
+constants and arrays.
+
+\begin{cbox}{26clcwy-04}{26clcwy-04}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    const int FIXED_VALUE = 5;
+    int arr[5] = { 1, 2, 3, 4, 5 };
+    double tensor[2][3] = {{0.0, 0.1, 0.2},
+                           {1.0, 1.1, 1.2}};
+    char string[10] = "string";
+
+    printf("Fixed value: %d\n", FIXED_VALUE);
+    printf("Second element of the array: %d\n", arr[1]);
+    printf("Second row, third column: %f\n", tensor[1][2]);
+    printf("Third charater in the string: %c\n", string[2]);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+Running it, we get the following.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Fixed value: 5
+Second element of the array: 2
+Second row, third column: 1.200000
+Third charater in the string: r
+\end{lstlisting}
+\end{basicbox}
+
+Now as mentioned previously, strings are quite different in C.
+They are not totally different data types, but just an array of
+characters. This simple nature of C is one of the factors that makes
+C special, but also slightly annoying.
+
+Now before moving onto inputs and outputs, here is one more data type.
+This one called \textbf{struct} is quite interesting because it is
+user-defined and also a composite data type. It can look like a class
+without functions, but they are different. Struct defines data type
+that we can use to organize information. Here is an example usage.
+
+\begin{cbox}{26clcwy-05}{26clcwy-05}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+typedef struct {
+    float a;
+    float b;
+    float c;
+} array ;
+
+struct vector {
+    float x;
+    float y;
+};
+
+int main() {
+    // Using vec
+    struct vector vec;
+    vec.x = 0.1;
+    vec.y = 0.2;
+    printf("v   = <%f, %f>\n", vec.x, vec.y);
+
+    // Using arr
+    array arr = { .a = 0.1, .b = 0.2, .c = 0.3, };
+    printf("arr = [%f, %f, %f]\n", arr.a, arr.b, arr.c);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+Running it, we get the following.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+v   = <0.100000, 0.200000>
+arr = [0.100000, 0.200000, 0.300000]
+\end{lstlisting}
+\end{basicbox}
+
+Struct is nice because we can use it like a template and reuse it
+multiple times. Also we will discuss more on \verb|typedef| later
+but we can use it as shown above to avoid writing more characters.
+Let's now turn our attention to inputs and outputs in C. We already
+discussed outputs, so let's see how we can take values in from the
+user in C.
+
+\begin{cbox}{26clcwy-06}{26clcwy-06}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    char name[10], fullName[30], alp;
+    int age;
+    double date;
+
+    printf("Full Name: ");
+    fgets(fullName, 30, stdin);
+    printf("First Name: ");
+    scanf("%s", name); // No ampersand here
+    printf("Age: ");
+    scanf("%d", &age); // You need this ampersand!
+    printf("Date: ");
+    scanf("%lf", &date); // %lf not %f
+    printf("Alphabet: ");
+    scanf(" %c", &alp); // You need the space in front of %c!
+
+    printf("Hi %s, today is %f\n", name, date);
+    printf("Your full name is %s", fullName);
+    printf("You are %d years old and you chose %c!\n", age, alp);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+Running it, we get the following.
+
+\begin{basicbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Full Name: John Doe
+First Name: John
+Age: 100
+Date: 11.18
+Alphabet: J
+Hi John, today is 11.180000
+Your full name is John Doe
+You are 100 years old and you chose J!
+\end{lstlisting}
+\end{basicbox}
+
+The ampersand that you see is there because we pass a pointer to
+\verb|scanf|, but we will get there in a second. Also when passing
+a character, float, and a string with spaces in it, we need to
+consider few factors. This is the place where I said its kinda
+annoying and awkward at first, but they are what makes C, the C!
+
+Also, C is designed to give us low level access, so as you can see
+with getting string inputs, we can manually allocate memory necessary.
+Now continuing with input/output and simple data types, let's move on
+to conditionals and loops.
+
+\subsection{Conditionals and Loops}
+
+
+
+
+
+
+Now before wrapping up this section, let's discuss about functions.
+
+\subsection{Functions}
+
+
+
+
+
+
+When we have a function that returns a value as shown above and if
+we want our main function to be on the very top, then we need
+something called prototype. Function prototypes and declaration are
+used interchangeably with slight difference in nuance. As shown below,
+we need to basically tell the compiler that the function that we will
+be using in the main function exists, so that it doesn't complain
+about it.
+
+This is it for this section! In the next section, we will discuss
+more about pointers and we mentioned briefly here.
 
 \end{document}
 

@@ -302,7 +302,7 @@ parts:
 
 
   - id: CS03
-    title: "Creative Coding"
+    title: "Programming Goodies"
     chapters:
       - id: sbm
         title: "C Programming Language"

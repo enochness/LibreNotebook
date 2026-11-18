@@ -67,10 +67,50 @@ int main(int argc, char *argv[]) {
     ids.push_back(newID);
 
     cout << newID << "\n";
+
     freopen("ids.txt", "w", stdout);
-    for (int i = 0; i < ids.size(); i++) {
+    cout << "BEGINIDS\n\n";
+    cout << "-----blacklist-----\n";
+    for (int i = 2; i < 15; i++) {
         cout << ids[i] << "\n";
     }
+
+    int idsCtr = 0;
+    int idsNCtr = 1;
+    int idsSCtr = 1;
+    cout << "\n-----notes-----\n";
+    for (int i = 16; i < ids.size(); i++) {
+        if (ids[i].size() == 3 && idsNCtr < 10) {
+            cout << "00" << idsNCtr << ". " << ids[i] << "\n";
+            idsCtr++;
+            idsNCtr++;
+        } else if (ids[i].size() == 3) {
+            cout << "0" << idsNCtr << ". " << ids[i] << "\n";
+            idsCtr++;
+            idsNCtr++;
+        } else {
+            continue;
+        }
+    }
+    cout << "\n-----sections-----\n";
+    for (int i = 16 + idsCtr; i < ids.size(); i++) {
+        if (ids[i].size() == 5 && idsSCtr < 10) {
+            cout << "00" << idsSCtr << ". " << ids[i] << "\n";
+            idsCtr++;
+            idsSCtr++;
+        } else if (ids[i].size() == 5 && idsSCtr < 100) {
+            cout << "0" << idsSCtr << ". " << ids[i] << "\n";
+            idsCtr++;
+            idsSCtr++;
+        } else if (ids[i].size() == 5) {
+            cout << idsSCtr << ". " << ids[i] << "\n";
+            idsCtr++;
+            idsSCtr++;
+        } else {
+            continue;
+        }
+    }
+    cout << "\nENDIDS\n";
 
     return 0;
 }

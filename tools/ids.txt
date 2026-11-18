@@ -1,3 +1,6 @@
+BEGINIDS
+
+-----blacklist-----
 fck
 sht
 wtf
@@ -11,122 +14,127 @@ nggrs
 xxxxx
 dckhd
 kkkkk
------
-swr
-vyt
-wzv
-yhs
-xbw
-zjt
-ycx
-zdy
-clw
-bfz
-cgb
-fny
-dhc
-lpk
-mql
-qyk
-rzl
-vdp
-zjv
-knj
-nwh
-pxk
-pxj
-rzm
-sbn
-tcq
-sbm
-rvq
-cgbbs
-dhcct
-gpznd
-fjddv
-hqbpf
-gkffw
-jrcqg
-hlggx
-ksdrh
-jmhhy
-lpkkb
-mqllc
-pxjwm
-nrmmd
-qykxn
-rzlyp
-qtppg
-rvqqh
-tcnbr
-swrrj
-vdpcs
-txssk
-wfqdt
-vyttl
-wzvvm
-yhsgw
-xbwwn
-zjthx
-ycxxp
-bkvjy
-zdyyq
-fnzph
-fnymc
-hqcrk
-jrfvq
-nwjxq
-pxlbw
-nwhvl
-pxkyr
-qylzs
-rzndy
-rzmbt
-sbncv
-tcqgb
-sbmzq
-tcpdw
-vdqfx
-wfsjd
-wfrgy
-xgtkf
-xgshz
-xgrfv
-yhtjb
-zjvkc
-bkwld
-clxmf
-dmzql
-clwkz
-gpcsn
-hqfwt
-gpbqj
-hqdtp
-kshyw
-jrdsl
-ksgwr
-ltgvn
-yhvlg
-zjxpm
-zjwmh
-bkyqn
-bkxnj
-dmbsq
-fndww
-fnctr
-gpfxx
-dmyng
-jrhzz
-kskdg
-jrgxv
-ksjbb
-mvmgj
-ltjzx
-bkzss
-clbtt
-clzrp
-dmcvv
-gpgzc
-fnbrm
-clcwy
-dmfzf
+
+-----notes-----
+001. swr
+002. vyt
+003. wzv
+004. yhs
+005. xbw
+006. zjt
+007. ycx
+008. zdy
+009. clw
+010. bfz
+011. cgb
+012. fny
+013. dhc
+014. lpk
+015. mql
+016. qyk
+017. rzl
+018. vdp
+019. zjv
+020. knj
+021. nwh
+022. pxk
+023. pxj
+024. rzm
+025. sbn
+026. tcq
+027. sbm
+028. rvq
+
+-----sections-----
+001. cgbbs
+002. dhcct
+003. gpznd
+004. fjddv
+005. hqbpf
+006. gkffw
+007. jrcqg
+008. hlggx
+009. ksdrh
+010. jmhhy
+011. lpkkb
+012. mqllc
+013. pxjwm
+014. nrmmd
+015. qykxn
+016. rzlyp
+017. qtppg
+018. rvqqh
+019. tcnbr
+020. swrrj
+021. vdpcs
+022. txssk
+023. wfqdt
+024. vyttl
+025. wzvvm
+026. yhsgw
+027. xbwwn
+028. zjthx
+029. ycxxp
+030. bkvjy
+031. zdyyq
+032. fnzph
+033. fnymc
+034. hqcrk
+035. jrfvq
+036. nwjxq
+037. pxlbw
+038. nwhvl
+039. pxkyr
+040. qylzs
+041. rzndy
+042. rzmbt
+043. sbncv
+044. tcqgb
+045. sbmzq
+046. tcpdw
+047. vdqfx
+048. wfsjd
+049. wfrgy
+050. xgtkf
+051. xgshz
+052. xgrfv
+053. yhtjb
+054. zjvkc
+055. bkwld
+056. clxmf
+057. dmzql
+058. clwkz
+059. gpcsn
+060. hqfwt
+061. gpbqj
+062. hqdtp
+063. kshyw
+064. jrdsl
+065. ksgwr
+066. ltgvn
+067. yhvlg
+068. zjxpm
+069. zjwmh
+070. bkyqn
+071. bkxnj
+072. dmbsq
+073. fndww
+074. fnctr
+075. gpfxx
+076. dmyng
+077. jrhzz
+078. kskdg
+079. jrgxv
+080. ksjbb
+081. mvmgj
+082. ltjzx
+083. bkzss
+084. clbtt
+085. clzrp
+086. dmcvv
+087. gpgzc
+088. fnbrm
+089. clcwy
+090. dmfzf
+
+ENDIDS
