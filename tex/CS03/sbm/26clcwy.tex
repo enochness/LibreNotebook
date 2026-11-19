@@ -90,16 +90,14 @@ Finally, notice that we wrote $1.0$ instead of $1$ for our first
 integer and we will get an error. Compiling and running, we get the
 following output.
 
-\begin{basicbox}
+\begin{outputbox}
 \begin{lstlisting}[style=basic]
-$ clang -Wall program.c -o program
-$ ./program
 Enoch is 123 years old.
 He has a GPA of 3.140000 and a letter grade of A
 Enoch also loves math. For example...
 1.000000 / 5 = 0.200000
 \end{lstlisting}
-\end{basicbox}
+\end{outputbox}
 
 As you can see, we get $3.140000$ instead of $3.14$. When displaying,
 C likes to give a more accurate value. Continuing, we have same
@@ -122,16 +120,11 @@ int main() {
 }
 \end{lstlisting}
 \end{cbox}
-
-Running them, we get the desired result.
-
-\begin{basicbox}
+\begin{outputbox}
 \begin{lstlisting}[style=basic]
-$ clang -Wall program.c -o program
-$ ./program
 Hi there
 \end{lstlisting}
-\end{basicbox}
+\end{outputbox}
 
 Similar to other languages, we can define a constant with \verb|const|
 and arrays with \verb|arr[]| as well. Here is an example of using
@@ -157,19 +150,14 @@ int main() {
 }
 \end{lstlisting}
 \end{cbox}
-
-Running it, we get the following.
-
-\begin{basicbox}
+\begin{outputbox}
 \begin{lstlisting}[style=basic]
-$ clang -Wall program.c -o program
-$ ./program
 Fixed value: 5
 Second element of the array: 2
 Second row, third column: 1.200000
 Third charater in the string: r
 \end{lstlisting}
-\end{basicbox}
+\end{outputbox}
 
 Now as mentioned previously, strings are quite different in C.
 They are not totally different data types, but just an array of
@@ -212,17 +200,12 @@ int main() {
 }
 \end{lstlisting}
 \end{cbox}
-
-Running it, we get the following.
-
-\begin{basicbox}
+\begin{outputbox}
 \begin{lstlisting}[style=basic]
-$ clang -Wall program.c -o program
-$ ./program
 v   = <0.100000, 0.200000>
 arr = [0.100000, 0.200000, 0.300000]
 \end{lstlisting}
-\end{basicbox}
+\end{outputbox}
 
 Struct is nice because we can use it like a template and reuse it
 multiple times. Also we will discuss more on \verb|typedef| later
@@ -259,13 +242,8 @@ int main() {
 }
 \end{lstlisting}
 \end{cbox}
-
-Running it, we get the following.
-
-\begin{basicbox}
+\begin{outputbox}
 \begin{lstlisting}[style=basic]
-$ clang -Wall program.c -o program
-$ ./program
 Full Name: John Doe
 First Name: John
 Age: 100
@@ -275,7 +253,7 @@ Hi John, today is 11.180000
 Your full name is John Doe
 You are 100 years old and you chose J!
 \end{lstlisting}
-\end{basicbox}
+\end{outputbox}
 
 The ampersand that you see is there because we pass a pointer to
 \verb|scanf|, but we will get there in a second. Also when passing
@@ -290,27 +268,183 @@ to conditionals and loops.
 
 \subsection{Conditionals and Loops}
 
+The syntax for conditionals for C is identical to the ones for C++.
+Here is an example of using if-else statements.
 
+\begin{cbox}{26clcwy-07}{26clcwy-07}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
 
+int main() {
+    if (1 > 2) {
+        printf("1 > 2\n");
+    } else if (3 > 2) {
+        printf("3 > 2\n");
+    }
 
+    if (1 > 2 || 3 > 2) {
+        printf("1 > 2 or 3 > 2\n");
+    }
+    if (1 < 2 && 3 > 2) {
+        printf("1 < 2 and 3 > 2\n");
+    }
 
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+3 > 2
+1 > 2 or 3 > 2
+1 < 2 and 3 > 2
+\end{lstlisting}
+\end{outputbox}
+
+Similarly, we could also use switch statements.
+
+\begin{cbox}{26clcwy-08}{26clcwy-08}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    int choice;
+    printf("Your choice (1-3): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Your choice is 1\n");
+            break;
+        case 2:
+            printf("Your choice is 2\n");
+            break;
+        case 3:
+            printf("Your choice is 3\n");
+            break;
+        default:
+            printf("Invalid Option\n");
+            break;
+    }
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Your choice (1-3): 2
+Your choice is 2
+$ clang -Wall program.c -o program
+$ ./program
+Your choice (1-3): 4
+Invalid Option
+\end{lstlisting}
+\end{outputbox}
+
+Continuing, we also have the same syntax for for, while, and do-while
+loops.
+
+\begin{cbox}{26clcwy-09}{26clcwy-09}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    int ctr = 0;
+    while (ctr < 5) {
+        printf("%d ", ctr);
+        ctr++;
+    }
+    printf("\n");
+
+    do {
+        printf("%d ", ctr);
+        ctr++;
+    } while (ctr < 0);
+    printf("\n");
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+0 1 2 3 4
+0 1 2 3 4
+5
+\end{lstlisting}
+\end{outputbox}
 
 Now before wrapping up this section, let's discuss about functions.
 
 \subsection{Functions}
 
+Functions in C works like many other languages. Here is an example
+of a hello user function.
 
+\begin{cbox}{26clcwy-10}{26clcwy-10}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
 
+void helloUser(char name[]) {
+    printf("Hello %s\n", name);
+}
 
+int main() {
+    char name[20];
+    printf("Your name: ");
+    scanf("%s", name);
+    helloUser(name);
 
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+$ clang -Wall program.c -o program
+$ ./program
+Your name: Enoch
+Hello Enoch
+\end{lstlisting}
+\end{outputbox}
 
-When we have a function that returns a value as shown above and if
-we want our main function to be on the very top, then we need
+When we want our main function to be on the very top, then we need
 something called prototype. Function prototypes and declaration are
 used interchangeably with slight difference in nuance. As shown below,
 we need to basically tell the compiler that the function that we will
 be using in the main function exists, so that it doesn't complain
 about it.
+
+\begin{cbox}{26clcwy-11}{26clcwy-11}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+double square(double num);
+
+int main () {
+    printf("1.4^2 is equal to %f\n", square(1.4));
+
+    return 0;
+}
+
+double square(double num) {
+    return num * num;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+1.4^2 is equal to 1.960000
+\end{lstlisting}
+\end{outputbox}
 
 This is it for this section! In the next section, we will discuss
 more about pointers and we mentioned briefly here.

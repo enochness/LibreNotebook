@@ -307,8 +307,10 @@ parts:
       - id: sbm
         title: "C Programming Language"
         sections:
-          - { id: 26clcwy, status: "0.0",
+          - { id: 26clcwy, status: "===",
               title: "Foundations" }
+          - { id: 26sbpfz, status: "===",
+              title: "Pointers" }
 
 
   - id: MISC01

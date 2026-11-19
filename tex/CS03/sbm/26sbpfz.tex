@@ -1,0 +1,254 @@
+\documentclass[../../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Pointers}
+
+Pointers have its reputation of being hard to understand when it is
+just another data type. I was planning to not create a separate
+section for pointer and just put it in the previous section alongside
+other data types, but I wanted to discuss more about arrays and
+strings that we missed earlier and discuss about dynamic memory
+allocation. So in this section we are going to not only discuss
+about pointers, but also related topics.
+
+So pointers in short is just a variable that stores the address
+of another variables. So what does this mean? When we store a
+value like \verb|int a = 5|, computers have to store that information
+somewhere. Integers like these are usually 4 bytes and written in
+binaries. Computers store this information in memory, or better
+known as RAM (Random Access Memory). When storing the information,
+they don't just store it, but allocates a space, or address, in the
+memory for the value. Here is an example.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Memory Address} & \textbf{Value} \\
+    \hline
+    0x16bc6ac18 & 5 \\
+    \hline
+    0x16bc6ac10 & 0.100000 \\
+    \hline
+    0x16f7a2c0f & A \\
+    \hline
+\end{tabular}
+\end{center}
+
+Pointer is just a variable that stores that memory address of an
+object. Here is the snippet that declares and prints pointer values.
+
+\begin{cbox}{26sbpfz-01}{26sbpfz-01}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    int a = 5;
+    double b = 0.1;
+    char c = 'A';
+
+    int* pA = &a;
+    double* pB = &b;
+    char* pC = &c;
+
+    printf("%d, %p\n", a, pA);
+    printf("%f, %p\n", b, pB);
+    printf("%c, %p\n", c, pC);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+5, 0x16bc6ac18
+0.100000, 0x16bc6ac10
+A, 0x16f7a2c0f
+\end{lstlisting}
+\end{outputbox}
+
+Here I used \verb|int* pA|, but \verb|int * pA| and \verb|int *pA|
+does the same thing. Also it is a convention to have ``p'' in front
+of a pointer variable!
+
+Being able to directly manipulate how the program manages memory
+is great because we can efficiently manage memory with manual
+allocation, pass data more efficiently by pointing instead of
+having a copy of the variable, and build data structures like trees
+and linked lists.
+
+We can access the variable with its memory address, or pointer,
+and change it. This gives us freedom on how we use memory in our
+program. But this freedom is also what makes it easy for us to shoot
+ourselves in the foot. But before getting to much into that,
+let's take a look at how we can \textbf{dereferece} a pointer to
+change the value that it is pointing at.
+
+\begin{cbox}{26sbpfz-02}{26sbpfz-02}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    int num = 5;
+    printf("Original num: %d\n", num);
+
+    int* pNum = &num;
+    *pNum = 10;
+    printf("New num: %d\n", num);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+Original num: 5
+New num: 10
+\end{lstlisting}
+\end{outputbox}
+
+As you can see, I like to see it as negative times negative is
+positive. We give one more asterisk to let the compiler know that
+we are dereferencing a referenced value. With this, I think it is
+now evident why we need \& when using \verb|scanf|! We are basically
+passing pointers to indirectly change the value of the declared
+variable. Let's take a deeper look at how arrays and strings work
+with pointers.
+
+A string is literally an array of character. So if we define
+\verb|char str[] =| \verb|"Hello"|, it will create an array like
+\verb|{'H', 'e', 'l', 'l', 'o',| \verb|'\0'}| where \verb|\0| is
+a null character that terminates the string. For that reason,
+when we use pointer with a string, it will work index by index.
+Here is what I mean.
+
+\begin{cbox}{26sbpfz-03}{26sbpfz-03}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    char str[] = "Hello";
+    char* ptr = str;
+
+    *ptr = 'A';
+    printf("%s\n", str);
+
+    *(ptr + 2) = 'A';
+    printf("%s\n", str);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+Aello
+AeAlo
+\end{lstlisting}
+\end{outputbox}
+
+As you can see, when we initialize the pointer for the string,
+the pointer is actually pointing to the address of the first
+character. The pointer can't store the address of the string because
+the string has many addresses. When we want to access diffferent
+element in the string, we can use arithmetic to find the right index.
+Also, if you wondered why we don't put ampersand for string when
+declaring a pointer and using \verb|scanf|, that is because the
+pointer is automatically assigned to the first character.
+
+Now as we can see from \verb|char name[20]| example, we can manually
+allocate memory in C. This causes a problem when we don't do it
+properly. Sometimes if we don't release memory after we no longer
+needed, the program will not only degrade performance but also could
+crash due to \textbf{memory leaks}. To avoid it, we need to free
+memory after allocating it. Here is an example.
+
+\begin{cbox}{26sbpfz-04}{26sbpfz-04}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* num = malloc(5 * sizeof(int));
+
+    for (int i = 0; i < 5; i++) {
+        num[i] = i;
+    }
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", num[i]);
+    }
+    printf("\n");
+
+    free(num);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+0 1 2 3 4
+\end{lstlisting}
+\end{outputbox}
+
+Without \verb|free(num);|, we will have memory leaks and cause
+degradation of the program. Continuing from the strings, you may have
+seen lots of arrows in C programs. Those are actually pointers as
+well! Here is an example of using pointers with structs.
+
+\begin{cbox}{26sbpfz-05}{26sbpfz-05}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+typedef struct {
+    int a;
+    int b;
+    int c;
+} array;
+
+int main() {
+    array arr = { 1, 2, 3 };
+    array* parr = &arr;
+    printf("Original Array: [%d, %d, %d]\n", arr.a, arr.b, arr.c);
+
+    (*parr).a = 4;
+    parr->b = 5;
+    parr->c = 6;
+    printf("New Array: [%d, %d, %d]\n", arr.a, arr.b, arr.c);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+\begin{outputbox}
+\begin{lstlisting}[style=basic]
+Original Array: [1, 2, 3]
+New Array: [4, 5, 6]
+\end{lstlisting}
+\end{outputbox}
+
+Finally before wrapping up this section, we can also now write and
+modify files with C using pointers!
+
+\begin{cbox}{26sbpfz-06}{26sbpfz-06}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+int main() {
+    FILE* fptr = fopen("file.txt", "w"); // r, w, a
+    fprintf(fptr, "Hello World\n");
+    fclose(fptr);
+
+    return 0;
+}
+\end{lstlisting}
+\end{cbox}
+
+Running this, we should get a file ``file.txt'' in the directory where
+the program was ran with the text ``Hello World'' in it. This is it
+for pointers! Before we write exciting programs, we will be going
+over header guard and macro in the next section.
+
+\end{document}
+
+
