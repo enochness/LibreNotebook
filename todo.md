@@ -18,7 +18,6 @@
   * Pascal Problem
 * nine point
 * 닮음의 중심부터 논증기하  주제들..
-
 * MATH0101.26003
   * Schur’s Inequality (Convexity Arguments)
   * Examples
@@ -30,7 +29,6 @@
   * Special Polynomials
     * Chebyshev Polynomials
   * Root-Bounding Techniques
-
 * Qudratic Residue
 * (a^m - 1, a^n - 1) = a^{(m, n) - 1}
 
@@ -50,10 +48,6 @@
   * Fun intro to cross entropy and information theory
 * CS0104.26016
   * Dynamic Programming in backprop
-* CS0105.26018
-* CS0105.26019
-* CS0105.26020
-* CS0106.26021
 
 ## CS02
 * Fast I/O
@@ -69,37 +63,31 @@
   * Counting
   * Radix
   * Merge
-* Bit Manipulation
 * Advanced
   * Hash Tables, Sets, Maps
   * Hashing
   * Two-pointer
   * Linked-list
-
   * Stack
   * Queue
-
   * Deque
   * Binary Tree
   * Graph
   * Greedy
 * Dynamic Programming
-
 * Data Structures
   * Min max heaps
   * Policy based data structures
+  * Graph Data Structures
+  * Tree Data Structures
+  * Advanced Data Structures
+  * Complex Data Structures
 * Repetition, Consition, Functions, Brute Force, Bit manipulation
 * Algorithms
   * Greedy
   * Tree Algorithsm
   * Graph Algorithms
   * String Algorithms
-* Array characters, Simulation, Simple Demo
-* Data Structures
-  * Graph Data Structures
-  * Tree Data Structures
-  * Advanced Data Structures
-  * Complex Data Structures
 * Problem solving techniques
 * BFS/DFS
 * Game Theory

@@ -13,7 +13,6 @@ author = "Enoch Yu"
     youtube = "https://www.youtube.com/@enochness"
     github = "https://github.com/enochness"
     blog = "https://blog.enochyu.com/"
-    archive = "https://archive.enochyu.com/"
 
 [security]
   allowContent = ['^text/html$', '^text/markdown$']
