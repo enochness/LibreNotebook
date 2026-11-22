@@ -1,5 +1,12 @@
 [
   {
+    "hash": "f32a0db0a80177899fa195e01edf9e36fb2effb4",
+    "commit": "f32a0db",
+    "date": "2026-11-22",
+    "author": "Enoch Yu",
+    "message": "fix(web): Broken links"
+  },
+  {
     "hash": "5d38a544568f1b68da50a43a7494519721e82396",
     "commit": "5d38a54",
     "date": "2026-11-21",

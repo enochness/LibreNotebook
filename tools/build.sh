@@ -10,9 +10,8 @@ rm -r "$CONTENT" "$CSS"
 mkdir "$CONTENT" "$CSS"
 
 # Preface
-make4ht -u -B temp -f html5+tidy tex/preface.tex "mathjax"
-tidy -indent -wrap 70 -utf8 -m \
-     --show-body-only yes --force-output yes \
+make4ht -u -B temp -f html5 tex/preface.tex "mathjax"
+tidy -wrap 0 -utf8 -m --show-body-only yes --force-output yes \
   temp/preface.html
 mv temp/preface.html "$CONTENT"
 mv temp/preface.css "$CSS"
@@ -27,14 +26,13 @@ for dir in tex/*; do
 
   (
     cd "$HOME/projects/LibreNotebook/$dir"
-    make4ht -u -B $TMP_DIR -f html5+tidy "${dirName#/}".tex "mathjax"
+    make4ht -u -B $TMP_DIR -f html5 "${dirName#/}".tex "mathjax"
     if grep -qE '\\(no)?cite|\\printbibliography' "${dirName#/}".tex; then
       (cd "$HOME/projects/LibreNotebook" &&
        biber --output-directory temp "${dirName#/}")
-      make4ht -u -B "$TMP_DIR" -f html5+tidy "${dirName#/}".tex "mathjax"
+      make4ht -u -B "$TMP_DIR" -f html5 "${dirName#/}".tex "mathjax"
     fi
-    tidy -indent -wrap 70 -utf8 -m \
-         --show-body-only yes --force-output yes \
+    tidy -wrap 0 -utf8 -m --show-body-only yes --force-output yes \
       "$TMP_DIR$dirName".html
     mv "$TMP_DIR$dirName".html "$CONTENT$dirNameLower".html
     mv "$TMP_DIR$dirName".css "$CSS$dirNameLower".css
@@ -54,19 +52,18 @@ for dir in tex/*; do
         fileName="$(basename "$file" .tex)"
         fileNameLower=$(echo "$fileName" | tr 'A-Z' 'a-z')
 
-        make4ht -u -B "$TMP_DIR" -f html5+tidy "$fileName".tex "mathjax"
+        make4ht -u -B "$TMP_DIR" -f html5 "$fileName".tex "mathjax"
         if grep -qE '\\(no)?cite|\\printbibliography' "$fileName".tex; then
           (cd "$HOME/projects/LibreNotebook" &&
            biber --output-directory temp "$fileName")
-          make4ht -u -B "$TMP_DIR" -f html5+tidy "$fileName".tex "mathjax"
+          make4ht -u -B "$TMP_DIR" -f html5 "$fileName".tex "mathjax"
         fi
 
         perl -0777 -pi -e "s#src\s*=\s*'([^']+\.svg)'#src='/svg/\$1'#g" \
           "$TMP_DIR/$fileName".html
         perl -pi -e 's/\\(?:displaybreak|linebreak|relax)//g' \
           "$TMP_DIR/$fileName.html"
-        tidy -indent -wrap 70 -utf8 -m \
-             --show-body-only yes --force-output yes \
+        tidy -wrap 0 -utf8 -m --show-body-only yes --force-output yes \
           "$TMP_DIR/$fileName".html
 
         mv "$TMP_DIR/$fileName".html \

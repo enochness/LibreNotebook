@@ -1,1727 +1,458 @@
 <!-- l. 5 -->
-
 <p class='noindent'></p>
-
-<h2 class='chapterHead' id='c-programming-language'><span class=
-'titlemark'>Note&nbsp;1</span><br>
-<a id='x1-10001'></a>C Programming Language</h2><!-- l. 7 -->
-
-<p class='noindent'>I always wanted to learn C. I mean C really is
-the fundamental language that inspired so many others like PHP, Java,
-C++, and so much more. Also there is that coolness in C. Is it only
-me? Or do you also feel that sensation when you see 90+% gray dot in
-GitHub repository for Linux Kernel? Writing in C and going low level
-has its own coolness. In this note, we will discuss some fundamental
-features in C for us to actually use it for writing goodies. Many of
-the contents here are based on the video “C Programming Tutorial for
-Beginners” from freeCodeCamp by Mike Dane and many other online
-tutorials [<a id='x1-1001'></a><a id='page.3'></a><a>Dan18</a>].</p>
-
-<h3 class='sectionHead' id='foundations'><span class=
-'titlemark'>1.1</span> <a id='x1-20001.1'></a>Foundations</h3>
+<h2 class='chapterHead' id='c-programming-language'><span class='titlemark'>Note&nbsp;1</span><br />
+<a id='x1-10001'></a>C Programming Language</h2>
+<!-- l. 7 -->
+<p class='noindent'>I always wanted to learn C. I mean C really is the fundamental language that inspired so many others like PHP, Java, C++, and so much more. Also there is that coolness in C. Is it only me? Or do you also feel that sensation when you see 90+% gray dot in GitHub repository for Linux Kernel? Writing in C and going low level has its own coolness. In this note, we will discuss some fundamental features in C for us to actually use it for writing goodies. Many of the contents here are based on the video “C Programming Tutorial for Beginners” from freeCodeCamp by Mike Dane and many other online tutorials [<a id='x1-1001'></a><a id='page.3'></a><a>Dan18</a>].</p>
+<h3 class='sectionHead' id='foundations'><span class='titlemark'>1.1</span> <a id='x1-20001.1'></a>Foundations</h3>
 <!-- l. 20 -->
-
-<p class='noindent'>The previous note contains much more detailed
-explanations on data structures, algorithms, and solving problems. So
-in this section, instead of discussing everything from scratch again,
-let’s focus on the syntax for C and some distinct features that C
-shines with.</p><!-- l. 26 -->
-
-<p class='noindent'>For our first program, let’s output “Hello,
-world!” and see how to compile C programs.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-1'>
-  <a id='x1-2009x1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 39 -->
-
-    <p class='noindent'>Code&nbsp;1.1.1:&nbsp;26clcwy-01</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 30 -->
-    <pre class='lstlisting' id='listing-1'>
-<span class='label'><a id='x1-2002r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-2003r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-2004r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-2005r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Hello</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>,</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>world!\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-2006r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span> 
-<span class='label'><a id='x1-2007r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-2008r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
-</div><!-- l. 41 -->
-
-<p class='noindent'>For our header, we have standard input/output and
-we use <span class='obeylines-h'><code class=
-'verb'>printf</code></span> to print output “Hello, world!”. Now
-there are two popular ways of compiling it and we can use either GCC
-or Clang. They are nearly identical (please don’t get mad at me!),
-and I will be using Clang since I am on macOS.</p>
-
+<p class='noindent'>The previous note contains much more detailed explanations on data structures, algorithms, and solving problems. So in this section, instead of discussing everything from scratch again, let’s focus on the syntax for C and some distinct features that C shines with.</p>
+<!-- l. 26 -->
+<p class='noindent'>For our first program, let’s output “Hello, world!” and see how to compile C programs.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-1'><a id='x1-2009x1.1'></a>
+<div class='tcolorbox-title'><!-- l. 39 -->
+<p class='noindent'>Code&nbsp;1.1.1:&nbsp;26clcwy-01</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 30 -->
+<pre class='lstlisting' id='listing-1'>
+<span class='label'><a id='x1-2002r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-2003r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-2004r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-2005r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Hello</span></span><span style='color:#A31515'><span class='pcrr8t-'>,</span></span><span style='color:#A31515'> <span class='pcrr8t-'>world!\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-2006r5'></a><span class='pplr8t-x-x-60'>5</span></span> 
+<span class='label'><a id='x1-2007r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-2008r7'></a><span class='pplr8t-x-x-60'>7</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
+<!-- l. 41 -->
+<p class='noindent'>For our header, we have standard input/output and we use <span class='obeylines-h'><code class='verb'>printf</code></span> to print output “Hello, world!”. Now there are two popular ways of compiling it and we can use either GCC or Clang. They are nearly identical (please don’t get mad at me!), and I will be using Clang since I am on macOS.</p>
 <div class='tcolorbox basicboxstyle' id='tcolobox-2'>
-  <div class='tcolorbox-title'></div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 48 -->
-    <pre class='lstlisting' id='listing-2'>
-<span class='label'><a id='x1-2010r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>clang -Wall program.c -o program</span> 
-</span><span class='label'><a id='x1-2011r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>./program</span> 
-</span><span class='label'><a id='x1-2012r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Hello</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>world!</span></span>
-</pre>
-  </div>
-</div><!-- l. 55 -->
-
-<p class='noindent'>With this, let’s discuss about input/output and
-basic data types.</p>
-
-<h4 class='subsectionHead' id='inputoutput-and-basic-data-types'>
-<span class='titlemark'>1.1.1</span> <a id=
-'x1-30001.1.1'></a>Input/Output and Basic Data Types</h4>
+<div class='tcolorbox-title'></div>
+<div class='tcolorbox-content'><!-- l. 48 -->
+<pre class='lstlisting' id='listing-2'>
+<span class='label'><a id='x1-2010r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>clang -Wall program.c -o program</span> 
+</span><span class='label'><a id='x1-2011r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>./program</span> 
+</span><span class='label'><a id='x1-2012r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Hello</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>world!</span></span>
+</pre></div>
+</div>
+<!-- l. 55 -->
+<p class='noindent'>With this, let’s discuss about input/output and basic data types.</p>
+<h4 class='subsectionHead' id='inputoutput-and-basic-data-types'><span class='titlemark'>1.1.1</span> <a id='x1-30001.1.1'></a>Input/Output and Basic Data Types</h4>
 <!-- l. 59 -->
-
-<p class='noindent'>Now this <span class='obeylines-h'><code class=
-'verb'>printf</code></span> function can be very powerful. Like Java,
-we can pass values into placeholders like %d, %f, %s, %c, namely
-double, float, string, and character. Here is an example.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-3'>
-  <a id='x1-3016x1.1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 80 -->
-
-    <p class='noindent'>Code&nbsp;1.1.2:&nbsp;26clcwy-02</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 64 -->
-    <pre class='lstlisting' id='listing-3'>
-<span class='label'><a id='x1-3002r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-3003r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-3004r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-3005r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>age = 123;</span> 
-</span><span class='label'><a id='x1-3006r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>double</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>gpa = 3.14;</span> 
-</span><span class='label'><a id='x1-3007r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>char</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name[] =</span> </span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Enoch</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3008r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span> 
-<span class='label'><a id='x1-3009r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>s</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>is %d years old.\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>name, age);</span> 
-</span><span class='label'><a id='x1-3010r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>He</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>has a GPA of %f and a letter grade of %c\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>gpa,</span> </span><span style='color:#A31515'><span class='pcrr8t-'>’</span></span><span style='color:#A31515'><span class='pcrr8t-'>A</span></span><span style='color:#A31515'><span class='pcrr8t-'>’</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3011r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>s</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>also loves math. For example...\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name);</span> 
-</span><span class='label'><a id='x1-3012r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>f</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>/ %d = %f\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>1.0, 5, 1.0 / 5);</span> 
-</span><span class='label'><a id='x1-3013r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span> 
-<span class='label'><a id='x1-3014r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-3015r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
-</div><!-- l. 82 -->
-
-<p class='noindent'>As you can see, we can define integer, double,
-float, and character as usual. We can also pass our values into the
-place holder. You may have noticed that we wrote <span class=
-'obeylines-h'><code class=
-'verb'>char&nbsp;name[]&nbsp;=&nbsp;"Enoch";</code></span> instead of
-<span class='obeylines-h'><code class=
-'verb'>string&nbsp;name&nbsp;=&nbsp;"Enoch";</code></span>. This is
-because unlike other languages, C doesn’t have data type string in
-its usual sense. We will discuss more about this as we discuss arrays
-and pointers. Finally, notice that we wrote <span class=
-'mathjax-inline'>\(1.0\)</span> instead of <span class=
-'mathjax-inline'>\(1\)</span> for our first <span class=
-'obeylines-h'><code class='verb'>%f</code></span> in the last line.
-This is because <span class='mathjax-inline'>\(1\)</span> by itself
-is an integer and we will get an error. Compiling and running, we get
-the following output.</p>
-
+<p class='noindent'>Now this <span class='obeylines-h'><code class='verb'>printf</code></span> function can be very powerful. Like Java, we can pass values into placeholders like %d, %f, %s, %c, namely double, float, string, and character. Here is an example.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-3'><a id='x1-3016x1.1.1'></a>
+<div class='tcolorbox-title'><!-- l. 80 -->
+<p class='noindent'>Code&nbsp;1.1.2:&nbsp;26clcwy-02</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 64 -->
+<pre class='lstlisting' id='listing-3'>
+<span class='label'><a id='x1-3002r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-3003r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-3004r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-3005r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>age = 123;</span> 
+</span><span class='label'><a id='x1-3006r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>gpa = 3.14;</span> 
+</span><span class='label'><a id='x1-3007r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>char</span></span><span style='color:#000000'> <span class='pcrr8t-'>name[] =</span> </span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Enoch</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3008r7'></a><span class='pplr8t-x-x-60'>7</span></span> 
+<span class='label'><a id='x1-3009r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>s</span></span><span style='color:#A31515'> <span class='pcrr8t-'>is %d years old.\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name, age);</span> 
+</span><span class='label'><a id='x1-3010r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>He</span></span><span style='color:#A31515'> <span class='pcrr8t-'>has a GPA of %f and a letter grade of %c\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>gpa,</span> </span><span style='color:#A31515'><span class='pcrr8t-'>’</span></span><span style='color:#A31515'><span class='pcrr8t-'>A</span></span><span style='color:#A31515'><span class='pcrr8t-'>’</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3011r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>s</span></span><span style='color:#A31515'> <span class='pcrr8t-'>also loves math. For example...\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name);</span> 
+</span><span class='label'><a id='x1-3012r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>f</span></span><span style='color:#A31515'> <span class='pcrr8t-'>/ %d = %f\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>1.0, 5, 1.0 / 5);</span> 
+</span><span class='label'><a id='x1-3013r12'></a><span class='pplr8t-x-x-60'>12</span></span> 
+<span class='label'><a id='x1-3014r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-3015r14'></a><span class='pplr8t-x-x-60'>14</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
+<!-- l. 82 -->
+<p class='noindent'>As you can see, we can define integer, double, float, and character as usual. We can also pass our values into the place holder. You may have noticed that we wrote <span class='obeylines-h'><code class='verb'>char&nbsp;name[]&nbsp;=&nbsp;"Enoch";</code></span> instead of <span class='obeylines-h'><code class='verb'>string&nbsp;name&nbsp;=&nbsp;"Enoch";</code></span>. This is because unlike other languages, C doesn’t have data type string in its usual sense. We will discuss more about this as we discuss arrays and pointers. Finally, notice that we wrote <span class='mathjax-inline'>\(1.0\)</span> instead of <span class='mathjax-inline'>\(1\)</span> for our first <span class='obeylines-h'><code class='verb'>%f</code></span> in the last line. This is because <span class='mathjax-inline'>\(1\)</span> by itself is an integer and we will get an error. Compiling and running, we get the following output.</p>
 <div class='tcolorbox outputboxstyle' id='tcolobox-4'>
-  <div class='tcolorbox-title'>
-    <!-- l. 100 -->
-
-    <p class='noindent'>Output&nbsp;1.1.3</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 94 -->
-    <pre class='lstlisting' id='listing-4'>
-<span class='label'><a id='x1-3018r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Enoch</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>is 123 years old.</span> 
-</span><span class='label'><a id='x1-3019r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>He</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>has a GPA of 3.140000 and a letter grade of A</span> 
-</span><span class='label'><a id='x1-3020r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Enoch</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>also loves math. For example...</span> 
-</span><span class='label'><a id='x1-3021r4'></a></span><span style=
-'color:#000000'><span class=
-'pcrr8t-'>1.000000</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>/ 5 = 0.200000</span></span>
-</pre>
-  </div>
-</div><!-- l. 102 -->
-
-<p class='noindent'>As you can see, we get <span class=
-'mathjax-inline'>\(3.140000\)</span> instead of <span class=
-'mathjax-inline'>\(3.14\)</span>. When displaying, C likes to give a
-more accurate value. Continuing, we have same commenting style as
-C++.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-5'>
-  <a id='x1-3036x1.1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 122 -->
-
-    <p class='noindent'>Code&nbsp;1.1.4:&nbsp;26clcwy-03</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 107 -->
-    <pre class='lstlisting' id='listing-5'>
-<span class='label'><a id='x1-3023r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-3024r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-3025r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-3026r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrro8t-'>    </span><span style='color:#646464'><span class=
-'pcrro8t-'>/*</span></span> 
-<span class='label'><a id='x1-3027r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrro8t-'>     </span><span style='color:#646464'><span class=
-'pcrro8t-'>*</span></span><span style='color:#646464'> <span class=
-'pcrro8t-'>This is a multi-line comment</span> 
-</span><span class='label'><a id='x1-3028r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrro8t-'>     </span><span style='color:#646464'><span class=
-'pcrro8t-'>*</span></span><span style='color:#646464'> <span class=
-'pcrro8t-'>This is fun!</span> 
-</span><span class='label'><a id='x1-3029r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span class=
-'pcrro8t-'>     </span><span style='color:#646464'><span class=
-'pcrro8t-'>*/</span></span> 
-<span class='label'><a id='x1-3030r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span> 
-<span class='label'><a id='x1-3031r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Hi</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>there\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3032r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrro8t-'>    </span><span style='color:#646464'><span class=
-'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
-'pcrro8t-'>printf("This is an inline comment");</span> 
-</span><span class='label'><a id='x1-3033r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span> 
-<span class='label'><a id='x1-3034r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-3035r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 100 -->
+<p class='noindent'>Output&nbsp;1.1.3</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 94 -->
+<pre class='lstlisting' id='listing-4'>
+<span class='label'><a id='x1-3018r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>Enoch</span></span><span style='color:#000000'> <span class='pcrr8t-'>is 123 years old.</span> 
+</span><span class='label'><a id='x1-3019r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>He</span></span><span style='color:#000000'> <span class='pcrr8t-'>has a GPA of 3.140000 and a letter grade of A</span> 
+</span><span class='label'><a id='x1-3020r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Enoch</span></span><span style='color:#000000'> <span class='pcrr8t-'>also loves math. For example...</span> 
+</span><span class='label'><a id='x1-3021r4'></a></span><span style='color:#000000'><span class='pcrr8t-'>1.000000</span></span><span style='color:#000000'> <span class='pcrr8t-'>/ 5 = 0.200000</span></span>
+</pre></div>
+</div>
+<!-- l. 102 -->
+<p class='noindent'>As you can see, we get <span class='mathjax-inline'>\(3.140000\)</span> instead of <span class='mathjax-inline'>\(3.14\)</span>. When displaying, C likes to give a more accurate value. Continuing, we have same commenting style as C++.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-5'><a id='x1-3036x1.1.1'></a>
+<div class='tcolorbox-title'><!-- l. 122 -->
+<p class='noindent'>Code&nbsp;1.1.4:&nbsp;26clcwy-03</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 107 -->
+<pre class='lstlisting' id='listing-5'>
+<span class='label'><a id='x1-3023r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-3024r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-3025r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-3026r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrro8t-'>    </span><span style='color:#646464'><span class='pcrro8t-'>/*</span></span> 
+<span class='label'><a id='x1-3027r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrro8t-'>     </span><span style='color:#646464'><span class='pcrro8t-'>*</span></span><span style='color:#646464'> <span class='pcrro8t-'>This is a multi-line comment</span> 
+</span><span class='label'><a id='x1-3028r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrro8t-'>     </span><span style='color:#646464'><span class='pcrro8t-'>*</span></span><span style='color:#646464'> <span class='pcrro8t-'>This is fun!</span> 
+</span><span class='label'><a id='x1-3029r7'></a><span class='pplr8t-x-x-60'>7</span></span><span class='pcrro8t-'>     </span><span style='color:#646464'><span class='pcrro8t-'>*/</span></span> 
+<span class='label'><a id='x1-3030r8'></a><span class='pplr8t-x-x-60'>8</span></span> 
+<span class='label'><a id='x1-3031r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Hi</span></span><span style='color:#A31515'> <span class='pcrr8t-'>there\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3032r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrro8t-'>    </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>printf("This is an inline comment");</span> 
+</span><span class='label'><a id='x1-3033r11'></a><span class='pplr8t-x-x-60'>11</span></span> 
+<span class='label'><a id='x1-3034r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-3035r13'></a><span class='pplr8t-x-x-60'>13</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-6'>
-  <div class='tcolorbox-title'>
-    <!-- l. 127 -->
-
-    <p class='noindent'>Output&nbsp;1.1.5</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 124 -->
-    <pre class='lstlisting' id='listing-6'>
-<span class='label'><a id='x1-3038r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Hi</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>there</span></span>
-</pre>
-  </div>
-</div><!-- l. 129 -->
-
-<p class='noindent'>Similar to other languages, we can define a
-constant with <span class='obeylines-h'><code class=
-'verb'>const</code></span> and arrays with <span class=
-'obeylines-h'><code class='verb'>arr[]</code></span> as well. Here is
-an example of using constants and arrays.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-7'>
-  <a id='x1-3056x1.1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 152 -->
-
-    <p class='noindent'>Code&nbsp;1.1.6:&nbsp;26clcwy-04</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 134 -->
-    <pre class='lstlisting' id='listing-7'>
-<span class='label'><a id='x1-3040r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-3041r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-3042r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-3043r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>const</span></span><span style=
-'color:#000000'> </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>FIXED_VALUE = 5;</span> 
-</span><span class='label'><a id='x1-3044r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>arr[5] = { 1, 2, 3, 4, 5 };</span> 
-</span><span class='label'><a id='x1-3045r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>double</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>tensor[2][3] = {{0.0, 0.1, 0.2},</span> 
-</span><span class='label'><a id='x1-3046r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span class=
-'pcrr8t-'>                           </span><span style=
-'color:#000000'><span class='pcrr8t-'>{1.0,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>1.1, 1.2}};</span> 
-</span><span class='label'><a id='x1-3047r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>char</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>string[10] =</span> </span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class=
-'pcrr8t-'>string</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3048r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span> 
-<span class='label'><a id='x1-3049r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Fixed</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>value: %d\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>FIXED_VALUE);</span> 
-</span><span class='label'><a id='x1-3050r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class=
-'pcrr8t-'>Second</span></span><span style='color:#A31515'> <span class='pcrr8t-'>element of the array: %d\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>arr[1]);</span> 
-</span><span class='label'><a id='x1-3051r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class=
-'pcrr8t-'>Second</span></span><span style='color:#A31515'> <span class='pcrr8t-'>row, third column: %f\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>tensor[1][2]);</span> 
-</span><span class='label'><a id='x1-3052r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Third</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>charater in the string: %c\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>string[2]);</span> 
-</span><span class='label'><a id='x1-3053r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span> 
-<span class='label'><a id='x1-3054r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-3055r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 127 -->
+<p class='noindent'>Output&nbsp;1.1.5</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 124 -->
+<pre class='lstlisting' id='listing-6'>
+<span class='label'><a id='x1-3038r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>Hi</span></span><span style='color:#000000'> <span class='pcrr8t-'>there</span></span>
+</pre></div>
+</div>
+<!-- l. 129 -->
+<p class='noindent'>Similar to other languages, we can define a constant with <span class='obeylines-h'><code class='verb'>const</code></span> and arrays with <span class='obeylines-h'><code class='verb'>arr[]</code></span> as well. Here is an example of using constants and arrays.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-7'><a id='x1-3056x1.1.1'></a>
+<div class='tcolorbox-title'><!-- l. 152 -->
+<p class='noindent'>Code&nbsp;1.1.6:&nbsp;26clcwy-04</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 134 -->
+<pre class='lstlisting' id='listing-7'>
+<span class='label'><a id='x1-3040r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-3041r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-3042r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-3043r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>const</span></span><span style='color:#000000'> </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>FIXED_VALUE = 5;</span> 
+</span><span class='label'><a id='x1-3044r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>arr[5] = { 1, 2, 3, 4, 5 };</span> 
+</span><span class='label'><a id='x1-3045r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>tensor[2][3] = {{0.0, 0.1, 0.2},</span> 
+</span><span class='label'><a id='x1-3046r7'></a><span class='pplr8t-x-x-60'>7</span></span><span class='pcrr8t-'>                           </span><span style='color:#000000'><span class='pcrr8t-'>{1.0,</span></span><span style='color:#000000'> <span class='pcrr8t-'>1.1, 1.2}};</span> 
+</span><span class='label'><a id='x1-3047r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>char</span></span><span style='color:#000000'> <span class='pcrr8t-'>string[10] =</span> </span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>string</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3048r9'></a><span class='pplr8t-x-x-60'>9</span></span> 
+<span class='label'><a id='x1-3049r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Fixed</span></span><span style='color:#A31515'> <span class='pcrr8t-'>value: %d\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>FIXED_VALUE);</span> 
+</span><span class='label'><a id='x1-3050r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Second</span></span><span style='color:#A31515'> <span class='pcrr8t-'>element of the array: %d\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>arr[1]);</span> 
+</span><span class='label'><a id='x1-3051r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Second</span></span><span style='color:#A31515'> <span class='pcrr8t-'>row, third column: %f\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>tensor[1][2]);</span> 
+</span><span class='label'><a id='x1-3052r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Third</span></span><span style='color:#A31515'> <span class='pcrr8t-'>charater in the string: %c\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>string[2]);</span> 
+</span><span class='label'><a id='x1-3053r14'></a><span class='pplr8t-x-x-60'>14</span></span> 
+<span class='label'><a id='x1-3054r15'></a><span class='pplr8t-x-x-60'>15</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-3055r16'></a><span class='pplr8t-x-x-60'>16</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-8'>
-  <div class='tcolorbox-title'>
-    <!-- l. 160 -->
-
-    <p class='noindent'>Output&nbsp;1.1.7</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 154 -->
-    <pre class='lstlisting' id='listing-8'>
-<span class='label'><a id='x1-3058r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Fixed</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>value: 5</span> 
-</span><span class='label'><a id='x1-3059r2'></a></span><span style=
-'color:#000000'><span class=
-'pcrr8t-'>Second</span></span><span style='color:#000000'> <span class='pcrr8t-'>element of the array: 2</span> 
-</span><span class='label'><a id='x1-3060r3'></a></span><span style=
-'color:#000000'><span class=
-'pcrr8t-'>Second</span></span><span style='color:#000000'> <span class='pcrr8t-'>row, third column: 1.200000</span> 
-</span><span class='label'><a id='x1-3061r4'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Third</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>charater in the string: r</span></span>
-</pre>
-  </div>
-</div><!-- l. 162 -->
-
-<p class='noindent'>Now as mentioned previously, strings are quite
-different in C. They are not totally different data types, but just
-an array of characters. This simple nature of C is one of the factors
-that makes C special, but also slightly annoying.</p><!-- l. 167 -->
-
-<p class='noindent'>Now before moving onto inputs and outputs, here
-is one more data type. This one called <span class=
-'pplb8t-x-x-109'>struct</span> is quite interesting because it is
-user-defined and also a composite data type. It can look like a class
-without functions, but they are different. Struct defines data type
-that we can use to organize information. Here is an example
-usage.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-9'>
-  <a id='x1-3089x1.1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 202 -->
-
-    <p class='noindent'>Code&nbsp;1.1.8:&nbsp;26clcwy-05</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 174 -->
-    <pre class='lstlisting' id='listing-9'>
-<span class='label'><a id='x1-3063r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-3064r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-3065r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>typedef</span></span><span style=
-'color:#000000'> </span><span style='color:#004099'><span class=
-'pcrb8t-'>struct</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>{</span> 
-</span><span class='label'><a id='x1-3066r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>float</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>a;</span> 
-</span><span class='label'><a id='x1-3067r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>float</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>b;</span> 
-</span><span class='label'><a id='x1-3068r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>float</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>c;</span> 
-</span><span class='label'><a id='x1-3069r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>array ;</span> 
-</span><span class='label'><a id='x1-3070r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span> 
-<span class='label'><a id='x1-3071r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>struct</span></span><span style='color:#000000'> <span class='pcrr8t-'>vector {</span> 
-</span><span class='label'><a id='x1-3072r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>float</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>x;</span> 
-</span><span class='label'><a id='x1-3073r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>float</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>y;</span> 
-</span><span class='label'><a id='x1-3074r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>};</span></span> 
-<span class='label'><a id='x1-3075r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span> 
-<span class='label'><a id='x1-3076r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-3077r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span><span class=
-'pcrro8t-'>    </span><span style='color:#646464'><span class=
-'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
-'pcrro8t-'>Using vec</span> 
-</span><span class='label'><a id='x1-3078r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>struct</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>vector vec;</span> 
-</span><span class='label'><a id='x1-3079r17'></a><span class=
-'pplr8t-x-x-60'>17</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>vec</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>.</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>x</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>= 0.1;</span> 
-</span><span class='label'><a id='x1-3080r18'></a><span class=
-'pplr8t-x-x-60'>18</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>vec</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>.</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>y</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>= 0.2;</span> 
-</span><span class='label'><a id='x1-3081r19'></a><span class=
-'pplr8t-x-x-60'>19</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>v</span></span><span style=
-'color:#A31515'> </span><span class='pcrr8t-'>  </span><span style=
-'color:#A31515'><span class='pcrr8t-'>=</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>&lt;%f, %f&gt;\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>vec.x, vec.y);</span> 
-</span><span class='label'><a id='x1-3082r20'></a><span class=
-'pplr8t-x-x-60'>20</span></span> 
-<span class='label'><a id='x1-3083r21'></a><span class=
-'pplr8t-x-x-60'>21</span></span><span class=
-'pcrro8t-'>    </span><span style='color:#646464'><span class=
-'pcrro8t-'>//</span></span><span style='color:#646464'> <span class=
-'pcrro8t-'>Using arr</span> 
-</span><span class='label'><a id='x1-3084r22'></a><span class=
-'pplr8t-x-x-60'>22</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>array</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>arr = { .a = 0.1, .b = 0.2, .c = 0.3, };</span> 
-</span><span class='label'><a id='x1-3085r23'></a><span class=
-'pplr8t-x-x-60'>23</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>arr</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>= [%f, %f, %f]\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>arr.a, arr.b, arr.c);</span> 
-</span><span class='label'><a id='x1-3086r24'></a><span class=
-'pplr8t-x-x-60'>24</span></span> 
-<span class='label'><a id='x1-3087r25'></a><span class=
-'pplr8t-x-x-60'>25</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-3088r26'></a><span class=
-'pplr8t-x-x-60'>26</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 160 -->
+<p class='noindent'>Output&nbsp;1.1.7</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 154 -->
+<pre class='lstlisting' id='listing-8'>
+<span class='label'><a id='x1-3058r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>Fixed</span></span><span style='color:#000000'> <span class='pcrr8t-'>value: 5</span> 
+</span><span class='label'><a id='x1-3059r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>Second</span></span><span style='color:#000000'> <span class='pcrr8t-'>element of the array: 2</span> 
+</span><span class='label'><a id='x1-3060r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Second</span></span><span style='color:#000000'> <span class='pcrr8t-'>row, third column: 1.200000</span> 
+</span><span class='label'><a id='x1-3061r4'></a></span><span style='color:#000000'><span class='pcrr8t-'>Third</span></span><span style='color:#000000'> <span class='pcrr8t-'>charater in the string: r</span></span>
+</pre></div>
+</div>
+<!-- l. 162 -->
+<p class='noindent'>Now as mentioned previously, strings are quite different in C. They are not totally different data types, but just an array of characters. This simple nature of C is one of the factors that makes C special, but also slightly annoying.</p>
+<!-- l. 167 -->
+<p class='noindent'>Now before moving onto inputs and outputs, here is one more data type. This one called <span class='pplb8t-x-x-109'>struct</span> is quite interesting because it is user-defined and also a composite data type. It can look like a class without functions, but they are different. Struct defines data type that we can use to organize information. Here is an example usage.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-9'><a id='x1-3089x1.1.1'></a>
+<div class='tcolorbox-title'><!-- l. 202 -->
+<p class='noindent'>Code&nbsp;1.1.8:&nbsp;26clcwy-05</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 174 -->
+<pre class='lstlisting' id='listing-9'>
+<span class='label'><a id='x1-3063r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-3064r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-3065r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>typedef</span></span><span style='color:#000000'> </span><span style='color:#004099'><span class='pcrb8t-'>struct</span></span><span style='color:#000000'> <span class='pcrr8t-'>{</span> 
+</span><span class='label'><a id='x1-3066r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>float</span></span><span style='color:#000000'> <span class='pcrr8t-'>a;</span> 
+</span><span class='label'><a id='x1-3067r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>float</span></span><span style='color:#000000'> <span class='pcrr8t-'>b;</span> 
+</span><span class='label'><a id='x1-3068r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>float</span></span><span style='color:#000000'> <span class='pcrr8t-'>c;</span> 
+</span><span class='label'><a id='x1-3069r7'></a><span class='pplr8t-x-x-60'>7</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span><span style='color:#000000'> <span class='pcrr8t-'>array ;</span> 
+</span><span class='label'><a id='x1-3070r8'></a><span class='pplr8t-x-x-60'>8</span></span> 
+<span class='label'><a id='x1-3071r9'></a><span class='pplr8t-x-x-60'>9</span></span><span style='color:#004099'><span class='pcrb8t-'>struct</span></span><span style='color:#000000'> <span class='pcrr8t-'>vector {</span> 
+</span><span class='label'><a id='x1-3072r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>float</span></span><span style='color:#000000'> <span class='pcrr8t-'>x;</span> 
+</span><span class='label'><a id='x1-3073r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>float</span></span><span style='color:#000000'> <span class='pcrr8t-'>y;</span> 
+</span><span class='label'><a id='x1-3074r12'></a><span class='pplr8t-x-x-60'>12</span></span><span style='color:#000000'><span class='pcrr8t-'>};</span></span> 
+<span class='label'><a id='x1-3075r13'></a><span class='pplr8t-x-x-60'>13</span></span> 
+<span class='label'><a id='x1-3076r14'></a><span class='pplr8t-x-x-60'>14</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-3077r15'></a><span class='pplr8t-x-x-60'>15</span></span><span class='pcrro8t-'>    </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>Using vec</span> 
+</span><span class='label'><a id='x1-3078r16'></a><span class='pplr8t-x-x-60'>16</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>struct</span></span><span style='color:#000000'> <span class='pcrr8t-'>vector vec;</span> 
+</span><span class='label'><a id='x1-3079r17'></a><span class='pplr8t-x-x-60'>17</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>vec</span></span><span style='color:#000000'><span class='pcrr8t-'>.</span></span><span style='color:#000000'><span class='pcrr8t-'>x</span></span><span style='color:#000000'> <span class='pcrr8t-'>= 0.1;</span> 
+</span><span class='label'><a id='x1-3080r18'></a><span class='pplr8t-x-x-60'>18</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>vec</span></span><span style='color:#000000'><span class='pcrr8t-'>.</span></span><span style='color:#000000'><span class='pcrr8t-'>y</span></span><span style='color:#000000'> <span class='pcrr8t-'>= 0.2;</span> 
+</span><span class='label'><a id='x1-3081r19'></a><span class='pplr8t-x-x-60'>19</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>v</span></span><span style='color:#A31515'> </span><span class='pcrr8t-'>  </span><span style='color:#A31515'><span class='pcrr8t-'>=</span></span><span style='color:#A31515'> <span class='pcrr8t-'>&lt;%f, %f&gt;\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>vec.x, vec.y);</span> 
+</span><span class='label'><a id='x1-3082r20'></a><span class='pplr8t-x-x-60'>20</span></span> 
+<span class='label'><a id='x1-3083r21'></a><span class='pplr8t-x-x-60'>21</span></span><span class='pcrro8t-'>    </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>Using arr</span> 
+</span><span class='label'><a id='x1-3084r22'></a><span class='pplr8t-x-x-60'>22</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>array</span></span><span style='color:#000000'> <span class='pcrr8t-'>arr = { .a = 0.1, .b = 0.2, .c = 0.3, };</span> 
+</span><span class='label'><a id='x1-3085r23'></a><span class='pplr8t-x-x-60'>23</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>arr</span></span><span style='color:#A31515'> <span class='pcrr8t-'>= [%f, %f, %f]\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>arr.a, arr.b, arr.c);</span> 
+</span><span class='label'><a id='x1-3086r24'></a><span class='pplr8t-x-x-60'>24</span></span> 
+<span class='label'><a id='x1-3087r25'></a><span class='pplr8t-x-x-60'>25</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-3088r26'></a><span class='pplr8t-x-x-60'>26</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-10'>
-  <div class='tcolorbox-title'>
-    <!-- l. 208 -->
-
-    <p class='noindent'>Output&nbsp;1.1.9</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 204 -->
-    <pre class='lstlisting' id='listing-10'>
-<span class='label'><a id='x1-3091r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>v</span></span><span style=
-'color:#000000'> </span><span class='pcrr8t-'>  </span><span style=
-'color:#000000'><span class='pcrr8t-'>=</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>&lt;0.100000, 0.200000&gt;</span> 
-</span><span class='label'><a id='x1-3092r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>arr</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>= [0.100000, 0.200000, 0.300000]</span></span>
-</pre>
-  </div>
-</div><!-- l. 210 -->
-
-<p class='noindent'>Struct is nice because we can use it like a
-template and reuse it multiple times. Also we will discuss more on
-<span class='obeylines-h'><code class='verb'>typedef</code></span>
-later but we can use it as shown above to avoid writing more
-characters. Let’s now turn our attention to inputs and outputs in C.
-We already discussed outputs, so let’s see how we can take values in
-from the user in C.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-11'>
-  <a id='x1-3118x1.1.1'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 244 -->
-
-    <p class='noindent'>Code&nbsp;1.1.10:&nbsp;26clcwy-06</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 218 -->
-    <pre class='lstlisting' id='listing-11'>
-<span class='label'><a id='x1-3094r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-3095r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-3096r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-3097r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>char</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name[10], fullName[30], alp;</span> 
-</span><span class='label'><a id='x1-3098r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>age;</span> 
-</span><span class='label'><a id='x1-3099r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>double</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>date;</span> 
-</span><span class='label'><a id='x1-3100r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span> 
-<span class='label'><a id='x1-3101r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Full</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>Name: "</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3102r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>fgets</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>fullName</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>30, stdin);</span> 
-</span><span class='label'><a id='x1-3103r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>First</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>Name: "</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3104r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>%</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>s</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name);</span> </span><span style=
-'color:#646464'><span class='pcrro8t-'>//</span></span><span style=
-'color:#646464'> <span class='pcrro8t-'>No ampersand here</span> 
-</span><span class='label'><a id='x1-3105r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Age</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>:</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3106r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>%</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>d</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>&amp;age);</span> </span><span style=
-'color:#646464'><span class='pcrro8t-'>//</span></span><span style=
-'color:#646464'> <span class=
-'pcrro8t-'>You need this ampersand!</span> 
-</span><span class='label'><a id='x1-3107r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Date</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>:</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3108r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>%</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>lf</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>&amp;date);</span> </span><span style=
-'color:#646464'><span class='pcrro8t-'>//</span></span><span style=
-'color:#646464'> <span class='pcrro8t-'>%lf not %f</span> 
-</span><span class='label'><a id='x1-3109r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class=
-'pcrr8t-'>Alphabet</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>:</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-3110r17'></a><span class=
-'pplr8t-x-x-60'>17</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'> <span class=
-'pcrr8t-'>%c"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>&amp;alp);</span> </span><span style=
-'color:#646464'><span class='pcrro8t-'>//</span></span><span style=
-'color:#646464'> <span class=
-'pcrro8t-'>You need the space in front of %c!</span> 
-</span><span class='label'><a id='x1-3111r18'></a><span class=
-'pplr8t-x-x-60'>18</span></span> 
-<span class='label'><a id='x1-3112r19'></a><span class=
-'pplr8t-x-x-60'>19</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Hi</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>%s, today is %f\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>name, date);</span> 
-</span><span class='label'><a id='x1-3113r20'></a><span class=
-'pplr8t-x-x-60'>20</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>full name is %s"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>fullName);</span> 
-</span><span class='label'><a id='x1-3114r21'></a><span class=
-'pplr8t-x-x-60'>21</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>You</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>are %d years old and you chose %c!\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>age, alp);</span> 
-</span><span class='label'><a id='x1-3115r22'></a><span class=
-'pplr8t-x-x-60'>22</span></span> 
-<span class='label'><a id='x1-3116r23'></a><span class=
-'pplr8t-x-x-60'>23</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-3117r24'></a><span class=
-'pplr8t-x-x-60'>24</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 208 -->
+<p class='noindent'>Output&nbsp;1.1.9</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 204 -->
+<pre class='lstlisting' id='listing-10'>
+<span class='label'><a id='x1-3091r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>v</span></span><span style='color:#000000'> </span><span class='pcrr8t-'>  </span><span style='color:#000000'><span class='pcrr8t-'>=</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;0.100000, 0.200000&gt;</span> 
+</span><span class='label'><a id='x1-3092r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>arr</span></span><span style='color:#000000'> <span class='pcrr8t-'>= [0.100000, 0.200000, 0.300000]</span></span>
+</pre></div>
+</div>
+<!-- l. 210 -->
+<p class='noindent'>Struct is nice because we can use it like a template and reuse it multiple times. Also we will discuss more on <span class='obeylines-h'><code class='verb'>typedef</code></span> later but we can use it as shown above to avoid writing more characters. Let’s now turn our attention to inputs and outputs in C. We already discussed outputs, so let’s see how we can take values in from the user in C.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-11'><a id='x1-3118x1.1.1'></a>
+<div class='tcolorbox-title'><!-- l. 244 -->
+<p class='noindent'>Code&nbsp;1.1.10:&nbsp;26clcwy-06</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 218 -->
+<pre class='lstlisting' id='listing-11'>
+<span class='label'><a id='x1-3094r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-3095r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-3096r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-3097r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>char</span></span><span style='color:#000000'> <span class='pcrr8t-'>name[10], fullName[30], alp;</span> 
+</span><span class='label'><a id='x1-3098r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>age;</span> 
+</span><span class='label'><a id='x1-3099r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>date;</span> 
+</span><span class='label'><a id='x1-3100r7'></a><span class='pplr8t-x-x-60'>7</span></span> 
+<span class='label'><a id='x1-3101r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Full</span></span><span style='color:#A31515'> <span class='pcrr8t-'>Name: "</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3102r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>fgets</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#000000'><span class='pcrr8t-'>fullName</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>30, stdin);</span> 
+</span><span class='label'><a id='x1-3103r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>First</span></span><span style='color:#A31515'> <span class='pcrr8t-'>Name: "</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3104r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>s</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name);</span> </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>No ampersand here</span> 
+</span><span class='label'><a id='x1-3105r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Age</span></span><span style='color:#A31515'><span class='pcrr8t-'>:</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3106r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>d</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>&amp;age);</span> </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>You need this ampersand!</span> 
+</span><span class='label'><a id='x1-3107r14'></a><span class='pplr8t-x-x-60'>14</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Date</span></span><span style='color:#A31515'><span class='pcrr8t-'>:</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3108r15'></a><span class='pplr8t-x-x-60'>15</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>lf</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>&amp;date);</span> </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>%lf not %f</span> 
+</span><span class='label'><a id='x1-3109r16'></a><span class='pplr8t-x-x-60'>16</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Alphabet</span></span><span style='color:#A31515'><span class='pcrr8t-'>:</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-3110r17'></a><span class='pplr8t-x-x-60'>17</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'> <span class='pcrr8t-'>%c"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>&amp;alp);</span> </span><span style='color:#646464'><span class='pcrro8t-'>//</span></span><span style='color:#646464'> <span class='pcrro8t-'>You need the space in front of %c!</span> 
+</span><span class='label'><a id='x1-3111r18'></a><span class='pplr8t-x-x-60'>18</span></span> 
+<span class='label'><a id='x1-3112r19'></a><span class='pplr8t-x-x-60'>19</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Hi</span></span><span style='color:#A31515'> <span class='pcrr8t-'>%s, today is %f\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name, date);</span> 
+</span><span class='label'><a id='x1-3113r20'></a><span class='pplr8t-x-x-60'>20</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>full name is %s"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>fullName);</span> 
+</span><span class='label'><a id='x1-3114r21'></a><span class='pplr8t-x-x-60'>21</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>You</span></span><span style='color:#A31515'> <span class='pcrr8t-'>are %d years old and you chose %c!\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>age, alp);</span> 
+</span><span class='label'><a id='x1-3115r22'></a><span class='pplr8t-x-x-60'>22</span></span> 
+<span class='label'><a id='x1-3116r23'></a><span class='pplr8t-x-x-60'>23</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-3117r24'></a><span class='pplr8t-x-x-60'>24</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-12'>
-  <div class='tcolorbox-title'>
-    <!-- l. 256 -->
-
-    <p class='noindent'>Output&nbsp;1.1.11</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 246 -->
-    <pre class='lstlisting' id='listing-12'>
-<span class='label'><a id='x1-3120r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Full</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>Name: John Doe</span> 
-</span><span class='label'><a id='x1-3121r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>First</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>Name: John</span> 
-</span><span class='label'><a id='x1-3122r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Age</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>:</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>100</span> 
-</span><span class='label'><a id='x1-3123r4'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Date</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>:</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>11.18</span> 
-</span><span class='label'><a id='x1-3124r5'></a></span><span style=
-'color:#000000'><span class=
-'pcrr8t-'>Alphabet</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>:</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>J</span> 
-</span><span class='label'><a id='x1-3125r6'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Hi</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>John, today is 11.180000</span> 
-</span><span class='label'><a id='x1-3126r7'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>full name is John Doe</span> 
-</span><span class='label'><a id='x1-3127r8'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>You</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>are 100 years old and you chose J!</span></span>
-</pre>
-  </div>
-</div><!-- l. 258 -->
-
-<p class='noindent'>The ampersand that you see is there because we
-pass a pointer to <span class='obeylines-h'><code class=
-'verb'>scanf</code></span>, but we will get there in a second. Also
-when passing a character, float, and a string with spaces in it, we
-need to consider few factors. This is the place where I said its
-kinda annoying and awkward at first, but they are what makes C, the
-C!</p><!-- l. 264 -->
-
-<p class='noindent'>Also, C is designed to give us low level access,
-so as you can see with getting string inputs, we can manually
-allocate memory necessary. Now continuing with input/output and
-simple data types, let’s move on to conditionals and loops.</p>
-
-<h4 class='subsectionHead' id='conditionals-and-loops'><span class=
-'titlemark'>1.1.2</span> <a id='x1-40001.1.2'></a>Conditionals and
-Loops</h4><!-- l. 271 -->
-
-<p class='noindent'>The syntax for conditionals for C is identical to
-the ones for C++. Here is an example of using if-else statements.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-13'>
-  <a id='x1-4020x1.1.2'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 295 -->
-
-    <p class='noindent'>Code&nbsp;1.1.12:&nbsp;26clcwy-07</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 275 -->
-    <pre class='lstlisting' id='listing-13'>
-<span class='label'><a id='x1-4002r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-4003r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-4004r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-4005r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>if</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>(1 &gt; 2) {</span> 
-</span><span class='label'><a id='x1-4006r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>1</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>&gt; 2\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4007r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span><span style=
-'color:#000000'> </span><span style='color:#004099'><span class=
-'pcrb8t-'>else</span></span><span style=
-'color:#000000'> </span><span style='color:#004099'><span class=
-'pcrb8t-'>if</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>(3 &gt; 2) {</span> 
-</span><span class='label'><a id='x1-4008r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>3</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>&gt; 2\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4009r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4010r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span> 
-<span class='label'><a id='x1-4011r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>if</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>(1 &gt; 2 || 3 &gt; 2) {</span> 
-</span><span class='label'><a id='x1-4012r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>1</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>&gt; 2 or 3 &gt; 2\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4013r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4014r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>if</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>(1 &lt; 2 &amp;&amp; 3 &gt; 2) {</span> 
-</span><span class='label'><a id='x1-4015r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>1</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>&lt; 2 and 3 &gt; 2\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4016r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4017r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span> 
-<span class='label'><a id='x1-4018r17'></a><span class=
-'pplr8t-x-x-60'>17</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-4019r18'></a><span class=
-'pplr8t-x-x-60'>18</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 256 -->
+<p class='noindent'>Output&nbsp;1.1.11</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 246 -->
+<pre class='lstlisting' id='listing-12'>
+<span class='label'><a id='x1-3120r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>Full</span></span><span style='color:#000000'> <span class='pcrr8t-'>Name: John Doe</span> 
+</span><span class='label'><a id='x1-3121r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>First</span></span><span style='color:#000000'> <span class='pcrr8t-'>Name: John</span> 
+</span><span class='label'><a id='x1-3122r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Age</span></span><span style='color:#000000'><span class='pcrr8t-'>:</span></span><span style='color:#000000'> <span class='pcrr8t-'>100</span> 
+</span><span class='label'><a id='x1-3123r4'></a></span><span style='color:#000000'><span class='pcrr8t-'>Date</span></span><span style='color:#000000'><span class='pcrr8t-'>:</span></span><span style='color:#000000'> <span class='pcrr8t-'>11.18</span> 
+</span><span class='label'><a id='x1-3124r5'></a></span><span style='color:#000000'><span class='pcrr8t-'>Alphabet</span></span><span style='color:#000000'><span class='pcrr8t-'>:</span></span><span style='color:#000000'> <span class='pcrr8t-'>J</span> 
+</span><span class='label'><a id='x1-3125r6'></a></span><span style='color:#000000'><span class='pcrr8t-'>Hi</span></span><span style='color:#000000'> <span class='pcrr8t-'>John, today is 11.180000</span> 
+</span><span class='label'><a id='x1-3126r7'></a></span><span style='color:#000000'><span class='pcrr8t-'>Your</span></span><span style='color:#000000'> <span class='pcrr8t-'>full name is John Doe</span> 
+</span><span class='label'><a id='x1-3127r8'></a></span><span style='color:#000000'><span class='pcrr8t-'>You</span></span><span style='color:#000000'> <span class='pcrr8t-'>are 100 years old and you chose J!</span></span>
+</pre></div>
+</div>
+<!-- l. 258 -->
+<p class='noindent'>The ampersand that you see is there because we pass a pointer to <span class='obeylines-h'><code class='verb'>scanf</code></span>, but we will get there in a second. Also when passing a character, float, and a string with spaces in it, we need to consider few factors. This is the place where I said its kinda annoying and awkward at first, but they are what makes C, the C!</p>
+<!-- l. 264 -->
+<p class='noindent'>Also, C is designed to give us low level access, so as you can see with getting string inputs, we can manually allocate memory necessary. Now continuing with input/output and simple data types, let’s move on to conditionals and loops.</p>
+<h4 class='subsectionHead' id='conditionals-and-loops'><span class='titlemark'>1.1.2</span> <a id='x1-40001.1.2'></a>Conditionals and Loops</h4>
+<!-- l. 271 -->
+<p class='noindent'>The syntax for conditionals for C is identical to the ones for C++. Here is an example of using if-else statements.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-13'><a id='x1-4020x1.1.2'></a>
+<div class='tcolorbox-title'><!-- l. 295 -->
+<p class='noindent'>Code&nbsp;1.1.12:&nbsp;26clcwy-07</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 275 -->
+<pre class='lstlisting' id='listing-13'>
+<span class='label'><a id='x1-4002r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-4003r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-4004r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-4005r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>if</span></span><span style='color:#000000'> <span class='pcrr8t-'>(1 &gt; 2) {</span> 
+</span><span class='label'><a id='x1-4006r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>1</span></span><span style='color:#A31515'> <span class='pcrr8t-'>&gt; 2\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4007r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span><span style='color:#000000'> </span><span style='color:#004099'><span class='pcrb8t-'>else</span></span><span style='color:#000000'> </span><span style='color:#004099'><span class='pcrb8t-'>if</span></span><span style='color:#000000'> <span class='pcrr8t-'>(3 &gt; 2) {</span> 
+</span><span class='label'><a id='x1-4008r7'></a><span class='pplr8t-x-x-60'>7</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>3</span></span><span style='color:#A31515'> <span class='pcrr8t-'>&gt; 2\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4009r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4010r9'></a><span class='pplr8t-x-x-60'>9</span></span> 
+<span class='label'><a id='x1-4011r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>if</span></span><span style='color:#000000'> <span class='pcrr8t-'>(1 &gt; 2 || 3 &gt; 2) {</span> 
+</span><span class='label'><a id='x1-4012r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>1</span></span><span style='color:#A31515'> <span class='pcrr8t-'>&gt; 2 or 3 &gt; 2\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4013r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4014r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>if</span></span><span style='color:#000000'> <span class='pcrr8t-'>(1 &lt; 2 &amp;&amp; 3 &gt; 2) {</span> 
+</span><span class='label'><a id='x1-4015r14'></a><span class='pplr8t-x-x-60'>14</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>1</span></span><span style='color:#A31515'> <span class='pcrr8t-'>&lt; 2 and 3 &gt; 2\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4016r15'></a><span class='pplr8t-x-x-60'>15</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4017r16'></a><span class='pplr8t-x-x-60'>16</span></span> 
+<span class='label'><a id='x1-4018r17'></a><span class='pplr8t-x-x-60'>17</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-4019r18'></a><span class='pplr8t-x-x-60'>18</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-14'>
-  <div class='tcolorbox-title'>
-    <!-- l. 302 -->
-
-    <p class='noindent'>Output&nbsp;1.1.13</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 297 -->
-    <pre class='lstlisting' id='listing-14'>
-<span class='label'><a id='x1-4022r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>3</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&gt; 2</span> 
-</span><span class='label'><a id='x1-4023r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>1</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&gt; 2 or 3 &gt; 2</span> 
-</span><span class='label'><a id='x1-4024r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>1</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>&lt; 2 and 3 &gt; 2</span></span>
-</pre>
-  </div>
-</div><!-- l. 304 -->
-
-<p class='noindent'>Similarly, we could also use switch
-statements.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-15'>
-  <a id='x1-4050x1.1.2'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 333 -->
-
-    <p class='noindent'>Code&nbsp;1.1.14:&nbsp;26clcwy-08</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 307 -->
-    <pre class='lstlisting' id='listing-15'>
-<span class='label'><a id='x1-4026r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-4027r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-4028r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-4029r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>choice;</span> 
-</span><span class='label'><a id='x1-4030r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>choice (1-3): "</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4031r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>%</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>d</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>&amp;choice);</span> 
-</span><span class='label'><a id='x1-4032r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span> 
-<span class='label'><a id='x1-4033r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>switch</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>(choice) {</span> 
-</span><span class='label'><a id='x1-4034r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#004099'><span class=
-'pcrb8t-'>case</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>1:</span> 
-</span><span class='label'><a id='x1-4035r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>choice is 1\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4036r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#004099'><span class=
-'pcrb8t-'>break</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4037r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#004099'><span class=
-'pcrb8t-'>case</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>2:</span> 
-</span><span class='label'><a id='x1-4038r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>choice is 2\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4039r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#004099'><span class=
-'pcrb8t-'>break</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4040r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#004099'><span class=
-'pcrb8t-'>case</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>3:</span> 
-</span><span class='label'><a id='x1-4041r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>choice is 3\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4042r17'></a><span class=
-'pplr8t-x-x-60'>17</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#004099'><span class=
-'pcrb8t-'>break</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4043r18'></a><span class=
-'pplr8t-x-x-60'>18</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#004099'><span class=
-'pcrb8t-'>default</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>:</span></span> 
-<span class='label'><a id='x1-4044r19'></a><span class=
-'pplr8t-x-x-60'>19</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class=
-'pcrr8t-'>Invalid</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>Option\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4045r20'></a><span class=
-'pplr8t-x-x-60'>20</span></span><span class=
-'pcrr8t-'>            </span><span style='color:#004099'><span class=
-'pcrb8t-'>break</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4046r21'></a><span class=
-'pplr8t-x-x-60'>21</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4047r22'></a><span class=
-'pplr8t-x-x-60'>22</span></span> 
-<span class='label'><a id='x1-4048r23'></a><span class=
-'pplr8t-x-x-60'>23</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-4049r24'></a><span class=
-'pplr8t-x-x-60'>24</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 302 -->
+<p class='noindent'>Output&nbsp;1.1.13</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 297 -->
+<pre class='lstlisting' id='listing-14'>
+<span class='label'><a id='x1-4022r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>3</span></span><span style='color:#000000'> <span class='pcrr8t-'>&gt; 2</span> 
+</span><span class='label'><a id='x1-4023r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>1</span></span><span style='color:#000000'> <span class='pcrr8t-'>&gt; 2 or 3 &gt; 2</span> 
+</span><span class='label'><a id='x1-4024r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>1</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt; 2 and 3 &gt; 2</span></span>
+</pre></div>
+</div>
+<!-- l. 304 -->
+<p class='noindent'>Similarly, we could also use switch statements.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-15'><a id='x1-4050x1.1.2'></a>
+<div class='tcolorbox-title'><!-- l. 333 -->
+<p class='noindent'>Code&nbsp;1.1.14:&nbsp;26clcwy-08</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 307 -->
+<pre class='lstlisting' id='listing-15'>
+<span class='label'><a id='x1-4026r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-4027r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-4028r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-4029r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>choice;</span> 
+</span><span class='label'><a id='x1-4030r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>choice (1-3): "</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4031r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>d</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>&amp;choice);</span> 
+</span><span class='label'><a id='x1-4032r7'></a><span class='pplr8t-x-x-60'>7</span></span> 
+<span class='label'><a id='x1-4033r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>switch</span></span><span style='color:#000000'> <span class='pcrr8t-'>(choice) {</span> 
+</span><span class='label'><a id='x1-4034r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>        </span><span style='color:#004099'><span class='pcrb8t-'>case</span></span><span style='color:#000000'> <span class='pcrr8t-'>1:</span> 
+</span><span class='label'><a id='x1-4035r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>            </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>choice is 1\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4036r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>            </span><span style='color:#004099'><span class='pcrb8t-'>break</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4037r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>        </span><span style='color:#004099'><span class='pcrb8t-'>case</span></span><span style='color:#000000'> <span class='pcrr8t-'>2:</span> 
+</span><span class='label'><a id='x1-4038r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>            </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>choice is 2\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4039r14'></a><span class='pplr8t-x-x-60'>14</span></span><span class='pcrr8t-'>            </span><span style='color:#004099'><span class='pcrb8t-'>break</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4040r15'></a><span class='pplr8t-x-x-60'>15</span></span><span class='pcrr8t-'>        </span><span style='color:#004099'><span class='pcrb8t-'>case</span></span><span style='color:#000000'> <span class='pcrr8t-'>3:</span> 
+</span><span class='label'><a id='x1-4041r16'></a><span class='pplr8t-x-x-60'>16</span></span><span class='pcrr8t-'>            </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>choice is 3\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4042r17'></a><span class='pplr8t-x-x-60'>17</span></span><span class='pcrr8t-'>            </span><span style='color:#004099'><span class='pcrb8t-'>break</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4043r18'></a><span class='pplr8t-x-x-60'>18</span></span><span class='pcrr8t-'>        </span><span style='color:#004099'><span class='pcrb8t-'>default</span></span><span style='color:#000000'><span class='pcrr8t-'>:</span></span> 
+<span class='label'><a id='x1-4044r19'></a><span class='pplr8t-x-x-60'>19</span></span><span class='pcrr8t-'>            </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Invalid</span></span><span style='color:#A31515'> <span class='pcrr8t-'>Option\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4045r20'></a><span class='pplr8t-x-x-60'>20</span></span><span class='pcrr8t-'>            </span><span style='color:#004099'><span class='pcrb8t-'>break</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4046r21'></a><span class='pplr8t-x-x-60'>21</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4047r22'></a><span class='pplr8t-x-x-60'>22</span></span> 
+<span class='label'><a id='x1-4048r23'></a><span class='pplr8t-x-x-60'>23</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-4049r24'></a><span class='pplr8t-x-x-60'>24</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-16'>
-  <div class='tcolorbox-title'>
-    <!-- l. 345 -->
-
-    <p class='noindent'>Output&nbsp;1.1.15</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 335 -->
-    <pre class='lstlisting' id='listing-16'>
-<span class='label'><a id='x1-4052r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>clang -Wall program.c -o program</span> 
-</span><span class='label'><a id='x1-4053r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>./program</span> 
-</span><span class='label'><a id='x1-4054r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>choice (1-3): 2</span> 
-</span><span class='label'><a id='x1-4055r4'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>choice is 2</span> 
-</span><span class='label'><a id='x1-4056r5'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>clang -Wall program.c -o program</span> 
-</span><span class='label'><a id='x1-4057r6'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>./program</span> 
-</span><span class='label'><a id='x1-4058r7'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>choice (1-3): 4</span> 
-</span><span class='label'><a id='x1-4059r8'></a></span><span style=
-'color:#000000'><span class=
-'pcrr8t-'>Invalid</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>Option</span></span>
-</pre>
-  </div>
-</div><!-- l. 347 -->
-
-<p class='noindent'>Continuing, we also have the same syntax for for,
-while, and do-while loops.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-17'>
-  <a id='x1-4084x1.1.2'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 376 -->
-
-    <p class='noindent'>Code&nbsp;1.1.16:&nbsp;26clcwy-09</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 351 -->
-    <pre class='lstlisting' id='listing-17'>
-<span class='label'><a id='x1-4061r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-4062r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-4063r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-4064r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>for</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>(</span></span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>i = 0; i &lt; 5; i++) {</span> 
-</span><span class='label'><a id='x1-4065r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>d</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>i);</span> 
-</span><span class='label'><a id='x1-4066r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4067r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>\</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>n</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4068r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span> 
-<span class='label'><a id='x1-4069r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>int</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>ctr = 0;</span> 
-</span><span class='label'><a id='x1-4070r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>while</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>(ctr &lt; 5) {</span> 
-</span><span class='label'><a id='x1-4071r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>d</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>ctr);</span> 
-</span><span class='label'><a id='x1-4072r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>ctr</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>++;</span></span> 
-<span class='label'><a id='x1-4073r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-4074r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>\</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>n</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4075r15'></a><span class=
-'pplr8t-x-x-60'>15</span></span> 
-<span class='label'><a id='x1-4076r16'></a><span class=
-'pplr8t-x-x-60'>16</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>do</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>{</span> 
-</span><span class='label'><a id='x1-4077r17'></a><span class=
-'pplr8t-x-x-60'>17</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>%</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>d</span></span><span style=
-'color:#A31515'> <span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>ctr);</span> 
-</span><span class='label'><a id='x1-4078r18'></a><span class=
-'pplr8t-x-x-60'>18</span></span><span class=
-'pcrr8t-'>        </span><span style='color:#000000'><span class=
-'pcrr8t-'>ctr</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>++;</span></span> 
-<span class='label'><a id='x1-4079r19'></a><span class=
-'pplr8t-x-x-60'>19</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>}</span></span><span style=
-'color:#000000'> </span><span style='color:#004099'><span class=
-'pcrb8t-'>while</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>(ctr &lt; 0);</span> 
-</span><span class='label'><a id='x1-4080r20'></a><span class=
-'pplr8t-x-x-60'>20</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>\</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>n</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-4081r21'></a><span class=
-'pplr8t-x-x-60'>21</span></span> 
-<span class='label'><a id='x1-4082r22'></a><span class=
-'pplr8t-x-x-60'>22</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-4083r23'></a><span class=
-'pplr8t-x-x-60'>23</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 345 -->
+<p class='noindent'>Output&nbsp;1.1.15</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 335 -->
+<pre class='lstlisting' id='listing-16'>
+<span class='label'><a id='x1-4052r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>clang -Wall program.c -o program</span> 
+</span><span class='label'><a id='x1-4053r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>./program</span> 
+</span><span class='label'><a id='x1-4054r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Your</span></span><span style='color:#000000'> <span class='pcrr8t-'>choice (1-3): 2</span> 
+</span><span class='label'><a id='x1-4055r4'></a></span><span style='color:#000000'><span class='pcrr8t-'>Your</span></span><span style='color:#000000'> <span class='pcrr8t-'>choice is 2</span> 
+</span><span class='label'><a id='x1-4056r5'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>clang -Wall program.c -o program</span> 
+</span><span class='label'><a id='x1-4057r6'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>./program</span> 
+</span><span class='label'><a id='x1-4058r7'></a></span><span style='color:#000000'><span class='pcrr8t-'>Your</span></span><span style='color:#000000'> <span class='pcrr8t-'>choice (1-3): 4</span> 
+</span><span class='label'><a id='x1-4059r8'></a></span><span style='color:#000000'><span class='pcrr8t-'>Invalid</span></span><span style='color:#000000'> <span class='pcrr8t-'>Option</span></span>
+</pre></div>
+</div>
+<!-- l. 347 -->
+<p class='noindent'>Continuing, we also have the same syntax for for, while, and do-while loops.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-17'><a id='x1-4084x1.1.2'></a>
+<div class='tcolorbox-title'><!-- l. 376 -->
+<p class='noindent'>Code&nbsp;1.1.16:&nbsp;26clcwy-09</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 351 -->
+<pre class='lstlisting' id='listing-17'>
+<span class='label'><a id='x1-4061r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-4062r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-4063r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-4064r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>for</span></span><span style='color:#000000'> <span class='pcrr8t-'>(</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>i = 0; i &lt; 5; i++) {</span> 
+</span><span class='label'><a id='x1-4065r5'></a><span class='pplr8t-x-x-60'>5</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>d</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>i);</span> 
+</span><span class='label'><a id='x1-4066r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4067r7'></a><span class='pplr8t-x-x-60'>7</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>\</span></span><span style='color:#A31515'><span class='pcrr8t-'>n</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4068r8'></a><span class='pplr8t-x-x-60'>8</span></span> 
+<span class='label'><a id='x1-4069r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>ctr = 0;</span> 
+</span><span class='label'><a id='x1-4070r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>while</span></span><span style='color:#000000'> <span class='pcrr8t-'>(ctr &lt; 5) {</span> 
+</span><span class='label'><a id='x1-4071r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>d</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>ctr);</span> 
+</span><span class='label'><a id='x1-4072r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>ctr</span></span><span style='color:#000000'><span class='pcrr8t-'>++;</span></span> 
+<span class='label'><a id='x1-4073r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-4074r14'></a><span class='pplr8t-x-x-60'>14</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>\</span></span><span style='color:#A31515'><span class='pcrr8t-'>n</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4075r15'></a><span class='pplr8t-x-x-60'>15</span></span> 
+<span class='label'><a id='x1-4076r16'></a><span class='pplr8t-x-x-60'>16</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>do</span></span><span style='color:#000000'> <span class='pcrr8t-'>{</span> 
+</span><span class='label'><a id='x1-4077r17'></a><span class='pplr8t-x-x-60'>17</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>d</span></span><span style='color:#A31515'> <span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>ctr);</span> 
+</span><span class='label'><a id='x1-4078r18'></a><span class='pplr8t-x-x-60'>18</span></span><span class='pcrr8t-'>        </span><span style='color:#000000'><span class='pcrr8t-'>ctr</span></span><span style='color:#000000'><span class='pcrr8t-'>++;</span></span> 
+<span class='label'><a id='x1-4079r19'></a><span class='pplr8t-x-x-60'>19</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>}</span></span><span style='color:#000000'> </span><span style='color:#004099'><span class='pcrb8t-'>while</span></span><span style='color:#000000'> <span class='pcrr8t-'>(ctr &lt; 0);</span> 
+</span><span class='label'><a id='x1-4080r20'></a><span class='pplr8t-x-x-60'>20</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>\</span></span><span style='color:#A31515'><span class='pcrr8t-'>n</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-4081r21'></a><span class='pplr8t-x-x-60'>21</span></span> 
+<span class='label'><a id='x1-4082r22'></a><span class='pplr8t-x-x-60'>22</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-4083r23'></a><span class='pplr8t-x-x-60'>23</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-18'>
-  <div class='tcolorbox-title'>
-    <!-- l. 383 -->
-
-    <p class='noindent'>Output&nbsp;1.1.17</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 378 -->
-    <pre class='lstlisting' id='listing-18'>
-<span class='label'><a id='x1-4086r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>0</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>1 2 3 4</span> 
-</span><span class='label'><a id='x1-4087r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>0</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>1 2 3 4</span> 
-</span><span class='label'><a id='x1-4088r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>5</span></span>
-</pre>
-  </div>
-</div><!-- l. 385 -->
-
-<p class='noindent'>Now before wrapping up this section, let’s
-discuss about functions.</p>
-
-<h4 class='subsectionHead' id='functions'><span class=
-'titlemark'>1.1.3</span> <a id='x1-50001.1.3'></a>Functions</h4>
+<div class='tcolorbox-title'><!-- l. 383 -->
+<p class='noindent'>Output&nbsp;1.1.17</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 378 -->
+<pre class='lstlisting' id='listing-18'>
+<span class='label'><a id='x1-4086r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>0</span></span><span style='color:#000000'> <span class='pcrr8t-'>1 2 3 4</span> 
+</span><span class='label'><a id='x1-4087r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>0</span></span><span style='color:#000000'> <span class='pcrr8t-'>1 2 3 4</span> 
+</span><span class='label'><a id='x1-4088r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>5</span></span>
+</pre></div>
+</div>
+<!-- l. 385 -->
+<p class='noindent'>Now before wrapping up this section, let’s discuss about functions.</p>
+<h4 class='subsectionHead' id='functions'><span class='titlemark'>1.1.3</span> <a id='x1-50001.1.3'></a>Functions</h4>
 <!-- l. 389 -->
-
-<p class='noindent'>Functions in C works like many other languages.
-Here is an example of a hello user function.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-19'>
-  <a id='x1-5016x1.1.3'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 409 -->
-
-    <p class='noindent'>Code&nbsp;1.1.18:&nbsp;26clcwy-10</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 393 -->
-    <pre class='lstlisting' id='listing-19'>
-<span class='label'><a id='x1-5002r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-5003r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-5004r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>void</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>helloUser(</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>char</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>name[]) {</span> 
-</span><span class='label'><a id='x1-5005r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Hello</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>%s\n"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name);</span> 
-</span><span class='label'><a id='x1-5006r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-5007r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span> 
-<span class='label'><a id='x1-5008r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main() {</span> 
-</span><span class='label'><a id='x1-5009r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>char</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name[20];</span> 
-</span><span class='label'><a id='x1-5010r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>name: "</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-5011r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>scanf</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>(</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>%</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>s</span></span><span style='color:#A31515'><span class=
-'pcrr8t-'>"</span></span><span style='color:#000000'><span class=
-'pcrr8t-'>,</span></span><span style='color:#000000'> <span class=
-'pcrr8t-'>name);</span> 
-</span><span class='label'><a id='x1-5012r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>helloUser</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>name</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>)</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>;</span></span> 
-<span class='label'><a id='x1-5013r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span> 
-<span class='label'><a id='x1-5014r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-5015r14'></a><span class=
-'pplr8t-x-x-60'>14</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<p class='noindent'>Functions in C works like many other languages. Here is an example of a hello user function.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-19'><a id='x1-5016x1.1.3'></a>
+<div class='tcolorbox-title'><!-- l. 409 -->
+<p class='noindent'>Code&nbsp;1.1.18:&nbsp;26clcwy-10</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 393 -->
+<pre class='lstlisting' id='listing-19'>
+<span class='label'><a id='x1-5002r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-5003r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-5004r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>void</span></span><span style='color:#000000'> <span class='pcrr8t-'>helloUser(</span></span><span style='color:#004099'><span class='pcrb8t-'>char</span></span><span style='color:#000000'> <span class='pcrr8t-'>name[]) {</span> 
+</span><span class='label'><a id='x1-5005r4'></a><span class='pplr8t-x-x-60'>4</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Hello</span></span><span style='color:#A31515'> <span class='pcrr8t-'>%s\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name);</span> 
+</span><span class='label'><a id='x1-5006r5'></a><span class='pplr8t-x-x-60'>5</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-5007r6'></a><span class='pplr8t-x-x-60'>6</span></span> 
+<span class='label'><a id='x1-5008r7'></a><span class='pplr8t-x-x-60'>7</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main() {</span> 
+</span><span class='label'><a id='x1-5009r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>char</span></span><span style='color:#000000'> <span class='pcrr8t-'>name[20];</span> 
+</span><span class='label'><a id='x1-5010r9'></a><span class='pplr8t-x-x-60'>9</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>Your</span></span><span style='color:#A31515'> <span class='pcrr8t-'>name: "</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-5011r10'></a><span class='pplr8t-x-x-60'>10</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>scanf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>%</span></span><span style='color:#A31515'><span class='pcrr8t-'>s</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>name);</span> 
+</span><span class='label'><a id='x1-5012r11'></a><span class='pplr8t-x-x-60'>11</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>helloUser</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#000000'><span class='pcrr8t-'>name</span></span><span style='color:#000000'><span class='pcrr8t-'>)</span></span><span style='color:#000000'><span class='pcrr8t-'>;</span></span> 
+<span class='label'><a id='x1-5013r12'></a><span class='pplr8t-x-x-60'>12</span></span> 
+<span class='label'><a id='x1-5014r13'></a><span class='pplr8t-x-x-60'>13</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-5015r14'></a><span class='pplr8t-x-x-60'>14</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-20'>
-  <div class='tcolorbox-title'>
-    <!-- l. 417 -->
-
-    <p class='noindent'>Output&nbsp;1.1.19</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 411 -->
-    <pre class='lstlisting' id='listing-20'>
-<span class='label'><a id='x1-5018r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>clang -Wall program.c -o program</span> 
-</span><span class='label'><a id='x1-5019r2'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>$</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>./program</span> 
-</span><span class='label'><a id='x1-5020r3'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Your</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>name: Enoch</span> 
-</span><span class='label'><a id='x1-5021r4'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>Hello</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>Enoch</span></span>
-</pre>
-  </div>
-</div><!-- l. 419 -->
-
-<p class='noindent'>When we want our main function to be on the very
-top, then we need something called prototype. Function prototypes and
-declaration are used interchangeably with slight difference in
-nuance. As shown below, we need to basically tell the compiler that
-the function that we will be using in the main function exists, so
-that it doesn’t complain about it.</p>
-
-<div class='tcolorbox cppboxstyle' id='tcolobox-21'>
-  <a id='x1-5036x1.1.3'></a>
-
-  <div class='tcolorbox-title'>
-    <!-- l. 442 -->
-
-    <p class='noindent'>Code&nbsp;1.1.20:&nbsp;26clcwy-11</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 427 -->
-    <pre class='lstlisting' id='listing-21'>
-<span class='label'><a id='x1-5023r1'></a><span class=
-'pplr8t-x-x-60'>1</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>#</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>include</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
-</span><span class='label'><a id='x1-5024r2'></a><span class=
-'pplr8t-x-x-60'>2</span></span> 
-<span class='label'><a id='x1-5025r3'></a><span class=
-'pplr8t-x-x-60'>3</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>square(</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>num);</span> 
-</span><span class='label'><a id='x1-5026r4'></a><span class=
-'pplr8t-x-x-60'>4</span></span> 
-<span class='label'><a id='x1-5027r5'></a><span class=
-'pplr8t-x-x-60'>5</span></span><span style=
-'color:#004099'><span class='pcrb8t-'>int</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>main () {</span> 
-</span><span class='label'><a id='x1-5028r6'></a><span class=
-'pplr8t-x-x-60'>6</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#000000'><span class=
-'pcrr8t-'>printf</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>(</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>"</span></span><span style=
-'color:#A31515'><span class='pcrr8t-'>1.4^2</span></span><span style=
-'color:#A31515'> <span class=
-'pcrr8t-'>is equal to %f\n"</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>,</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>square(1.4));</span> 
-</span><span class='label'><a id='x1-5029r7'></a><span class=
-'pplr8t-x-x-60'>7</span></span> 
-<span class='label'><a id='x1-5030r8'></a><span class=
-'pplr8t-x-x-60'>8</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>0;</span> 
-</span><span class='label'><a id='x1-5031r9'></a><span class=
-'pplr8t-x-x-60'>9</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span> 
-<span class='label'><a id='x1-5032r10'></a><span class=
-'pplr8t-x-x-60'>10</span></span> 
-<span class='label'><a id='x1-5033r11'></a><span class=
-'pplr8t-x-x-60'>11</span></span><span style=
-'color:#004099'><span class=
-'pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>square(</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>num) {</span> 
-</span><span class='label'><a id='x1-5034r12'></a><span class=
-'pplr8t-x-x-60'>12</span></span><span class=
-'pcrr8t-'>    </span><span style='color:#004099'><span class=
-'pcrb8t-'>return</span></span><span style=
-'color:#000000'> <span class='pcrr8t-'>num * num;</span> 
-</span><span class='label'><a id='x1-5035r13'></a><span class=
-'pplr8t-x-x-60'>13</span></span><span style=
-'color:#000000'><span class='pcrr8t-'>}</span></span>
-</pre>
-  </div>
+<div class='tcolorbox-title'><!-- l. 417 -->
+<p class='noindent'>Output&nbsp;1.1.19</p>
 </div>
-
+<div class='tcolorbox-content'><!-- l. 411 -->
+<pre class='lstlisting' id='listing-20'>
+<span class='label'><a id='x1-5018r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>clang -Wall program.c -o program</span> 
+</span><span class='label'><a id='x1-5019r2'></a></span><span style='color:#000000'><span class='pcrr8t-'>$</span></span><span style='color:#000000'> <span class='pcrr8t-'>./program</span> 
+</span><span class='label'><a id='x1-5020r3'></a></span><span style='color:#000000'><span class='pcrr8t-'>Your</span></span><span style='color:#000000'> <span class='pcrr8t-'>name: Enoch</span> 
+</span><span class='label'><a id='x1-5021r4'></a></span><span style='color:#000000'><span class='pcrr8t-'>Hello</span></span><span style='color:#000000'> <span class='pcrr8t-'>Enoch</span></span>
+</pre></div>
+</div>
+<!-- l. 419 -->
+<p class='noindent'>When we want our main function to be on the very top, then we need something called prototype. Function prototypes and declaration are used interchangeably with slight difference in nuance. As shown below, we need to basically tell the compiler that the function that we will be using in the main function exists, so that it doesn’t complain about it.</p>
+<div class='tcolorbox cppboxstyle' id='tcolobox-21'><a id='x1-5036x1.1.3'></a>
+<div class='tcolorbox-title'><!-- l. 442 -->
+<p class='noindent'>Code&nbsp;1.1.20:&nbsp;26clcwy-11</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 427 -->
+<pre class='lstlisting' id='listing-21'>
+<span class='label'><a id='x1-5023r1'></a><span class='pplr8t-x-x-60'>1</span></span><span style='color:#004099'><span class='pcrb8t-'>#</span></span><span style='color:#004099'><span class='pcrb8t-'>include</span></span><span style='color:#000000'> <span class='pcrr8t-'>&lt;stdio.h&gt;</span> 
+</span><span class='label'><a id='x1-5024r2'></a><span class='pplr8t-x-x-60'>2</span></span> 
+<span class='label'><a id='x1-5025r3'></a><span class='pplr8t-x-x-60'>3</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>square(</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>num);</span> 
+</span><span class='label'><a id='x1-5026r4'></a><span class='pplr8t-x-x-60'>4</span></span> 
+<span class='label'><a id='x1-5027r5'></a><span class='pplr8t-x-x-60'>5</span></span><span style='color:#004099'><span class='pcrb8t-'>int</span></span><span style='color:#000000'> <span class='pcrr8t-'>main () {</span> 
+</span><span class='label'><a id='x1-5028r6'></a><span class='pplr8t-x-x-60'>6</span></span><span class='pcrr8t-'>    </span><span style='color:#000000'><span class='pcrr8t-'>printf</span></span><span style='color:#000000'><span class='pcrr8t-'>(</span></span><span style='color:#A31515'><span class='pcrr8t-'>"</span></span><span style='color:#A31515'><span class='pcrr8t-'>1.4^2</span></span><span style='color:#A31515'> <span class='pcrr8t-'>is equal to %f\n"</span></span><span style='color:#000000'><span class='pcrr8t-'>,</span></span><span style='color:#000000'> <span class='pcrr8t-'>square(1.4));</span> 
+</span><span class='label'><a id='x1-5029r7'></a><span class='pplr8t-x-x-60'>7</span></span> 
+<span class='label'><a id='x1-5030r8'></a><span class='pplr8t-x-x-60'>8</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>0;</span> 
+</span><span class='label'><a id='x1-5031r9'></a><span class='pplr8t-x-x-60'>9</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span> 
+<span class='label'><a id='x1-5032r10'></a><span class='pplr8t-x-x-60'>10</span></span> 
+<span class='label'><a id='x1-5033r11'></a><span class='pplr8t-x-x-60'>11</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>square(</span></span><span style='color:#004099'><span class='pcrb8t-'>double</span></span><span style='color:#000000'> <span class='pcrr8t-'>num) {</span> 
+</span><span class='label'><a id='x1-5034r12'></a><span class='pplr8t-x-x-60'>12</span></span><span class='pcrr8t-'>    </span><span style='color:#004099'><span class='pcrb8t-'>return</span></span><span style='color:#000000'> <span class='pcrr8t-'>num * num;</span> 
+</span><span class='label'><a id='x1-5035r13'></a><span class='pplr8t-x-x-60'>13</span></span><span style='color:#000000'><span class='pcrr8t-'>}</span></span>
+</pre></div>
+</div>
 <div class='tcolorbox outputboxstyle' id='tcolobox-22'>
-  <div class='tcolorbox-title'>
-    <!-- l. 447 -->
+<div class='tcolorbox-title'><!-- l. 447 -->
+<p class='noindent'>Output&nbsp;1.1.21</p>
+</div>
+<div class='tcolorbox-content'><!-- l. 444 -->
+<pre class='lstlisting' id='listing-22'>
+<span class='label'><a id='x1-5038r1'></a></span><span style='color:#000000'><span class='pcrr8t-'>1.4^2</span></span><span style='color:#000000'> <span class='pcrr8t-'>is equal to 1.960000</span></span>
+</pre></div>
+</div>
+<!-- l. 449 -->
+<p class='noindent'>This is it for this section! In the next section, we will discuss more about pointers and we mentioned briefly here.</p>
 
-    <p class='noindent'>Output&nbsp;1.1.21</p>
-  </div>
-
-  <div class='tcolorbox-content'>
-    <!-- l. 444 -->
-    <pre class='lstlisting' id='listing-22'>
-<span class='label'><a id='x1-5038r1'></a></span><span style=
-'color:#000000'><span class='pcrr8t-'>1.4^2</span></span><span style=
-'color:#000000'> <span class=
-'pcrr8t-'>is equal to 1.960000</span></span>
-</pre>
-  </div>
-</div><!-- l. 449 -->
-
-<p class='noindent'>This is it for this section! In the next section,
-we will discuss more about pointers and we mentioned briefly
-here.</p>
