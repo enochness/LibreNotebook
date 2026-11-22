@@ -4,8 +4,37 @@
 
 \chapter{Directional Derivatives and Gradients}
 
+So far, we discussed about different ways to represent a
+multivariable function and their partial derivatives. Though they
+are very important, many of the application of multivariable
+calculus rises from gradients. Physics and machine learning are two
+fields that actively uses it! In this note, we will discuss about
+directional derivatives and gradients.
 
 \section{Directional Derivatives}
+
+Before we get too excited with directional derivatives and gradients,
+let's first expand our knowledge that we discussed earlier.
+Interpreting derivatives of a single variable function geometrically,
+we can think of it as the slope of the line tangent to the graph
+at the point. In other words, geometrically thinking, there exists
+a tangent line at that point if the point is differentiable.
+
+We kinda discussed this earlier as well, but let's extend that
+intuition for functions of two variables. For functions of two
+variables, there are many curves on the graph that passes through the
+point. In other words, if the function is differentiable at a given
+point, there should be lines tangents to all the curves on the graph.
+This is simply the tangent plane of the curve at the point.
+Now with this intuition, let's define what a tangent plane is.
+This will be important to understand directional derivatives!
+
+\begin{definition}{}{}
+Let $S$ be a surface that is differentiable at $(x_0, y_0, z_0)$.
+The \textbf{tangent plane} $H$ to $S$ at $(x_0, y_0, z_0)$ is the
+plane that contains $(x_0, y_0, z_0)$ and all the lines tangent
+to any smooth curve on $S$ that also passes through $(x_0, y_0, z_0)$.
+\end{definition}
 
 
 
