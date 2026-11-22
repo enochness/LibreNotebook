@@ -1,6 +1,10 @@
  
 /* start css.sty */
 .pplr8t-x-x-109{}
+.pcrr8t-x-x-109{ font-family: 'Nimbus Mono L', monospace,monospace;}
+.pplri8t-x-x-109{font-style: italic;}
+.pplrc8t-x-x-109{}
+.small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
