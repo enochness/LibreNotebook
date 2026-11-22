@@ -44,6 +44,7 @@ kkkkk
 026. tcq
 027. sbm
 028. rvq
+029. qym
 
 -----sections-----
 001. cgbbs
@@ -137,5 +138,6 @@ kkkkk
 089. clcwy
 090. dmfzf
 091. sbpfz
+092. fnfyb
 
 ENDIDS
