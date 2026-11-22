@@ -1,5 +1,47 @@
 [
   {
+    "hash": "5d38a544568f1b68da50a43a7494519721e82396",
+    "commit": "5d38a54",
+    "date": "2026-11-21",
+    "author": "Enoch Yu",
+    "message": "fix: Broken links"
+  },
+  {
+    "hash": "bdf14a04a3ae80b48433c23ed46c1c5a194955cc",
+    "commit": "bdf14a0",
+    "date": "2026-11-20",
+    "author": "Enoch Yu",
+    "message": "feat(MATH03): Chain Rule"
+  },
+  {
+    "hash": "0ab6a7b9c6aa8862e47ab4ce9c85f10c1c3e9e42",
+    "commit": "0ab6a7b",
+    "date": "2026-11-19",
+    "author": "Enoch Yu",
+    "message": "feat(CS03): Foundations and Pointers"
+  },
+  {
+    "hash": "dd597d2f804bc5cfef680a9bb23b1274aa9fbe4e",
+    "commit": "dd597d2",
+    "date": "2026-11-18",
+    "author": "Enoch Yu",
+    "message": "feat(CS03): Hello World, Basic Data Types"
+  },
+  {
+    "hash": "1e7ecd90802ce88546deb1d6726901baae3ee915",
+    "commit": "1e7ecd9",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "Merge pull request #17 from enochness/web"
+  },
+  {
+    "hash": "15226bbc72436692f0feda7ce446a7925593cc63",
+    "commit": "15226bb",
+    "date": "2026-11-17",
+    "author": "Enoch Yu",
+    "message": "fix: unnecessary urls and css"
+  },
+  {
     "hash": "d4d7ca53ac6327ab9ab2041700cadeb3dbca92fe",
     "commit": "d4d7ca5",
     "date": "2026-11-17",

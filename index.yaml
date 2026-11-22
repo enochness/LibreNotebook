@@ -211,8 +211,14 @@ parts:
               title: "Multivariable Functions and Sets" }
           - { id: 26jrdsl, status: "===",
               title: "Limits and Continuity" }
-          - { id: 26ksgwr, status: "0.0",
+          - { id: 26ksgwr, status: "===",
               title: "Partial Derivatives" }
+
+      - id: qym
+        title: "Directional Derivatives and Gradients"
+        sections:
+          - { id: 26fnfyb, status: "0.0",
+              title: "Directional Derivatives" }
 
 
   - id: CS01
