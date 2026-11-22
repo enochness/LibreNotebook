@@ -23,7 +23,7 @@ Commit
   <a href="https://github.com/enochness/LibreNotebook/commit/{{ $var.hash }}">{{ $var.commit }}</a>
   {{- printf "  %-10s %-100s\n" $var.author $var.message -}}
 {{- end -}}
-<hr><span>&copy; {{ now.Year }} Enoch Yu. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span></pre>
+<hr><span>&copy; {{ now.Year }} {{ .Site.Params.author }}. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span></pre>
 </main>
 </body>
 </html>

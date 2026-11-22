@@ -12,7 +12,7 @@
 <p class='noindent'>Definition&nbsp;1.1.1</p>
 </div>
 <div class='tcolorbox-content'><!-- l. 19 -->
-<p class='noindent'>The <span class='pplb8t-x-x-109'>Time Complexity</span> of a program denotes the number of operations an algorithm executes [<a id='x1-2002'></a><a id='page.3'></a><a>Gee26</a>].</p>
+<p class='noindent'>The <span class='pplb8t-x-x-109'>Time Complexity</span> of a program denotes the number of operations an algorithm executes [<a id='x1-2002'></a><a href='/misc01/rvq/26dmfzf/#ref-CS02-5'>Gee26</a>].</p>
 </div>
 </div>
 <!-- l. 23 -->
@@ -20,7 +20,7 @@
 <!-- l. 28 -->
 <p class='noindent'>The approximate number of the operations for the worst-case is represented using the <span class='pplb8t-x-x-109'>big O notation</span>. The lower the complexity, the efficient the program is.</p>
 <!-- l. 32 -->
-<p class='noindent'>The six major complexities are Constant <span class='mathjax-inline'>\(\mathcal {O}(1)\)</span>, Linear <span class='mathjax-inline'>\(\mathcal {O}(n)\)</span>, Logarithmic <span class='mathjax-inline'>\(\mathcal {O}(n \log n)\)</span>, Quadratic <span class='mathjax-inline'>\(\mathcal {O}(n^2)\)</span>, Exponential <span class='mathjax-inline'>\(\mathcal {O}(2^n)\)</span>, and Factorial <span class='mathjax-inline'>\(\mathcal {O}(n!)\)</span> [<a id='x1-2003'></a><a>Ola22</a>]. We will evaluate the time complexities of algorithms as we walk through them, but here are some simple examples using input/output and loops.</p>
+<p class='noindent'>The six major complexities are Constant <span class='mathjax-inline'>\(\mathcal {O}(1)\)</span>, Linear <span class='mathjax-inline'>\(\mathcal {O}(n)\)</span>, Logarithmic <span class='mathjax-inline'>\(\mathcal {O}(n \log n)\)</span>, Quadratic <span class='mathjax-inline'>\(\mathcal {O}(n^2)\)</span>, Exponential <span class='mathjax-inline'>\(\mathcal {O}(2^n)\)</span>, and Factorial <span class='mathjax-inline'>\(\mathcal {O}(n!)\)</span> [<a id='x1-2003'></a><a href='/misc01/rvq/26dmfzf/#ref-CS02-8'>Ola22</a>]. We will evaluate the time complexities of algorithms as we walk through them, but here are some simple examples using input/output and loops.</p>
 <!-- l. 39 -->
 <p class='noindent'>A simple hello world example have constant time complexity since it only prints once. One the other hand, the following snippet</p>
 <div class='tcolorbox basicboxstyle' id='tcolobox-2'>
@@ -33,7 +33,7 @@
 </pre></div>
 </div>
 <!-- l. 50 -->
-<p class='noindent'>is <span class='mathjax-inline'>\(\mathcal {O}(n)\)</span> [<a id='x1-2007'></a><a id='page.4'></a><a>Laa19</a>]. When we start nesting them, it gets horrible. For instance, the following snippet is <span class='mathjax-inline'>\(\mathcal {O}(nm)\)</span>.</p>
+<p class='noindent'>is <span class='mathjax-inline'>\(\mathcal {O}(n)\)</span> [<a id='x1-2007'></a><a href='/misc01/rvq/26dmfzf/#ref-CS02-2'>Laa19</a>]. When we start nesting them, it gets horrible. For instance, the following snippet is <span class='mathjax-inline'>\(\mathcal {O}(nm)\)</span>.</p>
 <div class='tcolorbox basicboxstyle' id='tcolobox-3'>
 <div class='tcolorbox-title'></div>
 <div class='tcolorbox-content'><!-- l. 55 -->
@@ -64,11 +64,11 @@
 <!-- l. 80 -->
 <p class='noindent'>The snippet above is <span class='mathjax-inline'>\(\mathcal {O}(nn) = \mathcal {O}(n^2)\)</span>. Note that the time complexity is not linear since the big O is only interested in the worst case.</p>
 <!-- l. 84 -->
-<p class='noindent'>One more thing to note is the order of growth. Consider the graph below [<a id='x1-2021'></a><a>Ola22</a>].</p>
+<p class='noindent'>One more thing to note is the order of growth. Consider the graph below [<a id='x1-2021'></a><a href='/misc01/rvq/26dmfzf/#ref-CS02-8'>Ola22</a>].</p>
 <!-- l. 89 -->
 <p class='noindent'><img alt='[Picture]' src='/svg/26dmcvv0x.svg' /></p>
 <!-- l. 159 -->
-<p class='noindent'>From the graph above, we can see that some functions grow faster than the other. For instance, the constant time has the lowest growth rate since it is not growing at all. Next, we can see that <span class='mathjax-inline'>\(\log {n}\)</span> grows slower than <span class='mathjax-inline'>\(n\)</span>, which grows slower than <span class='mathjax-inline'>\(n \log {n}\)</span> [<a id='x1-2022'></a><a id='page.8'></a><a>Gee26</a>]. Generally speaking, anything below <span class='mathjax-inline'>\(\mathcal (n)\)</span> is good while we really want to avoid anything beyond the linear time.</p>
+<p class='noindent'>From the graph above, we can see that some functions grow faster than the other. For instance, the constant time has the lowest growth rate since it is not growing at all. Next, we can see that <span class='mathjax-inline'>\(\log {n}\)</span> grows slower than <span class='mathjax-inline'>\(n\)</span>, which grows slower than <span class='mathjax-inline'>\(n \log {n}\)</span> [<a id='x1-2022'></a><a href='/misc01/rvq/26dmfzf/#ref-CS02-5'>Gee26</a>]. Generally speaking, anything below <span class='mathjax-inline'>\(\mathcal (n)\)</span> is good while we really want to avoid anything beyond the linear time.</p>
 <!-- l. 167 -->
-<p class='noindent'>Now big O is important since it is used to compare two algorithms that perform the same task. With <span class='pplb8t-x-x-109'>asymptotic analysis</span>, we can evaluate and compare algorithms without the inconsistency of inputs and machines [<a>Gee26</a>]. This was a short introduction to computing time complexities and big O notation. In the next section, we will be discussing fundamental data structures.</p>
+<p class='noindent'>Now big O is important since it is used to compare two algorithms that perform the same task. With <span class='pplb8t-x-x-109'>asymptotic analysis</span>, we can evaluate and compare algorithms without the inconsistency of inputs and machines [<a href='/misc01/rvq/26dmfzf/#ref-CS02-5'>Gee26</a>]. This was a short introduction to computing time complexities and big O notation. In the next section, we will be discussing fundamental data structures.</p>
 
