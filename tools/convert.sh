@@ -1,7 +1,8 @@
 #!/bin/bash
 
-OUT_DIR="$HOME/projects/LibreNotebook/librenotebook.enochyu.com"
-TMP_DIR="$HOME/projects/LibreNotebook/temp"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+OUT_DIR="$ROOT/librenotebook.enochyu.com"
+TMP_DIR="$ROOT/temp"
 CONTENT="$OUT_DIR/content"
 CSS="$OUT_DIR/assets/css/make4ht"
 
@@ -10,12 +11,11 @@ name=$(basename "$1" .tex)
 nameLower=$(echo "$name" | tr 'A-Z' 'a-z')
 page=$(echo "${dir#tex/}" | tr 'A-Z' 'a-z')
 
-cd ~/projects/LibreNotebook/"$dir"
+cd "$ROOT/$dir"
 
 make4ht -u -B $TMP_DIR -f html5 "$name".tex "mathjax"
 if grep -qE '\\(no)?cite|\\printbibliography' "$name".tex; then
-  (cd "$HOME/projects/LibreNotebook" &&
-   biber --output-directory temp "$name")
+  (cd "$ROOT" && biber --output-directory temp "$name")
   make4ht -u -B "$TMP_DIR" -f html5 "$name".tex "mathjax"
 fi
 

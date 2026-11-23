@@ -1,0 +1,81 @@
+name: Deploy website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-website
+  cancel-in-progress: true
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - name: Install tools
+        run: apt-get update && apt-get install -y git tidy jq hugo g++
+
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Convert TeX to HTML
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          tools/build.sh
+
+      - name: Check no missing pages
+        run: |
+          missing=0
+          for tex in tex/preface.tex tex/*/*.tex tex/*/*/*.tex; do
+            page=$(echo "${tex#tex/}" | tr 'A-Z' 'a-z')
+            case "$page" in
+              */*/*) html="${page%.tex}.html" ;;
+              */*)   html="${page%%/*}.html"  ;;
+              *)     html="${page%.tex}.html" ;;
+            esac
+            if [ ! -s "librenotebook.enochyu.com/content/$html" ]; then
+              echo "ERROR: No page for $tex"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Build site
+        working-directory: librenotebook.enochyu.com
+        env:
+          HUGO_GH_TOKEN: ${{ github.token }}
+        run: hugo
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: librenotebook.enochyu.com/public
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: public
+
+      - uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public
+                     --project-name=librenotebook
+                     --branch=main
+

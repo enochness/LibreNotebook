@@ -1,12 +1,14 @@
 #!/bin/bash
 
-OUT_DIR="$HOME/projects/LibreNotebook/librenotebook.enochyu.com"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+OUT_DIR="$ROOT/librenotebook.enochyu.com"
+TMP_DIR="$ROOT/temp"
 CONTENT="$OUT_DIR/content"
 CSS="$OUT_DIR/assets/css/make4ht"
 
-cd ~/projects/LibreNotebook
+cd "$ROOT"
 rm -r "$CONTENT" "$CSS"
-mkdir "$CONTENT" "$CSS"
+mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/static/svg" "$OUT_DIR/static/img"
 
 # Preface
 make4ht -u -B temp -f html5 tex/preface.tex "mathjax"
@@ -17,7 +19,7 @@ mv temp/preface.css "$CSS"
 
 ls tex/*/*.tex tex/*/*/*.tex | xargs -P 8 -n 1 tools/convert.sh
 
-cd "$HOME/projects/LibreNotebook/"
+cd "$ROOT"
 mv temp/*.svg "$OUT_DIR"/static/svg/
 cp assets/img/* "$OUT_DIR"/static/img/
 rm -r temp/
