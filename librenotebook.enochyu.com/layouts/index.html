@@ -26,7 +26,10 @@
         <div id="index-meta">
           <h3><strong>Author:</strong> Enoch Yu</h3>
           <h3><strong>License:</strong> CC-BY-SA-4.0</h3>
-          <h3><strong>Version:</strong> v1.11.22</h3>
+          <h3><strong>Version:</strong>
+            {{ printf "v%d.%02d.%02d"
+              (sub (mod now.Year 100) 25) now.Month now.Day }}
+          </h3>
           <h3><strong>Last Updated:</strong> {{ now.Format "2 January 2006" }}
           (<a href="/changelog"><strong>Changelog</strong></a>)</h3>
         </div>

@@ -1,8 +1,7 @@
 #!/bin/bash
 
 cd ~/projects/LibreNotebook
-cp build/main.pdf LibreNotebook.pdf
-cp LibreNotebook.pdf \
+cp build/main.pdf \
   ~/projects/archive/website/static/LibreNotebook.pdf
 
 cd ~/projects/archive/website
