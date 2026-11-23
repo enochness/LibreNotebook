@@ -9,6 +9,8 @@ CSS="$OUT_DIR/assets/css/make4ht"
 cd "$ROOT"
 rm -r "$CONTENT" "$CSS"
 mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/static/svg" "$OUT_DIR/static/img"
+mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/data" "$OUT_DIR/static/svg" \
+  "$OUT_DIR/static/img"
 
 # Preface
 make4ht -u -B temp -f html5 tex/preface.tex "mathjax"
