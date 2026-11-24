@@ -217,8 +217,8 @@ parts:
       - id: qym
         title: "Directional Derivatives and Gradients"
         sections:
-          - { id: 26fnfyb, status: "0.0",
-              title: "Directional Derivatives" }
+          - { id: 26fnfyb, status: "===",
+              title: "Tangent Planes and Directional Derivatives" }
 
 
   - id: CS01

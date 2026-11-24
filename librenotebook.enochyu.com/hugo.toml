@@ -11,8 +11,7 @@ author = "Enoch Yu"
   [params.social]
     website = "https://enochyu.com/"
     youtube = "https://www.youtube.com/@enochness"
-    github = "https://github.com/enochness"
-    blog = "https://blog.enochyu.com/"
+    github = "https://github.com/enochness/LibreNotebook"
 
 [security]
   allowContent = ['^text/html$', '^text/markdown$']
