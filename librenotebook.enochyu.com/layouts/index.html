@@ -1,126 +1,131 @@
 {{ define "main" }}
 <section id="index">
-  <div id="index-profile">
-    <hr><hr>
-    <div id="index-title">
-      <h1>LibreNotebook</h1>
-      <h2>A Giant Open Source Notebook</h2>
+  <div id="index-main">
+    <div id="index-profile">
+      <hr><hr>
+      <div id="index-title">
+        <h1>LibreNotebook</h1>
+        <h2>A Giant Open Source Notebook</h2>
 
-      <div id="intropara">
-        <em>LibreNotebook</em> is a giant open source notebook that I
-        write as I explore different topics of my interest. I personally
-        learn the best when I explain the contents, so I naturally write
-        my notes as if I am explaining the topics to other people.
-        Although <em>LibreNotebook</em> reflects my fields of interest,
-        I strive to include thorough insights whenever possible.
-        <br><br>
-        Having said that, <em>LibreNotebook</em> is not meant to replace
-        textbooks nor dedicated resources. Rather, it is intended
-        to encourage and accelerate open education by returning
-        the knowledge and skills that I received from public resources.
-        For anyone interested in the topics outlined below, I hope
-        <em>LibreNotebook</em> serve as a useful resource.
-      </div>
-
-      <div id="index-meta-cover">
-        <div id="index-meta">
-          <h3><strong>Author:</strong> Enoch Yu</h3>
-          <h3><strong>License:</strong> CC-BY-SA-4.0</h3>
-          <h3><strong>Version:</strong>
-            {{ printf "v%d.%02d.%02d"
-              (sub (mod now.Year 100) 25) now.Month now.Day }}
-          </h3>
-          <h3><strong>Last Updated:</strong> {{ now.Format "2 January 2006" }}
-          (<a href="/changelog"><strong>Changelog</strong></a>)</h3>
+        <div id="intropara">
+          <em>LibreNotebook</em> is a giant open source notebook that I
+          write as I explore different topics of my interest. I personally
+          learn the best when I explain the contents, so I naturally write
+          my notes as if I am explaining the topics to other people.
+          Although <em>LibreNotebook</em> reflects my fields of interest,
+          I strive to include thorough insights whenever possible.
+          <br><br>
+          Having said that, <em>LibreNotebook</em> is not meant to replace
+          textbooks nor dedicated resources. Rather, it is intended
+          to encourage and accelerate open education by returning
+          the knowledge and skills that I received from public resources.
+          For anyone interested in the topics outlined below, I hope
+          <em>LibreNotebook</em> serve as a useful resource.
         </div>
-        <img src="/cover.png" alt="LibreNotebook Cover" id="index-cover">
-      </div>
-    </div>
-    <hr style="margin-bottom: 0;">
 
-    <div class="index-stat">
-      <div>
-        <div class="index-stat-num" id="view-count">...</div>
-        <div>Visits</div>
-      </div>
-      <div>
-        {{ with partialCached "githubstars.html" . }}
-        <div class="index-stat-num">{{ .stargazers_count }}</div>
-        <div>GitHub Stars</div>
-        {{ end }}
-      </div>
-      <div>
-        {{ with .Site.Params.social.github }}
-        <a href="{{ . }}" target="_blank" rel="noopener"
-           aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        {{ end }}
-      </div>
-      <div>
-        {{ with .Site.Params.social.youtube }}
-        <a href="{{ . }}" target="_blank" rel="noopener"
-           aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        {{ end }}
-      </div>
-      {{ $parts := hugo.Data.index.parts }}
-      {{ $sections := 0 }}
-      {{ $chapters := 0 }}
-      {{ range $parts }}
-        {{ $chapters = add $chapters (len .chapters) }}
-        {{ range .chapters }}
-          {{ $sections = add $sections (len .sections) }}
-        {{ end }}
-      {{ end }}
-      <div>
-        <div class="index-stat-num">{{ $chapters }}</div>
-        <div>Notes</div>
-      </div>
-      <div>
-        <div class="index-stat-num">{{ $sections }}</div>
-        <div>Sections</div>
-      </div>
-      <div>
-        <div class="index-stat-num">
-          {{ add (len (readDir "static/svg")) (len (readDir "static/img")) }}
+        <div id="index-meta-cover">
+          <div id="index-meta">
+            <h3><strong>Author:</strong> Enoch Yu</h3>
+            <h3><strong>License:</strong> CC-BY-SA-4.0</h3>
+            <h3><strong>Version:</strong>
+              {{ printf "v%d.%02d.%02d"
+                (sub (mod now.Year 100) 25) now.Month now.Day }}
+            </h3>
+            <h3><strong>Last Updated:</strong> {{ now.Format "2 January 2006" }}
+            (<a href="/changelog"><strong>Changelog</strong></a>)</h3>
+          </div>
+          <img src="/cover.png" alt="LibreNotebook Cover" id="index-cover">
         </div>
-        <div>Figures</div>
       </div>
-      <div>
-        <a href="/LibreNotebook.pdf" target="_blank" rel="noopener">
-          <i class="fa-solid fa-file-pdf"></i>
-        </a>
+      <hr style="margin-bottom: 0;">
+
+      <div class="index-stat">
+        <div>
+          <div class="index-stat-num" id="view-count">...</div>
+          <div>Visits</div>
+        </div>
+        <div>
+          {{ with partialCached "githubstars.html" . }}
+          <div class="index-stat-num">{{ .stargazers_count }}</div>
+          <div>GitHub Stars</div>
+          {{ end }}
+        </div>
+        <div>
+          {{ with .Site.Params.social.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener"
+             aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          {{ end }}
+        </div>
+        <div>
+          {{ with .Site.Params.social.youtube }}
+          <a href="{{ . }}" target="_blank" rel="noopener"
+             aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          {{ end }}
+        </div>
+        {{ $parts := hugo.Data.index.parts }}
+        {{ $sections := 0 }}
+        {{ $chapters := 0 }}
+        {{ range $parts }}
+          {{ $chapters = add $chapters (len .chapters) }}
+          {{ range .chapters }}
+            {{ $sections = add $sections (len .sections) }}
+          {{ end }}
+        {{ end }}
+        <div>
+          <div class="index-stat-num">{{ $chapters }}</div>
+          <div>Notes</div>
+        </div>
+        <div>
+          <div class="index-stat-num">{{ $sections }}</div>
+          <div>Sections</div>
+        </div>
+        <div>
+          <div class="index-stat-num">
+            {{ add (len (readDir "static/svg")) (len (readDir "static/img")) }}
+          </div>
+          <div>Figures</div>
+        </div>
+        <div>
+          <a href="/LibreNotebook.pdf" target="_blank" rel="noopener">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        </div>
       </div>
+
+      <p>
+        Contributions are welcome! The source files are
+        <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>,
+        and the index for page URLs is available in <a href="/index.txt">index.txt</a>.
+        To contribute, please either create an issue or submit a pull request,
+        and be sure to check
+        <a href="https://github.com/enochness/LibreNotebook/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
+        for our <strong>No AI Policy</strong>. Thank you for your efforts!
+      </p>
+      <hr><hr>
     </div>
 
     <p>
-      Contributions are welcome! The source files are
-      <a href="https://github.com/enochness/LibreNotebook">hosted on GitHub</a>,
-      and the index for page URLs is available in <a href="/index.txt">index.txt</a>.
-      To contribute, please either create an issue or submit a pull request,
-      and be sure to check
-      <a href="https://github.com/enochness/LibreNotebook/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>
-      for our <strong>No AI Policy</strong>. Thank you for your efforts!
+      If you are deciding what to read, good news! You don't have to read
+      things in order. Each part is pretty much standalone, and should be
+      easy to read without extensive prerequisites. If however, I must
+      include my opinion on the reading order, here is a diagram on how each
+      part is related. The lined arrows represents prerequisites and the
+      dashed arrow represents helpful background. Please feel free to
+      explore each part and read in order of your best interest. Also,
+      the links in the diagram are clickable!
     </p>
-    <hr><hr>
+    {{ partial "flowchart.html" . }}
   </div>
 
-  <p>
-    If you are deciding what to read, good news! You don't have to read
-    things in order. Each part is pretty much standalone, and should be
-    easy to read without extensive prerequisites. If however, I must
-    include my opinion on the reading order, here is a diagram on how each
-    part is related. The lined arrows represents prerequisites and the
-    dashed arrow represents helpful background. Please feel free to
-    explore each part and read in order of your best interest. Also,
-    the links in the diagram are clickable!
-  </p>
-  {{ partial "flowchart.html" . }}
-
-  <div class="toc">
-    <h2>LibreNotebook</h2>
+  <aside id="index-toc" class="toc">
+    <h2>
+      <span class="index-toc-desktop">Table of Contents</span>
+      <span class="index-toc-mobile">LibreNotebook</span>
+    </h2>
     <ul>
       <li><a href="/preface">Preface</a></li>
     </ul>
@@ -157,7 +162,11 @@
         {{ end }}
       </ul>
     {{ end }}
-  </div>
+  </aside>
+
+  <aside class="single-right">
+    {{ partial "singleRight.html" . }}
+  </aside>
 </section>
 {{ end }}
 

@@ -37,10 +37,7 @@
 
 #index-title h3 a {
   font-size: 1.1rem;
-  color: blue;
-  margin: 0;
   font-weight: 500;
-  text-decoration: none;
 }
 
 
@@ -97,9 +94,6 @@
 #index-meta {
   flex: 1;
 }
-#index-meta a:hover {
-  text-decoration: underline;
-}
 #index-cover {
   width: 120px;
   object-fit: cover;
@@ -113,7 +107,6 @@
     font-size: 2.8rem;
   }
   #intropara {
-    font-size: 1.1rem;
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -152,6 +145,44 @@
 }
 .index-flowchart-rec {
   stroke-dasharray: 9 7;
+}
+
+
+
+.index-toc-desktop {
+  display: none;
+}
+@media (min-width: 912px) {
+  #index {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: calc(var(--toc-width) + 5rem);
+    padding-right: calc(var(--toc-width) + 5rem);
+  }
+  .index-toc-desktop {
+    display: inline;
+  }
+  .index-toc-mobile {
+    display: none;
+  }
+  #index-toc h2 {
+    color: var(--accent-color1);
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  #index-toc h3,
+  #index-toc h3 a {
+    font-size: 1.2rem;
+  }
+  #index-toc button,
+  #index-toc ul a {
+    font-size: 1rem;
+  }
+  #index-toc .accordion:after {
+    position: absolute;
+    right: 1rem;
+  }
 }
 
 

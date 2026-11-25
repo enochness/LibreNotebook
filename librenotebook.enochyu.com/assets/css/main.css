@@ -1,6 +1,7 @@
 :root {
   --accent-color1: #880808;
   --accent-color2: #FCA311;
+  --toc-width: 350px;
 }
 
 main {
@@ -13,13 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0 auto;
   line-height: 1.4;
   margin: 0 !important;
   max-width: none !important;
   padding: 0 !important;
   width: 100% !important;
-  line-height: 1.4;
   font-family: 'Times New Roman', Times, serif;
 }
 body p {
@@ -54,7 +53,6 @@ body:has(.error-page) {
   height: 100vh;
 }
 main:has(> .error-page) {
-  flex: 1;
   display: flex;
   min-height: 0;
 }
@@ -80,24 +78,35 @@ main:has(> .error-page) {
 
 .single {
   display: grid;
-  grid-template-columns: 2.2fr 6fr 1.8fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  box-sizing: border-box;
   width: 100%;
+  padding-left: calc(var(--toc-width) + 2rem);
+  padding-right: calc(var(--toc-width) + 2rem);
 }
-.single-left {
-  min-width: 0;
-  position: sticky;
-  top: 0;
-  height: fit-content;
-  overflow-y: auto;
-  border-right: 2px solid #37353E;
-  border-bottom: 2px solid #37353E;
-  padding: 0 2rem 1rem 2rem;
+@media (min-width: 912px) {
+  .single-left, #index-toc {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: var(--toc-width);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 0 2rem 1rem 2rem;
+    border-right: 2px solid #37353E;
+  }
 }
 .single-right {
-  min-width: 0;
-  position: sticky;
+  width: var(--toc-width);
+  box-sizing: border-box;
+  position: fixed;
   top: 0;
+  right: 0;
+  z-index: 1;
   height: fit-content;
   overflow-y: auto;
   border-left: 2px solid #37353E;
@@ -109,6 +118,7 @@ main:has(> .error-page) {
 }
 .single-right-content h3 {
   font-size: 1.5rem;
+  line-height: 1.2;
   margin-top: 1.3rem;
   margin-bottom: 0 !important;
   margin-left: 1rem;
@@ -141,6 +151,8 @@ main:has(> .error-page) {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
     width: 90vw;
   }
 }
@@ -203,7 +215,6 @@ main:has(> .error-page) {
 }
 .active:after {
   content: '\2212';
-  font-size: 1.1rem;
 }
 
 .panel {
@@ -222,20 +233,14 @@ main:has(> .error-page) {
 }
 .left-toc h2 {
   color: var(--accent-color1);
-  text-decoration: none;
   margin-bottom: 0rem !important;
   font-size: 2.1rem !important;
 }
 .left-toc h3 a {
-  color: blue;
-  text-decoration: none;
-  margin-bottom: 0rem !important;
   font-size: 1.2rem !important;
-}
-.left-toc h3 a:hover {
-  text-decoration: underline;
 }
 .left-toc h3 {
   font-size: 1.2rem !important;
 }
+
 
