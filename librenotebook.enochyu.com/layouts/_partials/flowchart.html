@@ -1,0 +1,84 @@
+<svg class="index-flowchart" viewBox="-175 -65 1150 630" role="img"
+     aria-label="Flowchart of LibreNotebook">
+  <defs>
+    <marker id="index-flowchart-arrow"
+            viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- MATH03 to CS01 -->
+  <line class="index-flowchart-edge"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="90" y1="305" x2="310" y2="445"/>
+  <!-- MATH02 to CS01 -->
+  <line class="index-flowchart-edge"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="45" y1="55" x2="355" y2="445"/>
+  <!-- MATH02 to MATH03 -->
+  <line class="index-flowchart-edge index-flowchart-rec"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="0" y1="55" x2="0" y2="195"/>
+  <!-- CS02 to CS01 -->
+  <line class="index-flowchart-edge index-flowchart-rec"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="555" y1="305" x2="445" y2="445"/>
+  <!-- CS03 to CS02 -->
+  <line class="index-flowchart-edge index-flowchart-rec"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="755" y1="55" x2="645" y2="195"/>
+  <!-- MATH01 to CS02 -->
+  <line class="index-flowchart-edge index-flowchart-rec"
+        marker-end="url(#index-flowchart-arrow)"
+        x1="445" y1="55" x2="555" y2="195"/>
+
+  <!-- MATH01 (400, 0) -->
+  <a href="/math01/">
+    <rect class="index-flowchart-node" rx="10"
+          x="235" y="-55" width="330" height="110"/>
+    <text class="index-flowchart-part" x="400" y="-8">Part I</text>
+    <text class="index-flowchart-title" x="400" y="24">Math Olympiad</text>
+  </a>
+  <!-- MATH02 (0, 0) -->
+  <a href="/math02/">
+    <rect class="index-flowchart-node" rx="10"
+          x="-165" y="-55" width="330" height="110"/>
+    <text class="index-flowchart-part" x="0" y="-8">Part II</text>
+    <text class="index-flowchart-title" x="0" y="24">Linear Algebra</text>
+  </a>
+  <!-- MATH03 (0, 250) -->
+  <a href="/math03/">
+    <rect class="index-flowchart-node" rx="10"
+          x="-165" y="195" width="330" height="110"/>
+    <text class="index-flowchart-part" x="0" y="242">Part III</text>
+    <text class="index-flowchart-title" x="0" y="274">
+      Multivariable Calculus
+    </text>
+  </a>
+  <!-- CS01 (400, 500) -->
+  <a href="/cs01/">
+    <rect class="index-flowchart-node" rx="10"
+          x="235" y="445" width="330" height="110"/>
+    <text class="index-flowchart-part" x="400" y="492">Part IV</text>
+    <text class="index-flowchart-title" x="400" y="524">Machine Learning</text>
+  </a>
+  <!-- CS02 (600, 250) -->
+  <a href="/cs02/">
+    <rect class="index-flowchart-node" rx="10"
+          x="435" y="195" width="330" height="110"/>
+    <text class="index-flowchart-part" x="600" y="242">Part V</text>
+    <text class="index-flowchart-title" x="600" y="274">
+      Competitive Programming
+    </text>
+  </a>
+  <!-- CS03 (800, 0) -->
+  <a href="/cs03/">
+    <rect class="index-flowchart-node" rx="10"
+          x="635" y="-55" width="330" height="110"/>
+    <text class="index-flowchart-part" x="800" y="-8">Part VI</text>
+    <text class="index-flowchart-title" x="800" y="24">
+      Programming Goodies
+    </text>
+  </a>
+</svg>

@@ -49,6 +49,12 @@ jobs:
           done
           exit $missing
 
+      - name: Build PDF
+        run: |
+          latexmk -pdf -shell-escape -interaction=nonstopmode \
+            -usepretex='\def\noexternalize{}' main.tex
+          cp main.pdf librenotebook.enochyu.com/static/LibreNotebook.pdf
+
       - name: Build site
         working-directory: librenotebook.enochyu.com
         env:

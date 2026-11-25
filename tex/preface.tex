@@ -5,8 +5,8 @@
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
 
-\section*{\S\! About the Book}
-\addcontentsline{toc}{section}{About the Book}
+\section*{\S\! About LibreNotebook}
+\addcontentsline{toc}{section}{About LibreNotebook}
 
 Teaching and sharing information, in my opinion, is the best way to
 learn. Whenever I explain the contents that I learned to others,
@@ -48,6 +48,67 @@ the blessings received by doing the same of returning knowledge.
 LibreNotebook is the notebook that highlights understandings that were
 learned to be shared.
 
+\section*{\S\! About the Author}
+\addcontentsline{toc}{section}{About the Author}
+
+Enoch is an ardent student who retains keen interest in pure math
+and machine learning. His previous accomplishments includes honorable
+mention from Korean Mathematical Olympiad (~300 in South Korea) and
+numerous awards from AMC. He currently dedicates his time on making
+\href{https://www.youtube.com/@enochness}{YouTube videos}
+on various math topics and \href{https://nanumlearn.org}{Nanum Learn}.
+More on Enoch can be found in his
+\href{https://enochyu.com}{personal website}.
+
+\section*{\S\! Getting Started}
+\addcontentsline{toc}{section}{Getting Started}
+
+If you are deciding what to read, good news! You don't have to read
+things in order. Each part is pretty much standalone, and should be
+easy to read without extensive prerequisites. If however, I must
+include my opinion on the reading order, here is a diagram on how each
+part is related. The lined arrows represents prerequisites and the
+dashed arrow represents helpful background. Please feel free to
+explore each part and read in order of your best interest. Also,
+the links in the diagram are clickable!
+
+\begin{figure}[H]
+\centering
+\tikzexternaldisable
+\begin{tikzpicture}[
+    part/.style={
+        draw=red!40!black,fill=BrickRed!3,rounded corners=3pt,
+        line width=1pt,text width=3.2cm,align=center
+    },
+    pre/.style={-{Stealth[length=6pt]},line width=1pt},
+    rec/.style={-{Stealth[length=6pt]},line width=0.8pt,dashed}
+]
+    \newcommand{\partnode}[4]{%
+        \node[part] (#1) at (#2) {%
+            \hyperref[#3]{%
+                \textcolor{BrickRed}{\small Part~\ref*{#3}}\\[1pt]
+                \textcolor{black}{\textbf{\small #4}}%
+            }%
+        };%
+    }
+
+    \partnode{MATH01}{4,0}{part:MATH01}{Math Olympiad}
+    \partnode{MATH02}{0,0}{part:MATH02}{Linear Algebra}
+    \partnode{MATH03}{0,-2.5}{part:MATH03}{Multivariable Calculus}
+    \partnode{CS01}{4,-5}{part:CS01}{Machine Learning}
+    \partnode{CS02}{6,-2.5}{part:CS02}{Competitive Programming}
+    \partnode{CS03}{8,0}{part:CS03}{Programming Goodies}
+
+    \draw[pre] (MATH03) -- (CS01);
+    \draw[pre] (MATH02) -- (CS01);
+    \draw[rec] (MATH02) -- (MATH03);
+    \draw[rec] (CS02) -- (CS01);
+    \draw[rec] (CS03) -- (CS02);
+    \draw[rec] (MATH01) -- (CS02);
+\end{tikzpicture}
+\tikzexternalenable
+\end{figure}
+
 \section*{\S\! Contributing}
 \addcontentsline{toc}{section}{Contributing}
 
@@ -70,18 +131,6 @@ submit any contributions that has been entirely written or polished
 by AI. If, however the contents include AI generated contents,
 please disclose it for transparency of contributors. With that,
 thank you for your interest and efforts!
-
-\section*{\S\! About the Author}
-\addcontentsline{toc}{section}{About the Author}
-
-Enoch is an ardent student who retains keen interest in pure math
-and machine learning. His previous accomplishments includes honorable
-mention from Korean Mathematical Olympiad (~300 in South Korea) and
-numerous awards from AMC. He currently dedicates his time on making
-\href{https://www.youtube.com/@enochness}{YouTube videos}
-on various math topics and \href{https://nanumlearn.org}{Nanum Learn}.
-More on Enoch can be found in his
-\href{https://enochyu.com}{personal website}.
 
 \end{document}
 

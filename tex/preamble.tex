@@ -57,6 +57,9 @@
 \usetikzlibrary{calc, angles, tikzmark, shapes.geometric,
                 positioning, arrows.meta, external}
 \tikzexternalize[prefix=tikz/]
+\ifdefined\noexternalize
+    \tikzset{external/export=false}
+\fi
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}

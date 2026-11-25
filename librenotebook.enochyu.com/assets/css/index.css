@@ -127,3 +127,31 @@
 }
 
 
+.index-flowchart {
+  display: block;
+  width: 100%;
+  margin: 1.5rem auto;
+}
+.index-flowchart-node {
+  fill: white;
+  stroke: var(--accent-color1);
+  stroke-width: 2.5;
+}
+.index-flowchart-part,
+.index-flowchart-title {
+  text-anchor: middle;
+  font-size: 24px;
+}
+.index-flowchart-title {
+  fill: blue;
+  font-weight: bold;
+}
+.index-flowchart-edge {
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+.index-flowchart-rec {
+  stroke-dasharray: 9 7;
+}
+
+
