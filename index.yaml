@@ -219,6 +219,8 @@ parts:
         sections:
           - { id: 26fnfyb, status: "===",
               title: "Tangent Planes and Directional Derivatives" }
+          - { id: 26fnhdl, status: "===",
+              title: "The Gradient" }
 
 
   - id: CS01

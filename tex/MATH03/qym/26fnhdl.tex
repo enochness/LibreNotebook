@@ -1,0 +1,99 @@
+\documentclass[../../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{The Gradient}
+
+Finally!! Gradients!!! I am very excited to discuss about the
+gradients because it has so much applications outside math.
+Physics and machine learning are two famous examples that constantly
+uses gradients as their foundation. I mean gradient descent is based
+one gradients! Now before we get too excited, let's get started with
+the definition.
+
+\begin{definition}{}{}
+Given a function $f$ whose first partials at $(x_0, y_0)$ exists,
+the \textbf{gradient} of $f$ at the point is defined as the following.
+\vspace{-0.8\baselineskip}
+\[
+\nabla f(x_0, y_0)
+\coloneqq \langle f_x(x_0, y_0), f_y(x_0, y_0) \rangle
+\]
+\end{definition}
+
+When we say this out loud, we say del, nabla, or grad $f$,
+where ``grad $f$'' is a popular choice. We can see that we can
+write $\nabla f$ as the following as well.
+\[
+\nabla f
+= \langle
+    \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}
+\rangle
+\]
+Now from this definition and our earlier discussion on directional
+derivative, I think it is not difficult to see that the following
+also holds for a unit vector $\mathbf{u}$.
+\[
+D_\mathbf{u} f(x_0, y_0) = \nabla f(x_0, y_0) \cdot \mathbf{u}
+\]
+We can also see that the gradient is actually a function! It takes
+in a point and spits out a vector. Also, in that sense $\nabla$ is
+merely an operator on functions. With this in mind, here is the
+theorem that makes gradients so powerful!
+
+\begin{theorem}{}{}
+Let $f(x, y)$ be a function where $\nabla f(x, y) \neq \mathbf{0}$
+for all points in the domain. Then, the direction of the maximum
+slope is $\nabla f(x, y)$ and the magnitude of the maximum slope is
+$\| \nabla f(x, y) \|$.
+\end{theorem}
+\begin{proof}
+First, consider the following equation for a unit vector $\mathbf{u}$.
+\[
+D_\mathbf{u} f(x_0, y_0)
+= \nabla f(x, y) \cdot \mathbf{u}
+= \| \nabla f(x, y) \| \| \mathbf{u} \| \cos\theta
+\]
+Notice that for $D_\mathbf{u} f(x_0, y_0)$ to be greatest,
+$\cos\theta = 1$ and $\theta = 0$. In other words,
+$D_\mathbf{u} f(x_0, y_0)$ is greatest when $\mathbf{u}$ and
+$\nabla f(x, y)$ points towards the same direction and
+$D_\mathbf{u} f(x_0, y_0) = \| \nabla f(x, y) \|$.
+\end{proof}
+
+Continuing with this theorem and proof, I don't think it is too
+difficult to see that the minimum of $D_\mathbf{u} f(x_0, y_0)$ occurs
+at the opposite direction of $\nabla f(x, y)$ and its magnitude is
+$-\| \nabla f(x, y) \|$.
+
+One side note is when $\nabla f(x, y) = \mathbf{0}$, then this point
+is a \textbf{saddle point}. Before we wrap up this section,
+here is one important theorem.
+
+\begin{theorem}{}{}
+Let $f(x, y)$ be a function that is differentiable at $(x_0, y_0)$ and
+$\nabla f(x_0, y_0) \neq \mathbf{0}$. Then, $\nabla f(x_0, y_0)$ and
+the tangent line that passes through level curve at the point are
+orthogonal.
+\end{theorem}
+\begin{proof}
+Let $\mathbf{r} = \langle x(t), y(t) \rangle$ be a smooth
+parametrization of the level curve $f(x, y) = c$ for some constant
+$c$. Using the chain rule, the following equations hold.
+\begin{align*}
+    f_x(x(t), y(t)) x'(t) + f_y(x(t), y(t)) y'(t) &= 0 \\
+    \nabla f(x(t), y(t)) \cdot \mathbf{r}'(t) &= 0
+\end{align*}
+Therefore, the theorem holds.
+\end{proof}
+
+This is it for gradients! It was a relatively short section although
+it is such a powerful tool. The fact that gradients give the minimum
+slope of a function is very good because we can use this information
+to descend towards the local minimum of loss functions in machine
+learning. Although I have so much to talk about here, I will save the
+rest for the Machine Learning part of LibreNotebook.
+
+\end{document}
+
+
