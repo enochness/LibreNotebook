@@ -15,10 +15,9 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-LibreNotebook Index
+START OF INDEX
 
 {{ $dhline }}
-
 
 I. Parts
 {{ $hline }}
@@ -27,9 +26,8 @@ I. Parts
   {{- $p := replaceRE `\d+$` "" .id -}}
   {{- $prefix = $p -}}
   {{- printf "%-30s | %s\n" .id .title -}}
-{{ end -}}
-{{ $hline }}
-
+{{ end }}
+{{ $dhline }}
 
 II. Notes
 {{ $hline }}
@@ -38,18 +36,15 @@ II. Notes
   {{- range .chapters -}}
     {{- printf "%-30s | %s\n" (printf "%s/%s" $part.id .id) .title -}}
   {{- end -}}
-{{ end -}}
-{{ $hline }}
-
+{{ end }}
+{{ $dhline }}
 
 III. Sections
 {{ $hline }}
 {{- range $i, $s := $sections }}
   {{- if eq $i 0 -}}{{ printf "\n" }}{{- end -}}
   {{- printf "%03d | %s | %18s | %s\n" (add $i 1) .status .path .title }}
-{{- end -}}
-{{ $hline }}
+{{- end }}
+{{ $dhline }}
 
 END OF INDEX
-
-{{ $dhline }}
