@@ -35,7 +35,7 @@ parts:
               title: "Foundations" }
           - { id: 26jmhhy, status: "0.4",
               title: "Cauchy's FE and Its Variants" }
-          - { id: 26lpkkb, status: "0.0",
+          - { id: 26lpkkb, status: "0.7",
               title: "Additional Topics" }
 
       - id: yhs
@@ -229,9 +229,9 @@ parts:
       - id: zjv
         title: "Fundamental Math for Machine Learning"
         sections:
-          - { id: 26ltgvn, status: "0.8",
+          - { id: 26ltgvn, status: "===",
               title: "Calculus" }
-          - { id: 26yhvlg, status: "0.7",
+          - { id: 26yhvlg, status: "===",
               title: "Linear Algebra" }
           - { id: 26zjxpm, status: "0.4",
               title: "Probability Theory" }
@@ -273,12 +273,6 @@ parts:
               title: "Attention and Transformers" }
           - { id: 26jrgxv, status: "0.0",
               title: "Building an LLM with PyTorch" }
-
-      - id: rzm
-        title: "Further Resources"
-        sections:
-          - { id: 26ksjbb, status: "0.7",
-              title: "Further Resources" }
 
 
   - id: CS02
@@ -324,9 +318,10 @@ parts:
   - id: MISC01
     title: "Appendix"
     chapters:
-      - id: rvq
-        title: "Bibliography"
+      - id: rzm
+        title: "Further Resources"
         sections:
-          - { id: 26dmfzf, status: "===",
-              title: "Bibliography" }
+          - { id: 26ksjbb, status: "===",
+              title: "Machine Learning" }
+
 

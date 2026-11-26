@@ -8,16 +8,24 @@ CSS="$OUT_DIR/assets/css/make4ht"
 
 cd "$ROOT"
 rm -r "$CONTENT" "$CSS"
-mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/static/svg" "$OUT_DIR/static/img"
-mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/data" "$OUT_DIR/static/svg" \
-  "$OUT_DIR/static/img"
+mkdir -p "$CONTENT" "$CSS" "$OUT_DIR/static/svg" \
+  "$OUT_DIR/static/img" "$OUT_DIR/data"
 
-# Preface
+# Preface and Bibliography
 make4ht -u -B temp -f html5 tex/preface.tex "mathjax"
 tidy -wrap 0 -utf8 -m --show-body-only yes --force-output yes \
   temp/preface.html
 mv temp/preface.html "$CONTENT"
 mv temp/preface.css "$CSS"
+
+make4ht -u -B temp -f html5 tex/bibliography.tex "mathjax"
+biber --output-directory temp bibliography
+make4ht -u -B temp -f html5 tex/bibliography.tex "mathjax"
+tidy -wrap 0 -utf8 -m --show-body-only yes --force-output yes \
+  temp/bibliography.html
+mv temp/bibliography.html "$CONTENT"
+mv temp/bibliography.css "$CSS"
+
 
 ls tex/*/*.tex tex/*/*/*.tex | xargs -P 8 -n 1 tools/convert.sh
 
@@ -32,4 +40,5 @@ jq -Rn '[inputs | split("\u001f") |
 ' > librenotebook.enochyu.com/data/changelog.json
 
 printf '%s\n' '---' 'layout: "changelog"' '---' > "$CONTENT/changelog.md"
+
 
