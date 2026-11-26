@@ -87,8 +87,6 @@ parts:
               title: "Infinite Descent" }
           - { id: 26yhsgw, status: "0.0",
               title: "Pell's Equations" }
-          - { id: 26xbwwn, status: "0.1",
-              title: "Practice Problems" }
 
       - id: clw
         title: "[N] Modular Arithmetic"
@@ -101,10 +99,8 @@ parts:
         sections:
           - { id: 26ycxxp, status: "===",
               title: "$p$-adic Valuation & LTE Lemma" }
-          - { id: 26zdyyq, status: "0.1",
+          - { id: 26zdyyq, status: "0.6",
               title: "Proving and Problem Solving Tips" }
-          - { id: 26bkvjy, status: "0.1",
-              title: "Practice Problems" }
 
 
   - id: MATH02
@@ -271,8 +267,6 @@ parts:
               title: "Bigram Language Model" }
           - { id: 26kskdg, status: "0.1",
               title: "Attention and Transformers" }
-          - { id: 26jrgxv, status: "0.0",
-              title: "Building an LLM with PyTorch" }
 
 
   - id: CS02
