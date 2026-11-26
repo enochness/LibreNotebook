@@ -87,7 +87,7 @@ parts:
               title: "Infinite Descent" }
           - { id: 26yhsgw, status: "0.0",
               title: "Pell's Equations" }
-          - { id: 26xbwwn, status: "0.0",
+          - { id: 26xbwwn, status: "0.1",
               title: "Practice Problems" }
 
       - id: clw
@@ -297,9 +297,9 @@ parts:
         sections:
           - { id: 26dmcvv, status: "===",
               title: "Time Complexity" }
-          - { id: 26gpgzc, status: "0.7",
+          - { id: 26gpgzc, status: "===",
               title: "Simulation and Complete Search" }
-          - { id: 26fnbrm, status: "0.1",
+          - { id: 26fnbrm, status: "===",
               title: "Practice Problems and Solutions" }
 
 

@@ -305,12 +305,93 @@ Continuing, let's discuss complete search, or brute forcing all cases.
 
 \subsection{Complete Search}
 
+Complete search literally means we are going to do a full complete
+search! Because this is not too different from simulation, let's solve
+two problems before wrapping up this section.
 
+\begin{problem}
+{2020 USACO Third Bronze Problem 1}
+{2020 USACO Third Bronze Problem 1}
+(\href{https://usaco.org/index.php?page=viewproblem2&cpid=1011}{Problem Statement})
 
+Given an input $N$ and $N$ coordinates, find two times the area of
+the biggest triangle with parallel sides to both $x$ and $y$ axis.
+\end{problem}
+\begin{solution}
+For this problem, I think one way to solve it is finding the area of
+all right triangles and comparing them.
 
+\begin{cppboxSolution}{26gpgzc-04}{26gpgzc-04}
+\begin{lstlisting}[style=cppstyle]
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        if (i != j) {
+            for (int k = 0; k < N; k++) {
+                if (i != k && j != k) {
+                    if (coord[i][0] == coord[j][0] &&
+                        coord[i][1] == coord[k][1]) {
+                        w = abs(coord[i][0] - coord[k][0]);
+                        h = abs(coord[i][1] - coord[j][1]);
+                        MAX = max(MAX, h * w);
+                    } else if (coord[i][0] == coord[j][0] &&
+                               coord[j][1] == coord[k][1]) {
+                        w = abs(coord[j][0] - coord[k][0]);
+                        h = abs(coord[i][1] - coord[j][1]);
+                        MAX = max(MAX, h * w);
+                        ...
+                }
+            }
+        }
+    }
+}
+\end{lstlisting}
+\end{cppboxSolution}
 
+To see the full spaghetti, you can go to GitHub! But as you can
+see, we are going through all combinations of right triangles and
+comparing them with \verb|MAX|. Although this solution has the
+complexity of $\mathcal{O}(N^3)$, it works!
+\end{solution}
 
+I check the official solution because there is no way the suggested
+solution is a spaghetti, but they used the same method! The syntax
+is much more brief because instead of checking points, the official
+solution checked the coordinates, but the underlying algorithm and
+time complexity is the same. Continuing, here is another problem.
 
+\begin{problem}
+{2016 USACO Third Bronze Problem 1}
+{2016 USACO Third Bronze Problem 1}
+(\href{https://usaco.org/index.php?page=viewproblem2&cpid=615}{Problem Statement})
+
+Given a target number $M$ and integers $X < Y < M$, find the greatest
+linear combination of $X, Y$ that is less than or equal to $M$.
+\end{problem}
+\begin{solution}
+This problem is rather simple if we fix $Y$ and try all $X$ from
+there.
+
+\begin{cppboxSolution}{26gpgzc-05}{26gpgzc-05}
+\begin{lstlisting}[style=cppstyle]
+int MAX = 0;
+int temp;
+for (int i = 0; i <= M/Y; i++) {
+    temp = i*Y + X*floor((M - i*Y)/X);
+    MAX = max(MAX, temp);
+}
+\end{lstlisting}
+\end{cppboxSolution}
+
+We are doing a complete search with fixed $Y$, and this solves the
+problem!
+\end{solution}
+
+Turns out, my solution does slightly less computation than the
+official solution, but I think the difference is trivial and both
+method works. This is it for this section! In the next section,
+there will be some practice problems to solve before moving on to
+data structures.
 
 \end{document}
+
 
