@@ -33,17 +33,6 @@
 * (a^m - 1, a^n - 1) = a^{(m, n) - 1}
 
 ## CS01
-* CS0101.26007
-  * Critical points
-  * Linear approximation
-  * Taylor approximation
-  * Tangent planes
-  * Intro to vector calc
-  * Jacobian and Hessian Matrices
-  * Lagrange Multipliers
-  * Fourier Transformation
-* CS0101.26008
-  * More on lin alg 
 * CS0101.26009
   * Fun intro to cross entropy and information theory
 * CS0104.26016

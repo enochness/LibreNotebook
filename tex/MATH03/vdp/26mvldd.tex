@@ -1,0 +1,165 @@
+\documentclass[../../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Generalizations}
+
+So far, we focused on functions of two variables. But what about
+functions of $n$ variables? The whole point of multivariable calculus
+is to generalize results from single variable calculus to functions
+of two or more variables. So let's do that! Since we generalized
+for functions of two variables, it shouldn't be too difficult
+generalizing to three or more variables.
+
+\begin{definition}{}{}
+Given a function $f$ of $n$ variables, assume that $f$ is defined
+on an open set $D$ that contains $(a_1, \ldots, a_n)$ where all first
+partials of $f$ exist at $(a_1, \ldots, a_n)$. Moreover,
+let $\Delta f = f(x_1, \ldots, x_n) - f(a_1, \ldots, a_n)$ and
+$\Delta x_i = x_i - a_i$. The function $f$ is \textbf{differentiable}
+at the point $(a_1, \ldots, a_n)$ if there exists some functions
+$\epsilon_1, \ldots, \epsilon_n$ such that
+\begin{align*}
+    \Delta f
+    &= f_{x_1}(a_1, \ldots, a_n) \Delta x_1 + \cdots
+        + f_{x_n}(a_1, \ldots, a_n) \Delta x_n \\
+    &\qquad\qquad\ + \epsilon_1(x_1, \ldots, x_n) \Delta x_1
+        + \cdots + \epsilon_n(x_1, \ldots, x_n) \Delta x_n
+\end{align*}
+holds for all points in the open set $D$ and $\epsilon_i$ approaches
+zero as $(\Delta x_1, \ldots, \Delta x_n) \to (0, \ldots, 0)$.
+\end{definition}
+
+Notice that this aligns with Definition \ref{def:Differentiability
+for Multivariable} for $n = 2$. Similarly, we can generalize
+Theorem \ref{theo:Differentiability and Partial Continuous}.
+
+\begin{theorem}{}{}
+Let $f$ be a function of $n$ variables whose first-order partials
+are defined on an open ball around $(a_1, \ldots, a_n)$. The function
+$f$ is differentiable at $(a_1, \ldots, a_n)$ if the partials are
+continuous at $(a_1, \ldots, a_n)$.
+\end{theorem}
+
+Similarly, differentiability implies continuity. Now we get more
+interesting result for generalizing chain rule. Like this is so
+important to machine learning and our lives. If I am getting a
+tattoo one day, I will be getting one for this chain rule.
+
+\begin{theorem}{}{}
+Let $f$ be a function of $n$ variables that are differentiable
+functions of $t$. Then, $f(x_1(t), \ldots, x_n(t))$ is also
+differentiable and the following chain rule holds.
+\[
+\frac{d}{dt} f(x_1(t), \ldots, x_n(t))
+= \sum_{i=1}^n \frac{\partial f}{\partial x_i} \frac{dx_i}{dt}
+\]
+\end{theorem}
+
+Notice that this aligns with Theorem \ref{theo:Chain Rule for Two
+Single} when $n = 2$. But we had one more chain rule!
+
+\begin{theorem}{}{}
+Let $f$ be a function of $n$ variables that are differentiable
+functions of $m$ variables. Then, $f(x_1(t_1, \ldots, t_m), \ldots,
+x_n(t_1, \ldots, t_m))$ is also differentiable and the following
+chain rule holds.
+\vspace{-0.6\baselineskip}
+\[
+\frac{\partial}{\partial t_i}
+    f(x_1(t_1, \ldots, t_m), \ldots, x_n(t_1, \ldots, t_m))
+= \sum_{j=1}^n
+    \frac{\partial f}{\partial x_j} \frac{\partial x_j}{\partial t_i}
+\]
+\end{theorem}
+
+Again for $n = 2$, this aligns with Theorem \ref{theo:Chain Rule for
+Two Multi}. For proving this result, we can use the same one liner
+to show it! Now let's move on to total differentials.
+
+\begin{definition}{}{}
+Let $f$ be a function of $n$ variables that is differentiable at
+$(a_1, \ldots, a_n)$. The \textbf{total differential} of $f$ at the
+point is defined as the following.
+\vspace{-0.8\baselineskip}
+\[
+df = \sum_{i=1}^n f_{x_i}(a_1, \ldots, a_n) dx_i
+\]
+\end{definition}
+
+For $n = 2$, this aligns with our Definition \ref{def:Total
+Differential}. The intuition also transcribes here as well. We can
+think $df$ as another function and that $\Delta f \approx df$ for
+$dx_i \approx 0$. Continuing, let's generalize directional
+derivatives.
+
+\begin{definition}{}{}
+Given a function $f$ of $n$ variables, the \textbf{directional
+derivative} of $f$ at $(a_1, \ldots, a_n)$ in the direction of
+a nonzero vector $\mathbf{v}$ is defined as the following.
+\[
+D_\mathbf{v} f(a_1, \ldots, a_n)
+= \frac{1}{\| \mathbf{v} \|}
+    \sum_{i=1}^n f_{x_i} (a_1, \ldots, a_n) v_i
+\]
+\end{definition}
+
+Similarly, the \textbf{gradient} of $f$ at the given point is
+defined as the following.
+\[
+\nabla f(a_1, \ldots, a_n)
+= \langle
+    f_{x_1}(a_1, \ldots, a_n), \ldots, f_{x_n}(a_1, \ldots, a_n)
+\rangle
+\]
+Just like we observed before, we can also see that for any unit vector
+$\mathbf{u}$, $D_\mathbf{u} f(a_1, \ldots, a_n) =
+\nabla f(a_1, \ldots, a_n) \cdot \mathbf{u}$. Similarly, using
+$\mathbf{v} \cdot \mathbf{w} = \| \mathbf{v} \| \| \mathbf{w} \|
+\cos\theta$ again, we can see that the representation of gradients
+and what its norm tells us also hold for functions of $n$ variables!
+
+Now before we wrap up this note, let's generalize Theorem
+\ref{theo:Level Curve Orthogonal}. There are generalizations of
+this theorem for four or more variables, but for now let's focus
+on functions of three variables.
+
+\begin{theorem}{}{}
+Let $f$ be a function of three variables that is differentiable at
+$(x_0, y_0, z_0)$ and $\nabla f(x_0, y_0, z_0) \neq \mathbf{0}$.
+Then, the tangent vectors of level surface through $(x_0, y_0, z_0)$
+and $\nabla f(x_0, y_0, z_0)$ are orthogonal.
+\end{theorem}
+\begin{proof}
+Let $S$ be the level surface $f(x, y, z) = k$ for some constant $k$.
+Let $\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle$ be a
+smooth curve on $S$ such that $\mathbf{r}'(t_0) = \mathbf{u}$ and
+$(x(t_0), y(t_0), z(t_0)) = (x_0, y_0, z_0)$. Differentiating the
+equation $f(x(t), y(t), z(t)) = k$ with respect to $t$,
+\[
+f_x(x_0, y_0, z_0) x'(t_0) +
+f_y(x_0, y_0, z_0) y'(t_0) +
+f_z(x_0, y_0, z_0) z'(t_0) = 0
+\]
+and $\nabla f(x_0, y_0, z_0) \cdot \mathbf{r}'(t_0) = 0$. Therefore,
+the theorem holds.
+\end{proof}
+
+We can also see from the theorem that the equation of the tangent
+plane can be represented as the following.
+\[
+f_x(x_0, y_0, z_0) (x - x_0) +
+f_y(x_0, y_0, z_0) (y - y_0) +
+f_z(x_0, y_0, z_0) (z - z_0) = 0
+\]
+This is it for this section! I think the fact that we can generalize
+so many results from single variable calculus to functions of two
+variables and that we can further generalize for functions of $n$
+variables is what makes multivariable calculus so essential in many
+different fields like physics and machine learning. In the next note,
+we are going to apply the contents discussed here to find extrema
+of some complicated functions.
+
+\end{document}
+
+

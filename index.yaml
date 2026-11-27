@@ -191,7 +191,7 @@ parts:
               title: "Cylindrical and Spherical Coordinates" }
 
       - id: rzl
-        title: "Vector-Valued Functions and Parametrization"
+        title: "Functions and Curves"
         sections:
           - { id: 26hqfwt, status: "===",
               title: "Vector-Valued Functions and Calculus" }
@@ -199,24 +199,28 @@ parts:
               title: "Parameterizations of Curves" }
           - { id: 26hqdtp, status: "===",
               title: "Curvature" }
-
-      - id: vdp
-        title: "Multivariable Functions and Derivatives"
-        sections:
           - { id: 26kshyw, status: "===",
               title: "Multivariable Functions and Sets" }
+
+      - id: vdp
+        title: "Differentiation"
+        sections:
           - { id: 26jrdsl, status: "===",
               title: "Limits and Continuity" }
           - { id: 26ksgwr, status: "===",
               title: "Partial Derivatives" }
-
-      - id: qym
-        title: "Directional Derivatives and Gradients"
-        sections:
           - { id: 26fnfyb, status: "===",
               title: "Tangent Planes and Directional Derivatives" }
           - { id: 26fnhdl, status: "===",
               title: "The Gradient" }
+          - { id: 26mvldd, status: "0.0",
+              title: "Generalizations" }
+
+      - id: qym
+        title: "Extrema and Lagrange Multiplier"
+        sections:
+          - { id: 26ksftm, status: "0.0",
+              title: "Maximum and Minimum" }
 
 
   - id: CS01
