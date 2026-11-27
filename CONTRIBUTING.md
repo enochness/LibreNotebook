@@ -2,7 +2,7 @@
 
 First and foremost, thank you so much for your interest and taking
 your time to contribute! All contributions, really any contributions
-ranging from a typo to writing a new chapter, are welcomed and
+ranging from a typo to writing a new note, are welcomed and
 encouraged with minor details below. To contribute, please either open
 an issue or submit a pull request.
 

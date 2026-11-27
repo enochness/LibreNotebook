@@ -10,7 +10,7 @@
       <strong>Source:</strong>
       <a href="https://github.com/enochness/LibreNotebook">GitHub</a>
     </li>
-    <li>
+    <li style="margin-bottom: 1rem;">
       <strong>Other:</strong>
       <a href="/changelog">Changelog</a>,
       <a href="/index.txt">Index</a>
@@ -47,6 +47,50 @@
       <a href="https://www.youtube.com/@enochness">
         <i class="fab fa-youtube"></i> YouTube</a>
     </li>
+  </ul>
+
+  {{ $notes := 0 }}
+  {{ $sections := 0 }}
+  {{ range hugo.Data.index.parts }}
+    {{ $notes = add $notes (len .notes) }}
+    {{ range .notes }}
+      {{ $sections = add $sections (len .sections) }}
+    {{ end }}
+  {{ end }}
+  {{ $figures := add (len (readDir "static/svg"))
+                     (len (readDir "static/img")) }}
+  <h3>Statistics</h3>
+  <ul class="single-right-stats">
+    <li><strong>Notes</strong>
+      <span>{{ $notes }}</span></li>
+    <li><strong>Sections</strong>
+      <span>{{ $sections }}</span></li>
+    <li><strong>Figures</strong>
+      <span>{{ $figures }}</span></li>
+    {{ with hugo.Data.stats }}
+    <li><strong>Lines of Code</strong>
+      <span>{{ lang.FormatNumber 0 .lines }} (TeX only)</span></li>
+    <li><span><hr></span><span></span></li>
+
+    <li><strong>Definitions</strong>
+      <span>{{ .definitions }}</span></li>
+    <li><strong>Theorems</strong>
+      <span>{{ .theorems }}</span></li>
+    <li><strong>Lemmas</strong>
+      <span>{{ .lemmas }}</span></li>
+    <li><strong>Corollaries</strong>
+      <span>{{ .corollaries }}</span></li>
+    <li><strong>Proofs</strong>
+      <span>{{ .proofs }}</span></li>
+    <li><span><hr></span><span></span></li>
+
+    <li><strong>Problems</strong>
+      <span>{{ .problems }}</span></li>
+    <li><strong>Solutions</strong>
+      <span>{{ .solutions }}</span></li>
+    <li><strong>Tips</strong>
+      <span>{{ .tips }}</span></li>
+    {{ end }}
   </ul>
 </div>
 

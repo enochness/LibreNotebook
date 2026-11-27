@@ -1,4 +1,12 @@
 {{ define "main" }}
+<button class="panel-toggle" id="toggle-left" data-side="left">
+  <span class="panel-shown">Hide TOC</span>
+  <span class="panel-hidden">Show TOC</span>
+</button>
+<button class="panel-toggle" id="toggle-right" data-side="right">
+  <span class="panel-shown">Hide Me</span>
+  <span class="panel-hidden">Show Me</span>
+</button>
 <section class="single">
   <aside class="single-left">
     {{ partial "singleLeft.html" . }}

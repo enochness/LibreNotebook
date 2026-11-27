@@ -24,7 +24,7 @@
       <a href="/{{ lower .id }}/">{{ .title }}</a>
     </h3>
     <ul>
-      {{ range .chapters }}
+      {{ range .notes }}
         {{ $base := printf "/%s/%s" (lower $part.id) .id }}
         {{ if and (eq (len .sections) 1) (eq (index .sections 0).title .title) }}
           {{ with index .sections 0 }}

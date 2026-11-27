@@ -44,11 +44,10 @@
 .index-stat {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 120px);
+  grid-auto-rows: 120px;
   place-items: center;
   font-size: 1.2rem;
   margin-top: 2rem;
-  margin-bottom: 1.2rem;
 }
 .index-stat > div {
   min-height: 120px;

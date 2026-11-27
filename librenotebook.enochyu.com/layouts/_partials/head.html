@@ -5,13 +5,23 @@
 <meta name="keywords" content="LibreNotebook, Enoch Yu, 유에녹">
 <meta name="robots" content="index, follow">
 
+<script>
+  try {
+    for (const side of ["left", "right"]) {
+      if (localStorage.getItem("hide-" + side)) {
+        document.documentElement.classList.add("hide-" + side);
+      }
+    }
+  } catch (e) {}
+</script>
+
 {{ $title := "LibreNotebook" }}
 {{ with .File }}
   {{ $id := .ContentBaseName }}
   {{ range hugo.Data.index.parts }}
     {{ $part := . }}
     {{ if eq (lower .id) $id }}{{ $title = printf "LibreNotebook - %s" .title }}{{ end }}
-    {{ range .chapters }}{{ range .sections }}
+    {{ range .notes }}{{ range .sections }}
       {{ if eq .id $id }}{{ $title = printf "LibreNotebook - %s · %s" .title $part.title }}{{ end }}
     {{ end }}{{ end }}
   {{ end }}

@@ -1,4 +1,12 @@
 {{ define "main" }}
+<button class="panel-toggle" id="toggle-left" data-side="left">
+  <span class="panel-shown">Hide TOC</span>
+  <span class="panel-hidden">Show TOC</span>
+</button>
+<button class="panel-toggle" id="toggle-right" data-side="right">
+  <span class="panel-shown">Hide Me</span>
+  <span class="panel-hidden">Show Me</span>
+</button>
 <section id="index">
   <div id="index-main">
     <div id="index-profile">
@@ -72,34 +80,6 @@
           </a>
           {{ end }}
         </div>
-        {{ $parts := hugo.Data.index.parts }}
-        {{ $sections := 0 }}
-        {{ $chapters := 0 }}
-        {{ range $parts }}
-          {{ $chapters = add $chapters (len .chapters) }}
-          {{ range .chapters }}
-            {{ $sections = add $sections (len .sections) }}
-          {{ end }}
-        {{ end }}
-        <div>
-          <div class="index-stat-num">{{ $chapters }}</div>
-          <div>Notes</div>
-        </div>
-        <div>
-          <div class="index-stat-num">{{ $sections }}</div>
-          <div>Sections</div>
-        </div>
-        <div>
-          <div class="index-stat-num">
-            {{ add (len (readDir "static/svg")) (len (readDir "static/img")) }}
-          </div>
-          <div>Figures</div>
-        </div>
-        <div>
-          <a href="/LibreNotebook.pdf" target="_blank" rel="noopener">
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
-        </div>
       </div>
 
       <p>
@@ -148,7 +128,7 @@
         <a href="/{{ lower .id }}/">{{ .title }}</a>
       </h3>
       <ul>
-        {{ range .chapters }}
+        {{ range .notes }}
           {{ $base := printf "/%s/%s" (lower $part.id) .id }}
           {{ if and (eq (len .sections) 1) (eq (index .sections 0).title .title) }}
             {{ with index .sections 0 }}

@@ -31,5 +31,6 @@ author = "Enoch Yu"
   notAlternative = true
 
 [outputs]
-  home = ["html", "rss", "index"]
+  home = ["html", "index"]
+
 

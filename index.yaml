@@ -3,7 +3,7 @@
 parts:
   - id: MATH01
     title: "Math Olympiad"
-    chapters:
+    notes:
       - id: swr
         title: "Prerequisites"
         sections:
@@ -105,7 +105,7 @@ parts:
 
   - id: MATH02
     title: "Linear Algebra"
-    chapters:
+    notes:
       - id: cgb
         title: "Vectors and Vector Spaces"
         sections:
@@ -177,7 +177,7 @@ parts:
 
   - id: MATH03
     title: "Multivariable Calculus"
-    chapters:
+    notes:
       - id: qyk
         title: "Vectors and Geometry"
         sections:
@@ -225,7 +225,7 @@ parts:
 
   - id: CS01
     title: "Machine Learning"
-    chapters:
+    notes:
       - id: zjv
         title: "Fundamental Math for Machine Learning"
         sections:
@@ -275,7 +275,7 @@ parts:
 
   - id: CS02
     title: "Competitive Programming"
-    chapters:
+    notes:
       - id: sbn
         title: "C++ Basics"
         sections:
@@ -303,7 +303,7 @@ parts:
 
   - id: CS03
     title: "Programming Goodies"
-    chapters:
+    notes:
       - id: sbm
         title: "C Programming Language"
         sections:
@@ -315,7 +315,7 @@ parts:
 
   - id: MISC01
     title: "Appendix"
-    chapters:
+    notes:
       - id: rzm
         title: "Further Resources"
         sections:

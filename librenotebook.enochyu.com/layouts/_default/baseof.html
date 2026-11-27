@@ -10,8 +10,8 @@
   
   {{ partial "footer.html" . }}
   
-  {{ $script := resources.Get "js/script.js" }}
-  <script src="{{ $script.RelPermalink }}"></script>
+  {{ $script := resources.Get "js/script.js" | fingerprint }}
+  <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
   {{ $counter := resources.Get "js/counter.js" }}
   <script src="{{ $counter.Permalink }}"></script>
 </body>

@@ -4,11 +4,11 @@
 {{- $sections := slice -}}
 {{- range $parts -}}
   {{- $part := .id -}}
-  {{- range .chapters -}}
-    {{- $chapter := printf "%s/%s" $part .id -}}
+  {{- range .notes -}}
+    {{- $note := printf "%s/%s" $part .id -}}
     {{- range .sections -}}
       {{- $sections = $sections | append (dict
-          "path" (printf "%s/%s" $chapter .id)
+          "path" (printf "%s/%s" $note .id)
           "status" .status
           "title" .title
       ) -}}
@@ -33,7 +33,7 @@ II. Notes
 {{ $hline }}
 {{ range $i, $part := $parts -}}
 {{- if $i }}{{ "\n" }}{{ end -}}
-  {{- range .chapters -}}
+  {{- range .notes -}}
     {{- printf "%-30s | %s\n" (printf "%s/%s" $part.id .id) .title -}}
   {{- end -}}
 {{ end }}

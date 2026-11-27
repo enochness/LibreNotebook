@@ -30,3 +30,15 @@ if (current && current.closest(".panel")) {
   openPanel(current.closest(".panel").previousElementSibling);
 }
 
+document.querySelectorAll(".panel-toggle").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var name = "hide-" + btn.dataset.side;
+    var hidden = document.documentElement.classList.toggle(name);
+    try {
+      if (hidden) localStorage.setItem(name, "1");
+      else localStorage.removeItem(name);
+    } catch (e) {}
+  });
+});
+
+

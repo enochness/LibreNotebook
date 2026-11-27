@@ -41,4 +41,5 @@ jq -Rn '[inputs | split("\u001f") |
 
 printf '%s\n' '---' 'layout: "changelog"' '---' > "$CONTENT/changelog.md"
 
+tools/stats.sh
 

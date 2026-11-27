@@ -105,12 +105,12 @@ main:has(> .error-page) {
   box-sizing: border-box;
   position: fixed;
   top: 0;
+  bottom: 0;
   right: 0;
   z-index: 1;
-  height: fit-content;
   overflow-y: auto;
+  overscroll-behavior: contain;
   border-left: 2px solid #37353E;
-  border-bottom: 2px solid #37353E;
 }
 .single-right-content {
   margin-bottom: 0rem !important;
@@ -141,9 +141,17 @@ main:has(> .error-page) {
   margin: 0 auto;
   margin-top: 2rem;
 }
+.single-right-stats {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 1rem;
+}
+.single-right-stats li {
+  display: contents;
+}
 
 @media (max-width: 912px) {
-  .single-left, .single-right {
+  .single-left, .single-right, .panel-toggle {
     display: none;
   }
   .single {
@@ -241,6 +249,45 @@ main:has(> .error-page) {
 }
 .left-toc h3 {
   font-size: 1.2rem !important;
+}
+
+
+
+.panel-toggle {
+  position: fixed;
+  top: 0.5rem;
+  z-index: 2;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: blue;
+  font: inherit;
+  cursor: pointer;
+}
+.panel-toggle:hover {
+  text-decoration: underline;
+}
+#toggle-left {
+  left: 0.5rem;
+}
+#toggle-right {
+  right: 0.5rem;
+}
+.panel-toggle .panel-hidden,
+.hide-left #toggle-left .panel-shown,
+.hide-right #toggle-right .panel-shown {
+  display: none;
+}
+.hide-left #toggle-left .panel-hidden,
+.hide-right #toggle-right .panel-hidden {
+  display: inline;
+}
+@media (min-width: 912px) {
+  .hide-left .single-left,
+  .hide-left #index-toc,
+  .hide-right .single-right {
+    display: none;
+  }
 }
 
 
