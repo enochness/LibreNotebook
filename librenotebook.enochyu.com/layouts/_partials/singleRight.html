@@ -43,7 +43,7 @@
       <a href="https://github.com/enochness/LibreNotebook">
         <i class="fab fa-github"></i> GitHub</a>
     </li>
-    <li>
+    <li style="margin-bottom: 1rem;">
       <a href="https://www.youtube.com/@enochness">
         <i class="fab fa-youtube"></i> YouTube</a>
     </li>
@@ -59,8 +59,9 @@
   {{ end }}
   {{ $figures := add (len (readDir "static/svg"))
                      (len (readDir "static/img")) }}
+  <hr>
   <h3>Statistics</h3>
-  <ul class="single-right-stats">
+  <ul class="single-right-stats" style="padding-bottom: 0.5rem;">
     <li><strong>Notes</strong>
       <span>{{ $notes }}</span></li>
     <li><strong>Sections</strong>
@@ -90,6 +91,8 @@
       <span>{{ .solutions }}</span></li>
     <li><strong>Tips</strong>
       <span>{{ .tips }}</span></li>
+    <li><strong>Code Blocks</strong>
+      <span>{{ .codes }}</span></li>
     {{ end }}
   </ul>
 </div>

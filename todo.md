@@ -33,10 +33,12 @@
 * (a^m - 1, a^n - 1) = a^{(m, n) - 1}
 
 ## CS01
-* CS0101.26009
-  * Fun intro to cross entropy and information theory
-* CS0104.26016
-  * Dynamic Programming in backprop
+* Fun intro to cross entropy and information theory
+* Dynamic Programming in backprop
+* Attention and Transformers
+* Neural Nets in C/C++ from scratch
+* Bigram no torch
+* Training an LLM from scratch with Pytorch
 
 ## CS02
 * Fast I/O
@@ -56,7 +58,6 @@
   * Hash Tables, Sets, Maps
   * Hashing
   * Two-pointer
-  * Linked-list
   * Stack
   * Queue
   * Deque
@@ -71,7 +72,7 @@
   * Tree Data Structures
   * Advanced Data Structures
   * Complex Data Structures
-* Repetition, Consition, Functions, Brute Force, Bit manipulation
+* Repetition, Consition, Functions, Bit manipulation
 * Algorithms
   * Greedy
   * Tree Algorithsm

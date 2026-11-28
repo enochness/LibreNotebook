@@ -45,6 +45,7 @@ kkkkk
 027. sbm
 028. rvq
 029. qym
+030. nrm
 
 -----sections-----
 001. cgbbs
@@ -142,5 +143,6 @@ kkkkk
 093. fnhdl
 094. mvldd
 095. ksftm
+096. sbqhf
 
 ENDIDS

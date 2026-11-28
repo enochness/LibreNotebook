@@ -213,7 +213,7 @@ parts:
               title: "Tangent Planes and Directional Derivatives" }
           - { id: 26fnhdl, status: "===",
               title: "The Gradient" }
-          - { id: 26mvldd, status: "0.0",
+          - { id: 26mvldd, status: "===",
               title: "Generalizations" }
 
       - id: qym
@@ -299,6 +299,12 @@ parts:
               title: "Simulation and Complete Search" }
           - { id: 26fnbrm, status: "===",
               title: "Practice Problems and Solutions" }
+
+      - id: nrm
+        title: "Data Structures"
+        sections:
+          - { id: 26sbqhf, status: "0.0",
+              title: "Lists and Linked Lists" }
 
 
   - id: CS03

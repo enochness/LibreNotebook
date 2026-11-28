@@ -18,6 +18,7 @@ jq -n '$ARGS.named' \
   --argjson problems    "$(count 'problem|listproblem')" \
   --argjson solutions   "$(count 'solution')" \
   --argjson tips        "$(count 'important')" \
+  --argjson codes       "$(count 'lstlisting')" \
   > librenotebook.enochyu.com/data/stats.json
 
 
